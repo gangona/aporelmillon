@@ -27,14 +27,29 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-0XX0M2PQ87"></script>
+<!-- Google tag (gtag.js) con Consent Mode: denegado por defecto hasta que el usuario decida -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'analytics_storage': 'denied',
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'wait_for_update': 500
+  });
+  (function () {
+    try {
+      var stored = JSON.parse(localStorage.getItem('apm_cookie_consent'));
+      if (stored && stored.analytics) {
+        gtag('consent', 'update', { 'analytics_storage': 'granted' });
+      }
+    } catch (e) {}
+  })();
   gtag('js', new Date());
   gtag('config', 'G-0XX0M2PQ87');
 </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0XX0M2PQ87"></script>
 <style>
 
   * { box-sizing: border-box; }
@@ -238,6 +253,33 @@
   .win95-toolbar { display: flex; align-items: center; padding: 6px 8px; border-top: 1px solid #808080; }
   .win95-toolbar .area-back-link { margin: 0; }
 
+
+
+.cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:9000;display:none;justify-content:center;padding:12px;}
+.cookie-window{max-width:640px;width:100%;background:#C0C0C0;border-top:2px solid #FFFFFF;border-left:2px solid #FFFFFF;border-right:2px solid #000000;border-bottom:2px solid #000000;box-shadow:0 4px 18px rgba(0,0,0,.35);}
+.cookie-titlebar{display:flex;align-items:center;gap:6px;background:linear-gradient(90deg,#000080,#1084D0);padding:4px 6px;color:#FFFFFF;font-family:'Tahoma','Segoe UI',Verdana,sans-serif;font-weight:700;font-size:12px;}
+.cookie-body{padding:12px 14px;font-family:'Tahoma','Segoe UI',Verdana,sans-serif;font-size:12px;line-height:1.5;color:#000000;}
+.cookie-body a{color:#000080;}
+.cookie-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;}
+.cookie-btn{-webkit-appearance:none;appearance:none;cursor:pointer;background:#C0C0C0;border-top:1px solid #FFFFFF;border-left:1px solid #FFFFFF;border-right:1px solid #000000;border-bottom:1px solid #000000;padding:5px 12px;font-family:'Tahoma','Segoe UI',Verdana,sans-serif;font-size:11.5px;font-weight:700;}
+.cookie-btn:active{border-top:1px solid #000000;border-left:1px solid #000000;border-right:1px solid #FFFFFF;border-bottom:1px solid #FFFFFF;}
+.cookie-btn-primary{background:#000080;color:#FFFFFF;}
+.cookie-prefs-panel{display:none;margin-top:10px;padding-top:10px;border-top:1px solid #808080;}
+.cookie-prefs-row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:4px 0;}
+.cookie-prefs-row label{display:flex;align-items:center;gap:8px;}
+.legal-footer{max-width:1180px;margin:0 auto;padding:14px 24px 40px 24px;font-family:'Tahoma','Segoe UI',Verdana,sans-serif;font-size:11.5px;color:#333;display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
+.legal-footer button{background:none;border:none;padding:0;color:#000080;text-decoration:underline;cursor:pointer;font-family:inherit;font-size:inherit;}
+.legal-modal{display:none;position:fixed;inset:0;z-index:9500;background:rgba(0,0,0,.45);align-items:center;justify-content:center;padding:16px;}
+.legal-window{max-width:760px;width:100%;max-height:82vh;display:flex;flex-direction:column;background:#C0C0C0;border-top:2px solid #FFFFFF;border-left:2px solid #FFFFFF;border-right:2px solid #000000;border-bottom:2px solid #000000;box-shadow:0 6px 24px rgba(0,0,0,.4);}
+.legal-titlebar{display:flex;align-items:center;justify-content:space-between;gap:6px;background:linear-gradient(90deg,#000080,#1084D0);padding:5px 8px;color:#FFFFFF;font-family:'Tahoma','Segoe UI',Verdana,sans-serif;font-weight:700;font-size:12.5px;}
+.legal-close{cursor:pointer;background:#C0C0C0;color:#000;border-top:1px solid #FFFFFF;border-left:1px solid #FFFFFF;border-right:1px solid #000000;border-bottom:1px solid #000000;width:18px;height:16px;font-size:10px;line-height:14px;text-align:center;font-weight:700;}
+.legal-content{padding:16px 20px;overflow-y:auto;background:#FFFFFF;margin:8px;font-family:'Tahoma','Segoe UI',Verdana,sans-serif;font-size:12.5px;line-height:1.65;color:#1B1A18;}
+.legal-content h4{font-size:13px;margin:14px 0 4px 0;color:#000080;}
+.legal-content h4:first-child{margin-top:0;}
+.legal-content table{width:100%;border-collapse:collapse;margin:8px 0;font-size:11.5px;}
+.legal-content th,.legal-content td{border:1px solid #C0C0C0;padding:4px 6px;text-align:left;}
+.legal-content th{background:#EFEFEF;}
+@media (max-width:520px){.cookie-actions{flex-direction:column;}.cookie-actions .cookie-btn{width:100%;text-align:center;}}
 
 </style>
 </head>
@@ -3827,6 +3869,94 @@
 
 
 </div>
+
+<div class="cookie-banner" id="cookie-banner">
+  <div class="cookie-window">
+    <div class="cookie-titlebar"><span>COOKIES.EXE</span></div>
+    <div class="cookie-body">
+      Usamos cookies propias y de terceros (Google Analytics) para analizar el uso de la web. Puedes aceptarlas, rechazarlas o configurarlas. Más info en nuestra <button type="button" data-legal-open="modal-cookies" style="background:none;border:none;padding:0;color:#000080;text-decoration:underline;cursor:pointer;font:inherit;">Política de Cookies</button>.
+      <div class="cookie-prefs-panel" id="cookie-prefs-panel">
+        <div class="cookie-prefs-row"><label><input type="checkbox" checked disabled> Necesarias (siempre activas)</label></div>
+        <div class="cookie-prefs-row"><label><input type="checkbox" id="cookie-pref-analytics"> Analítica (Google Analytics)</label></div>
+      </div>
+      <div class="cookie-actions">
+        <button type="button" class="cookie-btn cookie-btn-primary" onclick="window.apmCookie.acceptAll()">Aceptar todo</button>
+        <button type="button" class="cookie-btn" onclick="window.apmCookie.rejectAll()">Rechazar todo</button>
+        <button type="button" class="cookie-btn" onclick="window.apmCookie.togglePrefs()">Personalizar</button>
+        <button type="button" class="cookie-btn" id="cookie-save-prefs" style="display:none;" onclick="window.apmCookie.savePrefs()">Guardar preferencias</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="legal-footer">
+  <button type="button" data-legal-open="modal-aviso">Aviso Legal</button>
+  <button type="button" data-legal-open="modal-privacidad">Política de Privacidad</button>
+  <button type="button" data-legal-open="modal-cookies">Política de Cookies</button>
+  <button type="button" onclick="window.apmCookie.openPrefs()">Preferencias de cookies</button>
+  <span>© 2026 A por el Millón €</span>
+</div>
+
+<div class="legal-modal" id="modal-aviso">
+  <div class="legal-window">
+    <div class="legal-titlebar"><span>AVISO_LEGAL.TXT</span><span class="legal-close" data-legal-close>✕</span></div>
+    <div class="legal-content">
+      <h4>1. Titular del sitio</h4>
+      <p>Este sitio web (aporelmillon.com) es propiedad de Guillermo Angona (en adelante, "el titular"). A efectos de contacto: <strong>guille.angona@gmail.com</strong>.</p>
+      <h4>2. Objeto</h4>
+      <p>Aporelmillon.com es un proyecto personal de carácter informativo y educativo sobre inversión, ahorro y generación de ingresos. El contenido no constituye asesoramiento financiero, fiscal ni de inversión personalizado, y no debe interpretarse como una recomendación de compra o venta de ningún producto financiero. Toda decisión de inversión es responsabilidad exclusiva del usuario, que debería consultar con un profesional cualificado antes de tomar decisiones económicas relevantes.</p>
+      <h4>3. Propiedad intelectual</h4>
+      <p>Los textos, gráficos y diseño de este sitio son propiedad del titular salvo que se indique lo contrario. Su reproducción total o parcial sin autorización no está permitida.</p>
+      <h4>4. Exactitud de la información</h4>
+      <p>Las cifras, rentabilidades y ejemplos mostrados tienen carácter orientativo y pueden quedar desactualizados. El titular no garantiza la exactitud, vigencia o exhaustividad de los datos publicados.</p>
+      <p style="margin-top:14px;color:#716F68;font-size:11px;">Texto de referencia general, no elaborado ni revisado por un profesional del derecho. Se recomienda su revisión por un abogado antes de un uso comercial más intensivo del sitio.</p>
+    </div>
+  </div>
+</div>
+
+<div class="legal-modal" id="modal-privacidad">
+  <div class="legal-window">
+    <div class="legal-titlebar"><span>PRIVACIDAD.TXT</span><span class="legal-close" data-legal-close>✕</span></div>
+    <div class="legal-content">
+      <h4>Responsable del tratamiento</h4>
+      <p>Guillermo Angona — guille.angona@gmail.com</p>
+      <h4>¿Qué datos tratamos?</h4>
+      <p>Este sitio no requiere registro ni recoge datos identificativos directamente. Cuando aceptas las cookies analíticas, Google Analytics recoge datos de navegación (páginas visitadas, tiempo de permanencia, dispositivo, ubicación aproximada) de forma agregada y, en su mayor parte, anónima o pseudonimizada.</p>
+      <h4>Finalidad y base legal</h4>
+      <p>Analizar el uso del sitio para mejorarlo. La base legal es tu <strong>consentimiento</strong>, otorgado a través del banner de cookies, que puedes retirar en cualquier momento desde "Preferencias de cookies" en el pie de página.</p>
+      <h4>Destinatarios / encargados del tratamiento</h4>
+      <p>Google Ireland Limited (Google Analytics). Si en el futuro se activan anuncios (Google AdSense) o enlaces de afiliados (Amazon Asociados), esta política se actualizará para reflejarlo antes de activarlos.</p>
+      <h4>Plazo de conservación</h4>
+      <p>Los datos de Google Analytics se conservan según la configuración de retención de la propia herramienta (por defecto, hasta 14 meses).</p>
+      <h4>Tus derechos</h4>
+      <p>Puedes ejercer tus derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad escribiendo a guille.angona@gmail.com. También puedes reclamar ante la Agencia Española de Protección de Datos (AEPD) si consideras que tus derechos no se han respetado.</p>
+      <p style="margin-top:14px;color:#716F68;font-size:11px;">Texto de referencia general, no elaborado ni revisado por un profesional del derecho. Se recomienda su revisión por un abogado antes de un uso comercial más intensivo del sitio.</p>
+    </div>
+  </div>
+</div>
+
+<div class="legal-modal" id="modal-cookies">
+  <div class="legal-window">
+    <div class="legal-titlebar"><span>COOKIES.TXT</span><span class="legal-close" data-legal-close>✕</span></div>
+    <div class="legal-content">
+      <h4>¿Qué son las cookies?</h4>
+      <p>Pequeños archivos que se guardan en tu navegador para recordar información sobre tu visita.</p>
+      <h4>Cookies que usamos</h4>
+      <table>
+        <thead><tr><th>Cookie</th><th>Proveedor</th><th>Finalidad</th><th>Duración</th></tr></thead>
+        <tbody>
+          <tr><td>_ga</td><td>Google Analytics</td><td>Distinguir usuarios de forma anónima</td><td>~2 años</td></tr>
+          <tr><td>_ga_*</td><td>Google Analytics</td><td>Mantener el estado de la sesión</td><td>~2 años</td></tr>
+        </tbody>
+      </table>
+      <p>Estas cookies solo se instalan si aceptas la categoría "Analítica" en el banner. Si rechazas o no decides, no se cargan.</p>
+      <h4>¿Cómo cambiar tu decisión?</h4>
+      <p>Pulsa "Preferencias de cookies" en el pie de página en cualquier momento para actualizar tu elección. También puedes bloquear o eliminar cookies desde la configuración de tu navegador.</p>
+      <p style="margin-top:14px;color:#716F68;font-size:11px;">Texto de referencia general, no elaborado ni revisado por un profesional del derecho. Se recomienda su revisión por un abogado antes de un uso comercial más intensivo del sitio.</p>
+    </div>
+  </div>
+</div>
+
 <script>
 (function () {
   function showHome() {
@@ -3924,6 +4054,60 @@
       if (e.target.closest('[data-nav]')) closeMobileMenu();
     });
   }
+})();
+</script>
+<script>
+(function () {
+  var KEY = 'apm_cookie_consent';
+  function getConsent(){ try { return JSON.parse(localStorage.getItem(KEY)); } catch(e){ return null; } }
+  function applyConsent(analytics){
+    if (window.gtag) { gtag('consent', 'update', { 'analytics_storage': analytics ? 'granted' : 'denied' }); }
+  }
+  function persist(analytics){
+    try { localStorage.setItem(KEY, JSON.stringify({ analytics: !!analytics, ts: Date.now() })); } catch(e){}
+  }
+  function hideBanner(){ var b = document.getElementById('cookie-banner'); if (b) b.style.display = 'none'; }
+  function showBanner(){ var b = document.getElementById('cookie-banner'); if (b) b.style.display = 'flex'; }
+  window.apmCookie = {
+    acceptAll: function(){ persist(true); applyConsent(true); hideBanner(); },
+    rejectAll: function(){ persist(false); applyConsent(false); hideBanner(); },
+    togglePrefs: function(){
+      var p = document.getElementById('cookie-prefs-panel');
+      var save = document.getElementById('cookie-save-prefs');
+      if (!p) return;
+      var open = p.style.display === 'block';
+      p.style.display = open ? 'none' : 'block';
+      if (save) save.style.display = open ? 'none' : 'inline-block';
+      var stored = getConsent();
+      var chk = document.getElementById('cookie-pref-analytics');
+      if (chk) chk.checked = !!(stored && stored.analytics);
+    },
+    savePrefs: function(){
+      var chk = document.getElementById('cookie-pref-analytics');
+      var analytics = !!(chk && chk.checked);
+      persist(analytics); applyConsent(analytics); hideBanner();
+    },
+    openPrefs: function(){ showBanner(); }
+  };
+  document.addEventListener('DOMContentLoaded', function () {
+    var stored = getConsent();
+    if (stored) { applyConsent(!!stored.analytics); } else { showBanner(); }
+  });
+  document.addEventListener('click', function (e) {
+    var openBtn = e.target.closest('[data-legal-open]');
+    if (openBtn) {
+      var m = document.getElementById(openBtn.getAttribute('data-legal-open'));
+      if (m) m.style.display = 'flex';
+    }
+    var closeBtn = e.target.closest('[data-legal-close]');
+    if (closeBtn) {
+      var modal = closeBtn.closest('.legal-modal');
+      if (modal) modal.style.display = 'none';
+    }
+    if (e.target.classList && e.target.classList.contains('legal-modal')) {
+      e.target.style.display = 'none';
+    }
+  });
 })();
 </script>
 </body>
