@@ -289,6 +289,25 @@
   .win95-btn { width: 18px; height: 16px; background: #C0C0C0; color: #000000; font-size: 10px; line-height: 14px; text-align: center; font-weight: 700; border-top: 1px solid #FFFFFF; border-left: 1px solid #FFFFFF; border-right: 1px solid #000000; border-bottom: 1px solid #000000; }
   .win95-toolbar { display: flex; align-items: center; padding: 6px 8px; border-top: 1px solid #808080; }
   .win95-toolbar .area-back-link { margin: 0; }
+  .calc-window { max-width: 900px; margin: 16px 0 18px 0; background: #C0C0C0; border-top: 2px solid #FFFFFF; border-left: 2px solid #FFFFFF; border-right: 2px solid #000000; border-bottom: 2px solid #000000; box-shadow: inset 1px 1px 0 #DFDFDF; }
+  .calc-titlebar { display: flex; align-items: center; gap: 6px; background: linear-gradient(90deg, #000080, #1084D0); padding: 4px 6px; }
+  .calc-titlebar-text { flex-grow: 1; color: #FFFFFF; font-family: 'Tahoma', 'Segoe UI', Verdana, sans-serif; font-weight: 700; font-size: 12.5px; letter-spacing: .02em; }
+  .calc-body { padding: 14px 16px 18px 16px; }
+  .calc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 10px 14px; margin-bottom: 12px; }
+  .calc-field label { display: block; font-family: 'Tahoma', 'Segoe UI', Verdana, sans-serif; font-size: 11px; color: #000000; margin-bottom: 3px; }
+  .calc-field input[type="number"] { width: 100%; box-sizing: border-box; font-family: 'Tahoma', 'Segoe UI', Verdana, sans-serif; font-size: 12px; padding: 3px 6px; background: #FFFFFF; border-top: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #FFFFFF; border-bottom: 1px solid #FFFFFF; box-shadow: inset 1px 1px 1px rgba(0,0,0,.15); }
+  .calc-checkbox-row { display: flex; align-items: center; gap: 6px; font-family: 'Tahoma', 'Segoe UI', Verdana, sans-serif; font-size: 11px; margin-bottom: 12px; }
+  .calc-btn { font-family: 'Tahoma', 'Segoe UI', Verdana, sans-serif; font-size: 12px; font-weight: 700; padding: 6px 18px; background: #C0C0C0; border-top: 1px solid #FFFFFF; border-left: 1px solid #FFFFFF; border-right: 1px solid #000000; border-bottom: 1px solid #000000; cursor: pointer; }
+  .calc-btn:active { border-top: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #FFFFFF; border-bottom: 1px solid #FFFFFF; }
+  .calc-results { margin-top: 14px; background: #0A0E14; border-top: 2px solid #808080; border-left: 2px solid #808080; border-right: 2px solid #404040; border-bottom: 2px solid #404040; box-shadow: inset 0 0 24px rgba(0,255,102,.05); padding: 12px 16px; }
+  .calc-result-line { color: #4FA870; font-family: 'Courier New', monospace; font-size: 12.5px; line-height: 1.9; margin: 0; }
+  .calc-result-line strong { color: #00FF66; }
+  .calc-chart-panel { margin-top: 12px; background: #0A0E14; border-top: 2px solid #808080; border-left: 2px solid #808080; border-right: 2px solid #404040; border-bottom: 2px solid #404040; padding: 10px; }
+  .calc-chart-panel svg { width: 100%; height: auto; display: block; }
+  .calc-chart-legend { display: flex; flex-wrap: wrap; gap: 16px; font-family: 'Courier New', monospace; font-size: 11px; color: #4FA870; margin-top: 6px; }
+  .calc-chart-legend .calc-dot { display: inline-block; width: 8px; height: 8px; margin-right: 4px; }
+  .calc-disclaimer { font-size: 11px; color: #555555; margin: 10px 0 0 0; font-family: 'Tahoma', 'Segoe UI', Verdana, sans-serif; }
+  @media (max-width: 600px) { .calc-grid { grid-template-columns: 1fr 1fr; } }
   .tl-visual-wrap { margin: 0; background: #FFFFFF; border: 1px solid #808080; padding: 12px 16px 12px 34px; flex: 1 1 56%; min-width: 0; }
   .tl-visual { position: relative; }
   .tl-visual:before { content: ''; position: absolute; left: -20px; top: 2px; bottom: 2px; width: 2px; background: #C0C0C0; }
@@ -1015,7 +1034,7 @@
       <span class="area-number">1</span>
       <h2>GENERAL</h2>
     </div>
-    <p class="area-intro-text">Esta primera sección es la puerta de entrada a Aporelmillon.com: en pocos segundos tiene que dejar claro de qué trata la web, a quién se dirige y qué va a encontrar el lector en el resto de secciones. No es una sección de inversión en sí, sino el marco narrativo que conecta el problema (una vida laboral entera trabajando para otros, con impuestos e inflación erosionando el ahorro) con la solución (aprender a invertir de forma diversificada para alcanzar la independencia financiera). Webs de referencia en educación financiera en español, como Value School, Rankia o Cazadividendos, resuelven bien este mismo reto: comunican una promesa clara antes de entrar en detalle técnico. Aquí se sientan las bases de tono, estructura y objetivo del resto del sitio.</p>
+    <p class="area-intro-text">Esta primera sección es la puerta de entrada a Aporelmillon.com, la web pensada para ayudarte a llegar a tu primer millón de euros invirtiendo paso a paso aunque partas de cero: en pocos segundos tiene que dejar claro de qué trata la web, a quién se dirige y qué va a encontrar el lector en el resto de secciones. No es una sección de inversión en sí, sino el marco narrativo que conecta el problema (una vida laboral entera trabajando para otros, con impuestos e inflación erosionando el ahorro) con la solución (aprender a invertir de forma diversificada para alcanzar la independencia financiera). Webs de referencia en educación financiera en español, como Value School, Rankia o Cazadividendos, resuelven bien este mismo reto: comunican una promesa clara antes de entrar en detalle técnico. Aquí se sientan las bases de tono, estructura y objetivo del resto del sitio.</p>
     <div class="sub-grid">
       <article class="sub-card" id="a1-panorama-vida-laboral-impuestos-40-anos">
         <h3>Panorama (vida laboral, impuestos, 40 años)</h3>
@@ -3509,7 +3528,7 @@
       <span class="area-number">6</span>
       <h2>NEGOCIOS DIGITALES</h2>
     </div>
-    <p class="area-intro-text">Más allá de invertir en activos existentes, esta sección explora cómo crear y gestionar pequeños negocios propios en Internet. Son modelos que, en muchos casos, permiten empezar con una inversión inicial relativamente reducida, pero cuyo resultado depende mucho más del tiempo, el trabajo, las habilidades y la capacidad comercial del emprendedor que del capital aportado. Aquí se incluyen desde el trading activo hasta modelos de comercio electrónico como FBA y dropshipping, pasando por webs de nicho, aplicaciones, venta de dominios, publicación de libros, royalties, creación de contenido, infoproductos y servicios de publicidad digital. A diferencia de las inversiones financieras o inmobiliarias, estos modelos no tienen una rentabilidad anual homogénea que pueda aplicarse a todos los casos: un negocio digital puede generar beneficios elevados, mantenerse prácticamente sin beneficios o incluso acumular pérdidas, y conceptos como margen sobre ventas, ROI sobre el capital invertido y rentabilidad anual para el propietario no son equivalentes y deben distinguirse. Los negocios que requieren principalmente un local físico, maquinaria o instalaciones se recogen en la sección Negocios Físicos.</p>
+    <p class="area-intro-text">Más allá de invertir en activos existentes, esta sección explora cómo generar ingresos pasivos creando y gestionando pequeños negocios digitales propios en Internet. Son modelos que, en muchos casos, permiten empezar con una inversión inicial relativamente reducida, pero cuyo resultado depende mucho más del tiempo, el trabajo, las habilidades y la capacidad comercial del emprendedor que del capital aportado. Aquí se incluyen desde el trading activo hasta modelos de comercio electrónico como FBA y dropshipping, pasando por webs de nicho, aplicaciones, venta de dominios, publicación de libros, royalties, creación de contenido, infoproductos y servicios de publicidad digital. A diferencia de las inversiones financieras o inmobiliarias, estos modelos no tienen una rentabilidad anual homogénea que pueda aplicarse a todos los casos: un negocio digital puede generar beneficios elevados, mantenerse prácticamente sin beneficios o incluso acumular pérdidas, y conceptos como margen sobre ventas, ROI sobre el capital invertido y rentabilidad anual para el propietario no son equivalentes y deben distinguirse. Los negocios que requieren principalmente un local físico, maquinaria o instalaciones se recogen en la sección Negocios Físicos.</p>
     <div class="area-terminal-panel">
       <p class="area-terminal-line">&gt; <strong>11</strong> subapartados en esta área</p>
       <p class="area-terminal-line">&gt; Rentabilidad muy variable, depende casi por completo de la ejecución y el tiempo invertido</p>
@@ -4924,25 +4943,61 @@
       <span class="area-number">9</span>
       <h2>OTROS NEGOCIOS O INVERSIONES</h2>
     </div>
-    <p class="area-intro-text">Esta sección reúne el contenido de apoyo que no es en sí mismo una categoría de inversión, pero que resulta necesario para aprovechar el resto de la web: herramientas prácticas (calculadoras, glosario) y contenido transversal sobre análisis y fiscalidad aplicable a varias categorías a la vez. Es contenido más funcional que narrativo: su objetivo es que el lector pueda volver a consultarlo como referencia rápida mientras navega por las secciones de inversión propiamente dichas.</p>
+    <p class="area-intro-text">Esta sección reúne el contenido de apoyo que no es en sí mismo una categoría de inversión, pero que resulta necesario para aprovechar el resto de la web: herramientas prácticas como una calculadora de independencia financiera para saber cuánto invertir al mes para llegar a tu primer millón, un glosario y contenido transversal sobre análisis y fiscalidad aplicable a varias categorías a la vez. Es contenido más funcional que narrativo: su objetivo es que el lector pueda volver a consultarlo como referencia rápida mientras navega por las secciones de inversión propiamente dichas.</p>
     <div class="area-terminal-panel">
-      <p class="area-terminal-line">&gt; <strong>2</strong> subapartados en esta área</p>
+      <p class="area-terminal-line">&gt; <strong>3</strong> subapartados en esta área</p>
       <p class="area-terminal-line">&gt; Contenido de apoyo: calculadoras y fiscalidad aplicable a varias categorías</p>
     </div>
     <div class="sub-grid">
-            <article class="sub-card sub-card-wide" id="a8-herramientas-glosario-calc-inversion-if-calc-dividendos">
-        <h3>Herramientas (Calculadora IF, Calculadora Dividendos)</h3>
-        <div class="outline-tags"><span class="outline-tag">Calculadora de años hasta la independencia financiera</span><span class="outline-tag">Calculadora de rentabilidad por dividendo</span></div>
-        <p class="sub-intro">Dos calculadoras resultan especialmente útiles a la hora de planificar: una que estima cuántos años faltan para alcanzar la independencia financiera según el ahorro mensual, la rentabilidad esperada y el gasto anual objetivo, y otra centrada en dividendos, que calcula la rentabilidad por dividendo (yield) y proyecta los ingresos pasivos futuros de una cartera según el capital invertido y el crecimiento esperado del dividendo. El glosario general de términos financieros se ha repartido ahora al final de cada área temática (Renta Fija, Renta Variable...), donde resulta más útil por contexto.</p>
-        <p class="sub-examples-label">Ejemplos reales</p>
-        <ul class="sub-examples"><li>Calculadora de años hasta la independencia financiera</li><li>Calculadora de rentabilidad por dividendo</li><li>Simuladores similares de Rankia y Finect</li></ul>
-      </article>
       <article class="sub-card" id="a8-otros-inversion-analisis-fundamental-fiscalidad-basica">
-        <h3>Otros Inversión (Análisis Fundamental, Fiscalidad Básica)</h3>
+        <h3>Otras inversiones (Análisis Fundamental, Fiscalidad Básica)</h3>
         <div class="outline-tags"><span class="outline-tag">Ratios clave del análisis fundamental (PER, ROE, deuda)</span><span class="outline-tag">Tributación del ahorro en el IRPF (escala del ahorro)</span><span class="outline-tag">Modelo 720 y obligaciones de declarar activos en el extranjero</span><span class="outline-tag">Diferencias fiscales entre fondos, ETF y acciones</span></div>
         <p class="sub-intro">El análisis fundamental estudia los estados financieros de una empresa —beneficios, deuda, márgenes, retorno sobre el capital (ROE)— para estimar si su precio en bolsa está justificado, usando ratios como el PER (precio entre beneficio por acción) como referencia rápida, aunque nunca de forma aislada. En materia fiscal, en España las rentas del ahorro (dividendos, intereses, ganancias patrimoniales) tributan en una escala independiente de las rentas del trabajo, con tipos que en 2024 iban del 19% al 28% según el importe. Quien mantiene activos financieros en el extranjero por encima de determinados umbrales debe además declararlo mediante el Modelo 720, con sanciones relevantes en caso de incumplimiento.</p>
         <p class="sub-examples-label">Ejemplos reales</p>
         <ul class="sub-examples"><li>Ratio PER y ROE</li><li>Escala del ahorro del IRPF (19%-28%)</li><li>Modelo 720 — declaración de bienes en el extranjero</li><li>Guías de fiscalidad de la Agencia Tributaria</li></ul>
+      </article>
+      <article class="sub-card" id="a9-otros-negocios">
+        <h3>Otros negocios</h3>
+        <div class="outline-tags"><span class="outline-tag">Próximamente</span></div>
+        <p class="sub-intro">Apartado en construcción: aquí se irán recogiendo otros modelos de negocio y oportunidades que no encajan directamente en las categorías ya cubiertas por el resto de la web.</p>
+      </article>
+      <article class="sub-card sub-card-wide" id="a8-herramientas-glosario-calc-inversion-if-calc-dividendos">
+        <h3>Calculadora de Dividendos</h3>
+        <div class="outline-tags"><span class="outline-tag">Rentabilidad por dividendo (yield)</span><span class="outline-tag">Reinversión de dividendos (DRIP)</span><span class="outline-tag">Proyección de ingresos pasivos</span></div>
+        <p class="sub-intro">Calculadora interactiva que proyecta cómo evoluciona una cartera centrada en dividendos según el capital inicial, la aportación mensual, la rentabilidad por dividendo y su crecimiento esperado, con o sin reinversión automática. El glosario general de términos financieros se ha repartido ahora al final de cada área temática (Renta Fija, Renta Variable...), donde resulta más útil por contexto.</p>
+        <div class="calc-window" id="calc-dividendos">
+          <div class="calc-titlebar">
+            <span class="win95-titlebar-icon" aria-hidden="true"></span>
+            <span class="calc-titlebar-text">CALC_DIVIDENDOS.EXE</span>
+            <span class="win95-titlebar-btns"><span class="win95-btn" aria-hidden="true">_</span><span class="win95-btn" aria-hidden="true">□</span><span class="win95-btn win95-btn-close" aria-hidden="true">✕</span></span>
+          </div>
+          <div class="calc-body">
+            <div class="calc-grid">
+              <div class="calc-field"><label for="cd-capital">Capital inicial (€)</label><input type="number" id="cd-capital" value="10000" min="0" step="500"></div>
+              <div class="calc-field"><label for="cd-aportacion">Aportación mensual (€)</label><input type="number" id="cd-aportacion" value="100" min="0" step="10"></div>
+              <div class="calc-field"><label for="cd-yield">Rentabilidad por dividendo (%)</label><input type="number" id="cd-yield" value="4" min="0" max="20" step="0.1"></div>
+              <div class="calc-field"><label for="cd-crecimiento">Crecimiento anual dividendo (%)</label><input type="number" id="cd-crecimiento" value="5" min="0" max="30" step="0.5"></div>
+              <div class="calc-field"><label for="cd-revalorizacion">Revalorización anual precio (%)</label><input type="number" id="cd-revalorizacion" value="3" min="0" max="30" step="0.5"></div>
+              <div class="calc-field"><label for="cd-anos">Años de inversión</label><input type="number" id="cd-anos" value="20" min="1" max="60" step="1"></div>
+            </div>
+            <label class="calc-checkbox-row"><input type="checkbox" id="cd-drip" checked> Reinvertir dividendos automáticamente (DRIP)</label>
+            <button type="button" class="calc-btn" id="cd-calcular">Calcular ▶</button>
+            <div class="calc-results" id="cd-resultados">
+              <p class="calc-result-line">&gt; Total aportado: <strong id="cd-r-aportado">—</strong></p>
+              <p class="calc-result-line">&gt; Valor final de la cartera: <strong id="cd-r-valor">—</strong></p>
+              <p class="calc-result-line">&gt; Dividendos cobrados (acumulado): <strong id="cd-r-dividendos">—</strong></p>
+              <p class="calc-result-line">&gt; Rentabilidad anualizada: <strong id="cd-r-rentabilidad">—</strong></p>
+              <p class="calc-result-line">&gt; Yield on cost final: <strong id="cd-r-yoc">—</strong></p>
+            </div>
+            <div class="calc-chart-panel">
+              <svg id="cd-chart" viewBox="0 0 640 240" preserveAspectRatio="none"></svg>
+              <div class="calc-chart-legend"><span><span class="calc-dot" style="background:#00FF66"></span>Valor de la cartera</span><span><span class="calc-dot" style="background:#4FA870"></span>Total aportado</span></div>
+            </div>
+            <p class="calc-disclaimer">Cálculo estimado con fines educativos, simplificado como rentabilidad directa sobre el capital (sin modelar el precio de la acción): no tiene en cuenta impuestos, comisiones ni fluctuaciones reales de mercado.</p>
+          </div>
+        </div>
+        <p class="sub-examples-label">Ejemplos reales</p>
+        <ul class="sub-examples"><li>Calculadora de rentabilidad por dividendo</li><li>Simuladores similares de Rankia y Finect</li></ul>
       </article>
     </div>
   </section>
@@ -5420,7 +5475,7 @@
     <div class="footer-inner">
       <div class="footer-brand">A por el Millón €</div>
       <div class="footer-note">Portada en construcción · aporelmillon.com</div>
-      <div class="footer-version">v3.13 (25.09.2026)</div>
+      <div class="footer-version">v3.17 (25.09.2026)</div>
     </div>
   </footer>
     </div>
@@ -5518,7 +5573,7 @@
 
 <script>
 (function () {
-  var SECTION_URLS = {"a1-panorama-vida-laboral-impuestos-40-anos": "/general/panorama/", "a1-solucion-independencia-financiera": "/general/solucion-independencia-financiera/", "a1-mapa-de-inversion": "/general/mapa-de-inversion/", "a2-cuenta-remunerada": "/renta-fija/cuenta-remunerada/", "a2-deposito-a-plazo-fijo": "/renta-fija/deposito-a-plazo-fijo/", "bonos": "/renta-fija/bonos-y-letras-del-tesoro/", "a2-plan-de-pensiones": "/renta-fija/plan-de-pensiones/", "a2-cuentas-de-ahorro-a-largo-plazo-calculadora": "/renta-fija/cuentas-de-ahorro-a-largo-plazo/", "a2-pias-plan-individual-de-ahorro-sistematico": "/renta-fija/pias/", "a2-otros-renta-fija": "/renta-fija/otros/", "a2-glosario-renta-fija": "/renta-fija/glosario/", "a3-fondos-indexados": "/renta-variable/fondos-indexados/", "etf": "/renta-variable/etf/", "dividendos": "/renta-variable/bolsa-de-dividendos/", "a3-value-investing": "/renta-variable/value-investing/", "fondos": "/renta-variable/fondos-de-inversion/", "a3-futuros": "/renta-variable/futuros/", "a3-warrants": "/renta-variable/warrants/", "startups": "/renta-variable/startups-venture-capital/", "a3-venture-capital-guia-tecnica": "/renta-variable/venture-capital-guia-tecnica/", "a3-materias-primas": "/renta-variable/materias-primas/", "a3-crowdfunding-equity": "/renta-variable/crowdfunding-equity/", "a3-crowlending": "/renta-variable/crowlending/", "a3-otras-renta-variable": "/renta-variable/otras/", "a3-glosario-renta-variable": "/renta-variable/glosario/", "a4-pisos-en-alquiler-renta": "/inmobiliaria/pisos-en-alquiler/", "a4-piso-turistico": "/inmobiliaria/piso-turistico/", "a4-oficinas-coworking": "/inmobiliaria/oficinas-coworking/", "a4-habitaciones-para-estudiantes": "/inmobiliaria/habitaciones-para-estudiantes/", "a4-residencias-de-ancianos": "/inmobiliaria/residencias-de-ancianos/", "a4-crowdfunding-inmobiliario-urbanitae-housers": "/inmobiliaria/crowdfunding-crowdlending-inmobiliario/", "a4-locales-renta-y-transformacion-a-piso": "/inmobiliaria/locales-renta-y-transformacion-a-vivienda/", "a4-plaza-de-garaje": "/inmobiliaria/plaza-de-garaje/", "a4-terreno-rustico-en-explotacion-cereales-arboles-etc": "/inmobiliaria/terreno-rustico-en-explotacion/", "a4-terreno-para-otros-usos-eolica-solar-gaseoducto-etc": "/inmobiliaria/terreno-para-otros-usos/", "a4-otras-inmobiliario": "/inmobiliaria/otras/", "a4-glosario-inmobiliario": "/inmobiliaria/glosario/", "oro-plata": "/otras-inversiones/oro-y-plata/", "a5-diamantes-y-piedras-preciosas": "/otras-inversiones/diamantes-y-piedras-preciosas/", "a5-numismatica-y-notafilia": "/otras-inversiones/numismatica-y-notafilia/", "a5-coleccionismo-relojes-cartas-comics": "/otras-inversiones/coleccionismo/", "a5-antiguedades": "/otras-inversiones/antiguedades-y-bienes-historicos/", "arte": "/otras-inversiones/arte-e-inversion-fraccionada-en-arte/", "criptos": "/otras-inversiones/criptoactivos-criptomonedas-y-nft/", "a5-otros-split-invest-whisky-vino": "/otras-inversiones/otros/", "a5-glosario-otras-inversiones": "/otras-inversiones/glosario/", "a6-bolsa-trading-analisis-tecnico-forex-scalping-intradia": "/negocios-digitales/bolsa-trading/", "a6-fba-dropshipping": "/negocios-digitales/fba-dropshipping/", "a6-webs-de-nicho": "/negocios-digitales/webs-de-nicho/", "a6-apps-modelos-de-negocio": "/negocios-digitales/apps-modelos-de-negocio/", "a6-dominios-domain-trading": "/negocios-digitales/dominios-domain-trading/", "a6-libros-en-amazon-kdp": "/negocios-digitales/libros-en-amazon/", "a6-royalty-arte-y-musica": "/negocios-digitales/royalty-arte-y-musica/", "a6-yt-twitch": "/negocios-digitales/yt-twitch/", "a6-infoproductos": "/negocios-digitales/infoproductos/", "a6-redes-sociales-publicidad-digital": "/negocios-digitales/redes-sociales-publicidad-digital/", "a6-glosario-negocios-digitales": "/negocios-digitales/glosario/", "a7f-maquinas-vending": "/negocios-fisicos/maquinas-vending/", "a7f-tiendas-autoservicio": "/negocios-fisicos/tiendas-autoservicio/", "a7f-maquinas-recreativas": "/negocios-fisicos/maquinas-recreativas/", "a7f-bares-restaurantes": "/negocios-fisicos/hosteleria-bares-y-restaurantes/", "a7f-tiendas-barrio": "/negocios-fisicos/tiendas-de-barrio/", "a7f-compraventa-coches": "/negocios-fisicos/compraventa-de-coches/", "a7f-franquicias-bajo-coste": "/negocios-fisicos/franquicias/", "a7f-glosario-negocios-fisicos": "/negocios-fisicos/glosario/", "a7-loteria": "/juego-azar/loteria/", "a7-slots": "/juego-azar/slots-tragaperras/", "a7-ruleta": "/juego-azar/ruleta/", "a7-poker": "/juego-azar/poker/", "a7-blackjack": "/juego-azar/blackjack/", "a7-apuestas-deportivas": "/juego-azar/apuestas-deportivas/", "a7-otros-juego-bingo-bacara": "/juego-azar/otros-juego/", "a7-glosario-juego-azar": "/juego-azar/glosario/", "a8-herramientas-glosario-calc-inversion-if-calc-dividendos": "/otros/herramientas/", "a8-otros-inversion-analisis-fundamental-fiscalidad-basica": "/otros/otros-inversion/", "a10-nutricion": "/otros/otros-no-inversion/nutricion/", "a10-suplementacion": "/otros/otros-no-inversion/suplementacion/", "a10-longevidad": "/otros/otros-no-inversion/longevidad/", "a10-deporte": "/otros/otros-no-inversion/deporte/", "a9-cv": "/sobre-mi/guillermo-angona/", "a9-contacto": "/sobre-mi/contacto/", "a9-planificacion-personal": "/sobre-mi/planificacion-personal/", "a9-recomendado-libros-leidos-podcast-blogs": "/sobre-mi/recomendado-libros-leidos-podcast-blogs/", "a9-podcast-recomendados": "/sobre-mi/podcast-recomendados/", "a11-ia": "/otros-extra/ia/", "a11-sistemas-infraestructura": "/otros-extra/sistemas-infraestructura/", "a11-redes-conectividad": "/otros-extra/redes-conectividad/", "a11-desarrollo-software": "/otros-extra/desarrollo-software/", "a11-ciberseguridad": "/otros-extra/ciberseguridad/", "a11-hardware-chips": "/otros-extra/hardware-chips/", "a11-software-saas": "/otros-extra/software-saas/", "a11-cloud-devops": "/otros-extra/cloud-devops/", "a11-data-analytics": "/otros-extra/data-analytics/", "a11-blockchain-web3": "/otros-extra/blockchain-web3/"};
+  var SECTION_URLS = {"a1-panorama-vida-laboral-impuestos-40-anos": "/general/panorama/", "a1-solucion-independencia-financiera": "/general/solucion-independencia-financiera/", "a1-mapa-de-inversion": "/general/mapa-de-inversion/", "a2-cuenta-remunerada": "/renta-fija/cuenta-remunerada/", "a2-deposito-a-plazo-fijo": "/renta-fija/deposito-a-plazo-fijo/", "bonos": "/renta-fija/bonos-y-letras-del-tesoro/", "a2-plan-de-pensiones": "/renta-fija/plan-de-pensiones/", "a2-cuentas-de-ahorro-a-largo-plazo-calculadora": "/renta-fija/cuentas-de-ahorro-a-largo-plazo/", "a2-pias-plan-individual-de-ahorro-sistematico": "/renta-fija/pias/", "a2-otros-renta-fija": "/renta-fija/otros/", "a2-glosario-renta-fija": "/renta-fija/glosario/", "a3-fondos-indexados": "/renta-variable/fondos-indexados/", "etf": "/renta-variable/etf/", "dividendos": "/renta-variable/bolsa-de-dividendos/", "a3-value-investing": "/renta-variable/value-investing/", "fondos": "/renta-variable/fondos-de-inversion/", "a3-futuros": "/renta-variable/futuros/", "a3-warrants": "/renta-variable/warrants/", "startups": "/renta-variable/startups-venture-capital/", "a3-venture-capital-guia-tecnica": "/renta-variable/venture-capital-guia-tecnica/", "a3-materias-primas": "/renta-variable/materias-primas/", "a3-crowdfunding-equity": "/renta-variable/crowdfunding-equity/", "a3-crowlending": "/renta-variable/crowlending/", "a3-otras-renta-variable": "/renta-variable/otras/", "a3-glosario-renta-variable": "/renta-variable/glosario/", "a4-pisos-en-alquiler-renta": "/inmobiliaria/pisos-en-alquiler/", "a4-piso-turistico": "/inmobiliaria/piso-turistico/", "a4-oficinas-coworking": "/inmobiliaria/oficinas-coworking/", "a4-habitaciones-para-estudiantes": "/inmobiliaria/habitaciones-para-estudiantes/", "a4-residencias-de-ancianos": "/inmobiliaria/residencias-de-ancianos/", "a4-crowdfunding-inmobiliario-urbanitae-housers": "/inmobiliaria/crowdfunding-crowdlending-inmobiliario/", "a4-locales-renta-y-transformacion-a-piso": "/inmobiliaria/locales-renta-y-transformacion-a-vivienda/", "a4-plaza-de-garaje": "/inmobiliaria/plaza-de-garaje/", "a4-terreno-rustico-en-explotacion-cereales-arboles-etc": "/inmobiliaria/terreno-rustico-en-explotacion/", "a4-terreno-para-otros-usos-eolica-solar-gaseoducto-etc": "/inmobiliaria/terreno-para-otros-usos/", "a4-otras-inmobiliario": "/inmobiliaria/otras/", "a4-glosario-inmobiliario": "/inmobiliaria/glosario/", "oro-plata": "/otras-inversiones/oro-y-plata/", "a5-diamantes-y-piedras-preciosas": "/otras-inversiones/diamantes-y-piedras-preciosas/", "a5-numismatica-y-notafilia": "/otras-inversiones/numismatica-y-notafilia/", "a5-coleccionismo-relojes-cartas-comics": "/otras-inversiones/coleccionismo/", "a5-antiguedades": "/otras-inversiones/antiguedades-y-bienes-historicos/", "arte": "/otras-inversiones/arte-e-inversion-fraccionada-en-arte/", "criptos": "/otras-inversiones/criptoactivos-criptomonedas-y-nft/", "a5-otros-split-invest-whisky-vino": "/otras-inversiones/otros/", "a5-glosario-otras-inversiones": "/otras-inversiones/glosario/", "a6-bolsa-trading-analisis-tecnico-forex-scalping-intradia": "/negocios-digitales/bolsa-trading/", "a6-fba-dropshipping": "/negocios-digitales/fba-dropshipping/", "a6-webs-de-nicho": "/negocios-digitales/webs-de-nicho/", "a6-apps-modelos-de-negocio": "/negocios-digitales/apps-modelos-de-negocio/", "a6-dominios-domain-trading": "/negocios-digitales/dominios-domain-trading/", "a6-libros-en-amazon-kdp": "/negocios-digitales/libros-en-amazon/", "a6-royalty-arte-y-musica": "/negocios-digitales/royalty-arte-y-musica/", "a6-yt-twitch": "/negocios-digitales/yt-twitch/", "a6-infoproductos": "/negocios-digitales/infoproductos/", "a6-redes-sociales-publicidad-digital": "/negocios-digitales/redes-sociales-publicidad-digital/", "a6-glosario-negocios-digitales": "/negocios-digitales/glosario/", "a7f-maquinas-vending": "/negocios-fisicos/maquinas-vending/", "a7f-tiendas-autoservicio": "/negocios-fisicos/tiendas-autoservicio/", "a7f-maquinas-recreativas": "/negocios-fisicos/maquinas-recreativas/", "a7f-bares-restaurantes": "/negocios-fisicos/hosteleria-bares-y-restaurantes/", "a7f-tiendas-barrio": "/negocios-fisicos/tiendas-de-barrio/", "a7f-compraventa-coches": "/negocios-fisicos/compraventa-de-coches/", "a7f-franquicias-bajo-coste": "/negocios-fisicos/franquicias/", "a7f-glosario-negocios-fisicos": "/negocios-fisicos/glosario/", "a7-loteria": "/juego-azar/loteria/", "a7-slots": "/juego-azar/slots-tragaperras/", "a7-ruleta": "/juego-azar/ruleta/", "a7-poker": "/juego-azar/poker/", "a7-blackjack": "/juego-azar/blackjack/", "a7-apuestas-deportivas": "/juego-azar/apuestas-deportivas/", "a7-otros-juego-bingo-bacara": "/juego-azar/otros-juego/", "a7-glosario-juego-azar": "/juego-azar/glosario/", "a8-herramientas-glosario-calc-inversion-if-calc-dividendos": "/otros/herramientas/", "a8-otros-inversion-analisis-fundamental-fiscalidad-basica": "/otros/otros-inversion/", "a9-otros-negocios": "/otros/otros-negocios/", "a10-nutricion": "/otros/otros-no-inversion/nutricion/", "a10-suplementacion": "/otros/otros-no-inversion/suplementacion/", "a10-longevidad": "/otros/otros-no-inversion/longevidad/", "a10-deporte": "/otros/otros-no-inversion/deporte/", "a9-cv": "/sobre-mi/guillermo-angona/", "a9-contacto": "/sobre-mi/contacto/", "a9-planificacion-personal": "/sobre-mi/planificacion-personal/", "a9-recomendado-libros-leidos-podcast-blogs": "/sobre-mi/recomendado-libros-leidos-podcast-blogs/", "a9-podcast-recomendados": "/sobre-mi/podcast-recomendados/", "a11-ia": "/otros-extra/ia/", "a11-sistemas-infraestructura": "/otros-extra/sistemas-infraestructura/", "a11-redes-conectividad": "/otros-extra/redes-conectividad/", "a11-desarrollo-software": "/otros-extra/desarrollo-software/", "a11-ciberseguridad": "/otros-extra/ciberseguridad/", "a11-hardware-chips": "/otros-extra/hardware-chips/", "a11-software-saas": "/otros-extra/software-saas/", "a11-cloud-devops": "/otros-extra/cloud-devops/", "a11-data-analytics": "/otros-extra/data-analytics/", "a11-blockchain-web3": "/otros-extra/blockchain-web3/"};
   var AREA_URLS = {"area-1": "/general/", "area-2": "/renta-fija/", "area-3": "/renta-variable/", "inmobiliaria": "/inmobiliaria/", "area-5": "/otras-inversiones/", "area-6": "/negocios-digitales/", "area-7": "/negocios-fisicos/", "area-8": "/juego-azar/", "area-9": "/otros/", "longevidad-salud": "/otros/otros-no-inversion/", "tecnologia": "/otros-extra/", "sobre-mi": "/sobre-mi/"};
   var REVERSE_URLS = {};
   Object.keys(SECTION_URLS).forEach(function (id) { REVERSE_URLS[SECTION_URLS[id]] = id; });
@@ -5554,7 +5609,7 @@
       } else if (areaName) {
         titleText = areaName + ' — A por el Millón €';
       }
-      var introEl = target.querySelector ? target.querySelector('.sub-intro, .hero-intro') : null;
+      var introEl = target.querySelector ? (isSubCard ? target.querySelector('.sub-intro, .hero-intro') : target.querySelector('.area-intro-text')) : null;
       if (introEl && introEl.textContent.trim()) {
         descText = truncate(introEl.textContent, 155);
       }
@@ -5729,6 +5784,104 @@
       if (mobileBackdrop) mobileBackdrop.classList.toggle('mobile-menu-backdrop-active');
     });
     if (mobileBackdrop) mobileBackdrop.addEventListener('click', closeMobileMenu);
+  }
+
+  // Calculadora de dividendos (Área 8 — Herramientas)
+  var cdCalcBtn = document.getElementById('cd-calcular');
+  if (cdCalcBtn) {
+    var cd = function (id) { return document.getElementById(id); };
+    var fmtEUR = function (n) { return n.toLocaleString('es-ES', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }); };
+    var fmtPct = function (n) { return n.toLocaleString('es-ES', { maximumFractionDigits: 2 }) + '%'; };
+    var fmtEURDec = function (n) { return n.toLocaleString('es-ES', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }); };
+    var drawCdChart = function (years, values, invested, monthlyDiv) {
+      var svg = cd('cd-chart');
+      if (!svg) return;
+      var W = 640, H = 240, padL = 48, padB = 22, padT = 14, padR = 88;
+      var maxV = Math.max.apply(null, values.concat(invested).concat([1]));
+      var n = years.length;
+      var px = function (i) { return padL + (i / (n - 1 || 1)) * (W - padL - padR); };
+      var py = function (v) { return H - padB - (v / maxV) * (H - padT - padB); };
+      var grid = '';
+      for (var g = 0; g <= 4; g++) {
+        var gv = (maxV / 4) * g;
+        var gy = py(gv);
+        grid += '<line x1="' + padL + '" y1="' + gy.toFixed(1) + '" x2="' + (W - padR) + '" y2="' + gy.toFixed(1) + '" stroke="#173321" stroke-width="1"/>';
+        grid += '<text x="' + (padL - 6) + '" y="' + (gy + 3).toFixed(1) + '" fill="#4FA870" font-size="9" font-family="Courier New, monospace" text-anchor="end">' + Math.round(gv / 1000) + 'k</text>';
+      }
+      var pathFrom = function (arr) {
+        return arr.map(function (v, i) { return (i === 0 ? 'M' : 'L') + px(i).toFixed(1) + ',' + py(v).toFixed(1); }).join(' ');
+      };
+      var investedPath = '<path d="' + pathFrom(invested) + '" fill="none" stroke="#4FA870" stroke-width="1.5" stroke-dasharray="4,3"/>';
+      var valuePath = '<path d="' + pathFrom(values) + '" fill="none" stroke="#00FF66" stroke-width="2"/>';
+      var xLabels = '';
+      var step = Math.max(1, Math.round(n / 6));
+      years.forEach(function (yr, i) {
+        if (i % step === 0 || i === n - 1) {
+          xLabels += '<text x="' + px(i).toFixed(1) + '" y="' + (H - 6) + '" fill="#4FA870" font-size="9" font-family="Courier New, monospace" text-anchor="middle">' + yr + '</text>';
+        }
+      });
+      var markers = '';
+      years.forEach(function (yr, i) {
+        if (yr > 0 && yr % 5 === 0) {
+          var mx = px(i);
+          var my = Math.max(padT + 8, py(values[i]));
+          var isLast = i === n - 1;
+          var ly = isLast ? my + 13 : my - 8;
+          markers += '<circle cx="' + mx.toFixed(1) + '" cy="' + py(values[i]).toFixed(1) + '" r="2.5" fill="#00FF66"/>';
+          markers += '<text x="' + mx.toFixed(1) + '" y="' + ly.toFixed(1) + '" fill="#00FF66" font-size="9" font-family="Courier New, monospace" text-anchor="middle">' + fmtEURDec(Math.round(monthlyDiv[i])) + '/mes</text>';
+        }
+      });
+      var lastX = px(n - 1);
+      var valueEndY = py(values[n - 1]);
+      var investedEndY = py(invested[n - 1]);
+      var endLabels = '';
+      endLabels += '<text x="' + (lastX + 6).toFixed(1) + '" y="' + (valueEndY + 3).toFixed(1) + '" fill="#00FF66" font-size="10.5" font-family="Courier New, monospace" font-weight="bold">' + fmtEURDec(values[n - 1]) + '</text>';
+      endLabels += '<text x="' + (lastX + 6).toFixed(1) + '" y="' + (investedEndY + 3).toFixed(1) + '" fill="#4FA870" font-size="10" font-family="Courier New, monospace">' + fmtEURDec(invested[n - 1]) + '</text>';
+      svg.innerHTML = grid + investedPath + valuePath + markers + endLabels + xLabels;
+    };
+    var calcularDividendos = function () {
+      var capital0 = parseFloat(cd('cd-capital').value) || 0;
+      var aportacionMensual = parseFloat(cd('cd-aportacion').value) || 0;
+      var yieldInicial = (parseFloat(cd('cd-yield').value) || 0) / 100;
+      var crecimientoDiv = (parseFloat(cd('cd-crecimiento').value) || 0) / 100;
+      var revalorizacion = (parseFloat(cd('cd-revalorizacion').value) || 0) / 100;
+      var anos = Math.max(1, Math.round(parseFloat(cd('cd-anos').value) || 1));
+      var drip = cd('cd-drip').checked;
+      var balance = capital0;
+      var totalAportado = capital0;
+      var dividendosCobrados = 0;
+      var ultimoIngresoDividendos = 0;
+      var years = [0];
+      var values = [capital0];
+      var invested = [capital0];
+      var monthlyDiv = [0];
+      for (var a = 1; a <= anos; a++) {
+        var yieldEfectivo = yieldInicial * Math.pow(1 + crecimientoDiv, a - 1);
+        var ingresoDividendos = balance * yieldEfectivo;
+        dividendosCobrados += ingresoDividendos;
+        ultimoIngresoDividendos = ingresoDividendos;
+        if (drip) balance += ingresoDividendos;
+        balance = balance * (1 + revalorizacion);
+        var aportacionAnual = aportacionMensual * 12;
+        balance += aportacionAnual;
+        totalAportado += aportacionAnual;
+        years.push(a);
+        values.push(balance);
+        invested.push(totalAportado);
+        monthlyDiv.push(ingresoDividendos / 12);
+      }
+      var valorFinal = values[values.length - 1];
+      var rentabilidadAnualizada = totalAportado > 0 ? (Math.pow(valorFinal / totalAportado, 1 / anos) - 1) * 100 : 0;
+      var yieldOnCost = totalAportado > 0 ? (ultimoIngresoDividendos / totalAportado) * 100 : 0;
+      cd('cd-r-aportado').textContent = fmtEUR(totalAportado);
+      cd('cd-r-valor').textContent = fmtEUR(valorFinal);
+      cd('cd-r-dividendos').textContent = fmtEUR(dividendosCobrados);
+      cd('cd-r-rentabilidad').textContent = fmtPct(rentabilidadAnualizada);
+      cd('cd-r-yoc').textContent = fmtPct(yieldOnCost);
+      drawCdChart(years, values, invested, monthlyDiv);
+    };
+    cdCalcBtn.addEventListener('click', calcularDividendos);
+    calcularDividendos();
   }
 })();
 </script>
