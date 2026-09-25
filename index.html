@@ -2,6 +2,15 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
+<!-- GitHub Pages no tiene rutas de servidor reales: 404.html redirige aqui codificando la ruta pedida en la query string, y este script la restaura con replaceState antes de que la app decida que seccion mostrar (tecnica spa-github-pages) -->
+<script>
+(function (l) {
+  if (l.search[1] === '/') {
+    var decoded = l.search.slice(1).split('&').map(function (s) { return s.replace(/~and~/g, '&'); }).join('?');
+    window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash);
+  }
+}(window.location));
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>A por el Millón € — Aporelmillon.com</title>
 <meta name="description" content="Todos los caminos posibles hacia la independencia financiera: renta fija, renta variable, inmobiliario, arte, criptomonedas y mucho más, con ejemplos y datos reales.">
@@ -144,6 +153,7 @@
   .footer-brand::before { content: '\25A0 '; color: #000080; }
   .footer-note { color: #000000; font-size: 12px; font-family: 'Courier New', monospace; }
   .footer-note::after { content: '\2588'; animation: blink-cursor 1s steps(1) infinite; margin-left: 2px; }
+  .footer-version { color: #4a4a4a; font-size: 11px; font-family: 'Courier New', monospace; }
 
   @media (max-width: 900px) {
     .cards-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -5410,6 +5420,7 @@
     <div class="footer-inner">
       <div class="footer-brand">A por el Millón €</div>
       <div class="footer-note">Portada en construcción · aporelmillon.com</div>
+      <div class="footer-version">v3.12 (25.09.2026)</div>
     </div>
   </footer>
     </div>
@@ -5509,6 +5520,9 @@
 (function () {
   var SECTION_URLS = {"a1-panorama-vida-laboral-impuestos-40-anos": "/general/panorama/", "a1-solucion-independencia-financiera": "/general/solucion-independencia-financiera/", "a1-mapa-de-inversion": "/general/mapa-de-inversion/", "a2-cuenta-remunerada": "/renta-fija/cuenta-remunerada/", "a2-deposito-a-plazo-fijo": "/renta-fija/deposito-a-plazo-fijo/", "bonos": "/renta-fija/bonos-y-letras-del-tesoro/", "a2-plan-de-pensiones": "/renta-fija/plan-de-pensiones/", "a2-cuentas-de-ahorro-a-largo-plazo-calculadora": "/renta-fija/cuentas-de-ahorro-a-largo-plazo/", "a2-pias-plan-individual-de-ahorro-sistematico": "/renta-fija/pias/", "a2-otros-renta-fija": "/renta-fija/otros/", "a2-glosario-renta-fija": "/renta-fija/glosario/", "a3-fondos-indexados": "/renta-variable/fondos-indexados/", "etf": "/renta-variable/etf/", "dividendos": "/renta-variable/bolsa-de-dividendos/", "a3-value-investing": "/renta-variable/value-investing/", "fondos": "/renta-variable/fondos-de-inversion/", "a3-futuros": "/renta-variable/futuros/", "a3-warrants": "/renta-variable/warrants/", "startups": "/renta-variable/startups-venture-capital/", "a3-venture-capital-guia-tecnica": "/renta-variable/venture-capital-guia-tecnica/", "a3-materias-primas": "/renta-variable/materias-primas/", "a3-crowdfunding-equity": "/renta-variable/crowdfunding-equity/", "a3-crowlending": "/renta-variable/crowlending/", "a3-otras-renta-variable": "/renta-variable/otras/", "a3-glosario-renta-variable": "/renta-variable/glosario/", "a4-pisos-en-alquiler-renta": "/inmobiliaria/pisos-en-alquiler/", "a4-piso-turistico": "/inmobiliaria/piso-turistico/", "a4-oficinas-coworking": "/inmobiliaria/oficinas-coworking/", "a4-habitaciones-para-estudiantes": "/inmobiliaria/habitaciones-para-estudiantes/", "a4-residencias-de-ancianos": "/inmobiliaria/residencias-de-ancianos/", "a4-crowdfunding-inmobiliario-urbanitae-housers": "/inmobiliaria/crowdfunding-crowdlending-inmobiliario/", "a4-locales-renta-y-transformacion-a-piso": "/inmobiliaria/locales-renta-y-transformacion-a-vivienda/", "a4-plaza-de-garaje": "/inmobiliaria/plaza-de-garaje/", "a4-terreno-rustico-en-explotacion-cereales-arboles-etc": "/inmobiliaria/terreno-rustico-en-explotacion/", "a4-terreno-para-otros-usos-eolica-solar-gaseoducto-etc": "/inmobiliaria/terreno-para-otros-usos/", "a4-otras-inmobiliario": "/inmobiliaria/otras/", "a4-glosario-inmobiliario": "/inmobiliaria/glosario/", "oro-plata": "/otras-inversiones/oro-y-plata/", "a5-diamantes-y-piedras-preciosas": "/otras-inversiones/diamantes-y-piedras-preciosas/", "a5-numismatica-y-notafilia": "/otras-inversiones/numismatica-y-notafilia/", "a5-coleccionismo-relojes-cartas-comics": "/otras-inversiones/coleccionismo/", "a5-antiguedades": "/otras-inversiones/antiguedades-y-bienes-historicos/", "arte": "/otras-inversiones/arte-e-inversion-fraccionada-en-arte/", "criptos": "/otras-inversiones/criptoactivos-criptomonedas-y-nft/", "a5-otros-split-invest-whisky-vino": "/otras-inversiones/otros/", "a5-glosario-otras-inversiones": "/otras-inversiones/glosario/", "a6-bolsa-trading-analisis-tecnico-forex-scalping-intradia": "/negocios-digitales/bolsa-trading/", "a6-fba-dropshipping": "/negocios-digitales/fba-dropshipping/", "a6-webs-de-nicho": "/negocios-digitales/webs-de-nicho/", "a6-apps-modelos-de-negocio": "/negocios-digitales/apps-modelos-de-negocio/", "a6-dominios-domain-trading": "/negocios-digitales/dominios-domain-trading/", "a6-libros-en-amazon-kdp": "/negocios-digitales/libros-en-amazon/", "a6-royalty-arte-y-musica": "/negocios-digitales/royalty-arte-y-musica/", "a6-yt-twitch": "/negocios-digitales/yt-twitch/", "a6-infoproductos": "/negocios-digitales/infoproductos/", "a6-redes-sociales-publicidad-digital": "/negocios-digitales/redes-sociales-publicidad-digital/", "a6-glosario-negocios-digitales": "/negocios-digitales/glosario/", "a7f-maquinas-vending": "/negocios-fisicos/maquinas-vending/", "a7f-tiendas-autoservicio": "/negocios-fisicos/tiendas-autoservicio/", "a7f-maquinas-recreativas": "/negocios-fisicos/maquinas-recreativas/", "a7f-bares-restaurantes": "/negocios-fisicos/hosteleria-bares-y-restaurantes/", "a7f-tiendas-barrio": "/negocios-fisicos/tiendas-de-barrio/", "a7f-compraventa-coches": "/negocios-fisicos/compraventa-de-coches/", "a7f-franquicias-bajo-coste": "/negocios-fisicos/franquicias/", "a7f-glosario-negocios-fisicos": "/negocios-fisicos/glosario/", "a7-loteria": "/juego-azar/loteria/", "a7-slots": "/juego-azar/slots-tragaperras/", "a7-ruleta": "/juego-azar/ruleta/", "a7-poker": "/juego-azar/poker/", "a7-blackjack": "/juego-azar/blackjack/", "a7-apuestas-deportivas": "/juego-azar/apuestas-deportivas/", "a7-otros-juego-bingo-bacara": "/juego-azar/otros-juego/", "a7-glosario-juego-azar": "/juego-azar/glosario/", "a8-herramientas-glosario-calc-inversion-if-calc-dividendos": "/otros/herramientas/", "a8-otros-inversion-analisis-fundamental-fiscalidad-basica": "/otros/otros-inversion/", "a10-nutricion": "/otros/otros-no-inversion/nutricion/", "a10-suplementacion": "/otros/otros-no-inversion/suplementacion/", "a10-longevidad": "/otros/otros-no-inversion/longevidad/", "a10-deporte": "/otros/otros-no-inversion/deporte/", "a9-cv": "/sobre-mi/guillermo-angona/", "a9-contacto": "/sobre-mi/contacto/", "a9-planificacion-personal": "/sobre-mi/planificacion-personal/", "a9-recomendado-libros-leidos-podcast-blogs": "/sobre-mi/recomendado-libros-leidos-podcast-blogs/", "a9-podcast-recomendados": "/sobre-mi/podcast-recomendados/", "a11-ia": "/otros-extra/ia/", "a11-sistemas-infraestructura": "/otros-extra/sistemas-infraestructura/", "a11-redes-conectividad": "/otros-extra/redes-conectividad/", "a11-desarrollo-software": "/otros-extra/desarrollo-software/", "a11-ciberseguridad": "/otros-extra/ciberseguridad/", "a11-hardware-chips": "/otros-extra/hardware-chips/", "a11-software-saas": "/otros-extra/software-saas/", "a11-cloud-devops": "/otros-extra/cloud-devops/", "a11-data-analytics": "/otros-extra/data-analytics/", "a11-blockchain-web3": "/otros-extra/blockchain-web3/"};
   var AREA_URLS = {"area-1": "/general/", "area-2": "/renta-fija/", "area-3": "/renta-variable/", "inmobiliaria": "/inmobiliaria/", "area-5": "/otras-inversiones/", "area-6": "/negocios-digitales/", "area-7": "/negocios-fisicos/", "area-8": "/juego-azar/", "area-9": "/otros/", "longevidad-salud": "/otros/otros-no-inversion/", "tecnologia": "/otros-extra/", "sobre-mi": "/sobre-mi/"};
+  var REVERSE_URLS = {};
+  Object.keys(SECTION_URLS).forEach(function (id) { REVERSE_URLS[SECTION_URLS[id]] = id; });
+  Object.keys(AREA_URLS).forEach(function (id) { if (!REVERSE_URLS[AREA_URLS[id]]) REVERSE_URLS[AREA_URLS[id]] = id; });
   function updateUrl(path) {
     try { if (path && location.pathname !== path) history.replaceState(null, '', path); } catch (e) {}
   }
@@ -5596,7 +5610,20 @@
     if (linkDetails) linkDetails.open = true;
     goTo(id, true);
   }, true);
-  showHome();
+
+  // Al cargar, si la URL apunta a una seccion concreta (enlace directo/recargado), abrirla en vez del inicio
+  var __initialId = null;
+  try {
+    var __path = location.pathname;
+    if (__path && __path !== '/') {
+      __initialId = REVERSE_URLS[__path] || REVERSE_URLS[__path.charAt(__path.length - 1) === '/' ? __path.slice(0, -1) : __path + '/'] || null;
+    }
+  } catch (e) {}
+  if (__initialId) {
+    goTo(__initialId, false);
+  } else {
+    showHome();
+  }
 
   // Buscador inteligente del índice lateral
   var searchInput = document.getElementById('sidebar-search-input');
