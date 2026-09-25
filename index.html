@@ -5420,7 +5420,7 @@
     <div class="footer-inner">
       <div class="footer-brand">A por el Millón €</div>
       <div class="footer-note">Portada en construcción · aporelmillon.com</div>
-      <div class="footer-version">v3.12 (25.09.2026)</div>
+      <div class="footer-version">v3.13 (25.09.2026)</div>
     </div>
   </footer>
     </div>
@@ -5523,6 +5523,53 @@
   var REVERSE_URLS = {};
   Object.keys(SECTION_URLS).forEach(function (id) { REVERSE_URLS[SECTION_URLS[id]] = id; });
   Object.keys(AREA_URLS).forEach(function (id) { if (!REVERSE_URLS[AREA_URLS[id]]) REVERSE_URLS[AREA_URLS[id]] = id; });
+
+  // SEO: cada seccion recibe su propio <title>, meta description y canonical (en vez de que
+  // todas las URLs compartan siempre los de portada, que le decia a Google que todo era
+  // "duplicado" de la home y frenaba la indexacion por seccion)
+  var titleEl = document.querySelector('title');
+  var DEFAULT_TITLE = titleEl ? titleEl.textContent : '';
+  var descMetaEl = document.querySelector('meta[name="description"]');
+  var DEFAULT_DESC = descMetaEl ? descMetaEl.getAttribute('content') : '';
+  function setMetaAttr(attr, key, value) {
+    var el = document.querySelector('meta[' + attr + '="' + key + '"]');
+    if (el) el.setAttribute('content', value);
+  }
+  function truncate(text, max) {
+    text = (text || '').replace(/\s+/g, ' ').trim();
+    if (text.length <= max) return text;
+    return text.slice(0, max).replace(/\s+\S*$/, '') + '…';
+  }
+  function updateMeta(id) {
+    var target = id ? document.getElementById(id) : null;
+    var titleText = DEFAULT_TITLE, descText = DEFAULT_DESC, path = '/';
+    if (target) {
+      var areaEl = target.classList && target.classList.contains('area-section') ? target : target.closest('.area-section');
+      var h2 = areaEl ? areaEl.querySelector('h2') : null;
+      var areaName = h2 ? h2.textContent.trim() : '';
+      var isSubCard = areaEl && target !== areaEl;
+      var h3 = isSubCard && target.querySelector ? target.querySelector('h3') : null;
+      if (h3) {
+        titleText = h3.textContent.trim() + (areaName ? ' — ' + areaName : '') + ' — A por el Millón €';
+      } else if (areaName) {
+        titleText = areaName + ' — A por el Millón €';
+      }
+      var introEl = target.querySelector ? target.querySelector('.sub-intro, .hero-intro') : null;
+      if (introEl && introEl.textContent.trim()) {
+        descText = truncate(introEl.textContent, 155);
+      }
+      path = SECTION_URLS[id] || AREA_URLS[areaEl ? areaEl.id : id] || AREA_URLS[id] || '/';
+    }
+    try { document.title = titleText; } catch (e) {}
+    setMetaAttr('name', 'description', descText);
+    setMetaAttr('property', 'og:title', titleText);
+    setMetaAttr('property', 'og:description', descText);
+    setMetaAttr('property', 'og:url', 'https://aporelmillon.com' + path);
+    setMetaAttr('name', 'twitter:title', titleText);
+    setMetaAttr('name', 'twitter:description', descText);
+    var canonicalEl = document.querySelector('link[rel="canonical"]');
+    if (canonicalEl) canonicalEl.setAttribute('href', 'https://aporelmillon.com' + path);
+  }
   function updateUrl(path) {
     try { if (path && location.pathname !== path) history.replaceState(null, '', path); } catch (e) {}
   }
@@ -5563,6 +5610,7 @@
         if (visible[cards[i].id] && SECTION_URLS[cards[i].id]) {
           updateUrl(SECTION_URLS[cards[i].id]);
           setActiveNav(cards[i].id);
+          updateMeta(cards[i].id);
           break;
         }
       }
@@ -5590,10 +5638,12 @@
     if (id === 'inicio' || !areaEl) {
       showHome();
       updateUrl('/');
+      updateMeta(null);
     } else {
       showArea(areaEl);
       updateUrl(SECTION_URLS[id] || AREA_URLS[areaEl.id] || '/');
       setActiveNav(id);
+      updateMeta(id);
     }
     requestAnimationFrame(function () {
       target.scrollIntoView({ behavior: smooth ? 'smooth' : 'auto', block: 'start' });
