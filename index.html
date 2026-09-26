@@ -126,7 +126,9 @@
   @media (max-width: 900px) { .rr-keylist { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 560px) { .rr-keylist { grid-template-columns: 1fr; } }
 
-  .sfc-wrap { margin: 4px 0 4px 0; }
+  .sfc-wrap { margin: 4px 0 12px 0; background: #C0C0C0; border-top: 2px solid #FFFFFF; border-left: 2px solid #FFFFFF; border-right: 2px solid #000000; border-bottom: 2px solid #000000; box-shadow: inset 1px 1px 0 #DFDFDF, 3px 3px 0 rgba(0,0,0,.25); }
+  .sfc-toolbar { display: flex; align-items: center; padding: 6px 10px 2px 10px; }
+  .sfc-body { padding: 10px 14px 14px 14px; }
   .sfc-caption { margin: 0 0 8px 0; color: #202020; font-family: 'Tahoma', 'Segoe UI', Verdana, sans-serif; font-weight: 700; font-size: 12px; }
   .sfc-axis-text { fill: #204070; font-family: 'Courier New', monospace; font-size: 10px; }
   .sfc-axis-title { fill: #000080; font-family: 'Tahoma', 'Segoe UI', Verdana, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: .03em; }
@@ -2388,6 +2390,12 @@
           </table>
         </div>
         <div class="sfc-wrap">
+          <div class="win95-titlebar">
+            <span class="win95-titlebar-icon" aria-hidden="true"></span>
+            <span class="win95-titlebar-text">CICLO_FINANCIACION.EXE</span>
+            <span class="win95-titlebar-btns"><span class="win95-btn" aria-hidden="true">_</span><span class="win95-btn" aria-hidden="true">□</span><span class="win95-btn win95-btn-close" aria-hidden="true">✕</span></span>
+          </div>
+          <div class="sfc-body">
           <p class="sfc-caption">Ciclo de financiación de una startup: fases, inversionistas y evolución de ingresos</p>
           <svg class="rr-chart-svg" viewBox="0 0 900 430" role="img" aria-label="Ciclo de financiación de una startup: etapas de pre-semilla a mercado público, tipos de inversionistas por fase y curva de evolución de ingresos con el valle de la muerte">
             <defs>
@@ -2457,6 +2465,7 @@
             <span class="sfc-legend-item"><span class="sfc-legend-dot"></span>Rondas de inversión</span>
           </div>
           <p class="sub-table-note">Esquema orientativo del ciclo de financiación típico de una startup: hitos, tipos de inversionistas y evolución de ingresos, sin escala real y sin garantía de que una startup concreta siga este patrón (la mayoría no llega a Serie A y muy pocas alcanzan el mercado público).</p>
+          </div>
         </div>
         <p class="sub-examples-label">Ejemplos de startups españolas por sector</p>
         <div class="sub-table-wrap">
@@ -2640,30 +2649,89 @@
 
       <article class="sub-card sub-card-wide" id="a4-guia-practica-invertir-startups">
         <h3>Guía práctica para comenzar a invertir en Startups</h3>
-        <div class="outline-tags"><span class="outline-tag">Ecosistema en cifras</span><span class="outline-tag">Hoja de ruta</span><span class="outline-tag">Errores comunes</span></div>
+        <div class="outline-tags"><span class="outline-tag">Ecosistema en cifras</span><span class="outline-tag">Metodologías de evaluación</span><span class="outline-tag">Individual o en red</span><span class="outline-tag">Hoja de ruta</span><span class="outline-tag">Errores comunes</span><span class="outline-tag">Glosario</span></div>
         <p class="sub-h4">El ecosistema español, en cifras</p>
-        <p class="sub-intro">La inversión en startups en España alcanzó los 3.100 millones de euros en 2024, un 36% más que el año anterior, aunque el número total de operaciones cayó un 14%, afectando sobre todo a las fases más tempranas. Sectores como fintech/insurtech, viajes/turismo y movilidad/logística lideran la captación de fondos, mientras que salud y bienestar acumula el mayor número de operaciones. El valor total del ecosistema español de startups supera ya los 100.000 millones de euros, y el capital privado ha multiplicado por 1,8 sus activos bajo gestión desde 2006. Barcelona y Madrid se consolidan como los principales polos de atracción de capital del país. A pesar de la percepción de alto riesgo, el 92% de las startups españolas sobrevive más allá de los primeros cinco años, frente al 73,4% de las empresas tradicionales — un ecosistema más resiliente de lo que la intuición sugiere.</p>
+        <p class="sub-intro">La inversión en startups en España alcanzó los 3.100 millones de euros en 2024, un 36% más que el año anterior, aunque el número total de operaciones cayó un 14%, afectando sobre todo a las fases más tempranas. Sectores como fintech/insurtech, viajes/turismo y movilidad/logística lideran la captación de fondos, mientras que salud y bienestar acumula el mayor número de operaciones (49 transacciones). A pesar de la percepción de alto riesgo, el 92% de las startups españolas sobrevive más allá de los primeros cinco años, frente al 73,4% de las empresas tradicionales — un ecosistema más resiliente de lo que la intuición sugiere.</p>
+        <div class="sub-table-wrap">
+          <table class="sub-table">
+            <thead><tr><th>Indicador</th><th>Dato</th></tr></thead>
+            <tbody>
+              <tr><td>Inversión total en startups (2024)</td><td>3.100 M€ (+36% interanual)</td></tr>
+              <tr><td>Inversión de Venture Capital (2022)</td><td>3.600 M€ (frente a 4.200 M€ en 2021)</td></tr>
+              <tr><td>Valor total del ecosistema startup español</td><td>Supera los 100.000 M€</td></tr>
+              <tr><td>Activos bajo gestión del capital privado</td><td>x1,8 desde 2006 (~15.000 M€ en 2022, +25% ese año)</td></tr>
+              <tr><td>Rentabilidad de los fondos españoles de VC/PE</td><td>Doble dígito sostenida durante más de 15 años</td></tr>
+              <tr><td>Ticket medio invertido por business angels (2024)</td><td>95.525 € (mediana: 20.000 €)</td></tr>
+              <tr><td>Business angels que repitieron coinversión en 2024</td><td>Más del 80%</td></tr>
+              <tr><td>Startups certificadas por ENISA (2024)</td><td>Más de 1.000</td></tr>
+              <tr><td>Principales polos de capital</td><td>Barcelona (1.627 M€) y Madrid (821 M€)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="sub-table-note">Datos orientativos de septiembre de 2026 sobre ejercicios 2021-2024, sujetos a revisión y actualización por las fuentes originales.</p>
         <p class="sub-h4">Qué significa realmente invertir en una startup</p>
         <p class="sub-intro">Invertir en una startup consiste en aportar capital a una empresa emergente con alto potencial de crecimiento a cambio de una participación en su capital. A diferencia de la inversión tradicional, implica mayor riesgo, horizontes temporales largos (habitualmente entre 5 y 10 años) y la recuperación del capital solo se produce mediante un evento de liquidez —adquisición, fusión o salida a bolsa— sin garantía de que llegue a ocurrir. A cambio, el potencial de revalorización puede ser muy superior al de activos más convencionales. El activo más determinante en una startup en fase temprana no es el producto ni la cifra de negocio (que apenas existen), sino el propio equipo fundador: su visión, complementariedad de capacidades y capacidad de ejecución.</p>
+        <p class="sub-h4">Cómo evaluar una startup antes de invertir</p>
+        <p class="sub-intro">Antes de comprometer capital conviene analizar con método, no solo con intuición. La guía de referencia distingue cuatro focos de análisis, complementados con marcos de valoración específicos para fases tempranas, donde apenas hay histórico financiero que analizar.</p>
+        <div class="sub-table-wrap">
+          <table class="sub-table">
+            <thead><tr><th>Foco de análisis</th><th>Qué evalúa</th></tr></thead>
+            <tbody>
+              <tr><td>Equipo fundador</td><td>Visión, complementariedad de capacidades, experiencia previa y capacidad de ejecución del equipo</td></tr>
+              <tr><td>Mercado</td><td>Tamaño y crecimiento del mercado objetivo, competencia existente y barreras de entrada</td></tr>
+              <tr><td>Producto o servicio</td><td>Grado de diferenciación, encaje producto-mercado y viabilidad técnica del desarrollo</td></tr>
+              <tr><td><em>Due diligence</em></td><td>Revisión de estados financieros, condiciones del acuerdo de inversión, propiedad intelectual/patentes y estructura de capital y dilución</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="sub-table-note">Como apoyo a este análisis, existen metodologías de valoración diseñadas específicamente para fases muy tempranas con datos limitados, como el <strong>Berkus Method</strong> o la <strong>Scorecard Valuation Methodology</strong> de Bill Payne: sistemas que ponderan criterios cualitativos (equipo, producto, mercado, relaciones estratégicas) con un peso porcentual definido por quien invierte, en lugar de partir de cifras de negocio que aún no existen.</p>
+        <p class="sub-h4">Invertir en solitario o a través de una red</p>
+        <p class="sub-intro">Quien quiere ir más allá del <em>equity crowdfunding</em> y actuar como business angel puede hacerlo de forma individual o integrándose en una red o club de inversores, cada opción con ventajas y desafíos distintos.</p>
+        <div class="sub-table-wrap">
+          <table class="sub-table">
+            <thead><tr><th>Modelo</th><th>Ventajas</th><th>Desventajas</th></tr></thead>
+            <tbody>
+              <tr><td>Individual</td><td>Mayor autonomía, libertad de elección y control directo de la relación con la startup</td><td>Carga completa del riesgo, mayor dificultad para diversificar, capital y acceso a proyectos de calidad más limitados</td></tr>
+              <tr><td>En red o club</td><td>Diversificación del riesgo, acceso a más proyectos, beneficio del conocimiento colectivo, tickets más pequeños y mejor capacidad de negociación</td><td>Menor autonomía en las decisiones, procesos más largos, necesidad de consenso y posible dilución de criterios personales</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="sub-intro">Para formar parte de una red de business angels, AEBAN establece tres requisitos habituales: <strong>capacidad financiera</strong> suficiente para invertir, <strong>experiencia profesional</strong> destacada en el mundo empresarial y <strong>compromiso y disponibilidad</strong> real para evaluar proyectos y apoyar a las empresas participadas — aunque cada red puede fijar sus propias condiciones de acceso, valorando también el interés genuino por el ecosistema en quienes tienen menos trayectoria. España cuenta con redes especializadas como BIGBAN (foco tecnológico), WA4STEAM (mujeres inversoras en STEAM), Club Impact Angels (impacto social y ambiental), IESE Business Angels y Esade BAN (vinculadas a escuelas de negocio), entre otras agrupadas bajo el paraguas de AEBAN. La diversificación sigue siendo clave incluso invirtiendo en red: se recomienda no concentrar el capital en una sola startup ni en menos de cinco, combinando distintos sectores y fases de desarrollo.</p>
         <p class="sub-h4">Hoja de ruta para dar los primeros pasos</p>
-        <p class="sub-intro">Antes de la primera inversión conviene: <strong>1) Definir el presupuesto</strong> — qué cantidad se destina, asumiendo que ese capital quedará inmovilizado durante años y puede perderse por completo; una referencia habitual es no superar el 10% del patrimonio total y destinar solo lo que no se necesite y se pueda dar por perdido. <strong>2) Establecer una estrategia</strong> — en qué sectores, fases o tipos de startup se quiere invertir, en función del conocimiento y los intereses propios; especializarse en un sector conocido facilita valorar el modelo de negocio y las posibles salidas. <strong>3) Explorar las opciones disponibles</strong> — plataformas de equity crowdfunding y redes de business angels. <strong>4) Invertir con cautela</strong> — empezar con tickets pequeños y diversificar entre varias startups (una referencia habitual es no concentrar en menos de 5 operaciones) en lugar de comprometer todo el presupuesto en la primera oportunidad que aparece.</p>
+        <p class="sub-intro">Antes de la primera inversión conviene: <strong>1) Formarse</strong> — asistir a cursos, leer sobre el sector, suscribirse a newsletters especializadas, seguir a referentes y hablar con personas con experiencia antes de comenzar. <strong>2) Definir el presupuesto</strong> — qué cantidad se destina, asumiendo que ese capital quedará inmovilizado durante años y puede perderse por completo; una referencia habitual es no superar el 10% del patrimonio total y destinar solo lo que no se necesite y se pueda dar por perdido. <strong>3) Establecer una estrategia</strong> — en qué sectores, fases o tipos de startup se quiere invertir, en función del conocimiento y los intereses propios; especializarse en un sector conocido facilita valorar el modelo de negocio y las posibles salidas. <strong>4) Explorar las opciones disponibles</strong> — plataformas de equity crowdfunding y redes de business angels. <strong>5) Invertir con cautela</strong> — empezar con tickets pequeños y diversificar entre varias startups en lugar de comprometer todo el presupuesto en la primera oportunidad que aparece.</p>
+        <p class="sub-intro"><strong>Recursos para seguir formándose:</strong> programas especializados con enfoque práctico como COREangels International, SeedRocket Investors Academy o AEBAN Academy; un enfoque más académico a través de IESE, ESADE o IE Business School; foros de inversión como Keiretsu Forum o los eventos de AEBAN, donde se puede observar en vivo cómo inversores experimentados evalúan proyectos; <em>demodays</em> de aceleradoras como Lanzadera o Wayra; grandes citas del ecosistema como South Summit o 4YFN; y bases de datos como Crunchbase o Dealroom junto con informes de referencia como el Observatorio de la Fundación Innovación Bankinter o los estudios anuales de SpainCap.</p>
         <p class="sub-h4">Errores más comunes al empezar</p>
         <div class="sub-table-wrap">
           <table class="sub-table">
             <thead><tr><th>Error</th><th>Por qué perjudica</th></tr></thead>
             <tbody>
+              <tr><td>Precipitarse sin estrategia definida</td><td>Invertir en la primera oportunidad que aparece o comprometer el capital objetivo en poco tiempo suele coincidir con menos experiencia y peor acceso a proyectos de calidad</td></tr>
               <tr><td>No diversificar adecuadamente</td><td>Concentrar demasiado capital en pocas startups aumenta significativamente el riesgo total de la cartera</td></tr>
-              <tr><td>Ignorar aspectos legales</td><td>No revisar pactos de socios o condiciones de inversión puede derivar en problemas graves más adelante</td></tr>
+              <tr><td>Ignorar aspectos legales</td><td>No revisar pactos de socios o condiciones de inversión, o carecer de la autorización preceptiva, puede derivar en problemas graves e incluso sanciones económicas elevadas</td></tr>
+              <tr><td>No contar con asesoramiento adecuado</td><td>Asesorarse con profesionales especializados o inversores con experiencia antes de dar el paso reduce errores evitables</td></tr>
               <tr><td>Falta de paciencia</td><td>Las inversiones en startups requieren tiempo para madurar, generalmente entre 5 y 10 años</td></tr>
               <tr><td>No aportar valor más allá del capital</td><td>El apoyo en forma de contactos, mentoría o conocimiento sectorial puede ser tan valioso como el dinero</td></tr>
               <tr><td>Invertir en sectores desconocidos</td><td>Dificulta evaluar el equipo, el mercado y aportar valor real a la empresa</td></tr>
+              <tr><td>No analizar las opciones de salida</td><td>Los <em>exits</em> son escasos: no estudiarlos con suficiente profundidad, o confundir un proyecto viable con uno realmente invertible, es un error frecuente</td></tr>
               <tr><td>No reservar capital para rondas posteriores</td><td>Sin capital de seguimiento (<em>follow-on</em>) la participación se diluye en las siguientes rondas de financiación</td></tr>
             </tbody>
           </table>
         </div>
-        <p class="sub-table-note">Una vez realizada la primera inversión, conviene mantener un seguimiento activo, reservar entre un 30% y un 40% del presupuesto para rondas de seguimiento, ampliar la red de contactos con otros inversores y seguir formándose de manera continua: el ecosistema evoluciona rápido y la especialización suele llegar de forma progresiva, con la experiencia.</p>
+        <p class="sub-table-note">Una vez realizada la primera inversión, conviene: mantener un seguimiento activo de la participada, reservar entre un 30% y un 40% del presupuesto para rondas de seguimiento (<em>follow-on</em>) y así evitar la dilución, ampliar la red de contactos con otras personas inversoras, avanzar hacia una especialización progresiva por sector o fase a medida que se gana experiencia, y seguir formándose de manera continua: el ecosistema evoluciona rápido.</p>
+        <p class="sub-h4">Glosario rápido</p>
+        <div class="sub-table-wrap">
+          <table class="sub-table">
+            <thead><tr><th>Término</th><th>Definición</th></tr></thead>
+            <tbody>
+              <tr><td>Exit</td><td>Estrategia mediante la cual quien invierte consigue liquidez por su participación: venta a un tercero, fusión o salida a bolsa (OPV)</td></tr>
+              <tr><td>Dealflow</td><td>Flujo de oportunidades de inversión que llegan a un inversor: el conjunto de startups disponibles para evaluación</td></tr>
+              <tr><td>Dilución</td><td>Reducción del porcentaje de participación de un inversor cuando la startup emite nuevas acciones en rondas posteriores y no participa en ellas proporcionalmente</td></tr>
+              <tr><td>Follow-on</td><td>Inversión adicional en una empresa donde ya se ha invertido antes, realizada en rondas posteriores para mantener el porcentaje de participación</td></tr>
+            </tbody>
+          </table>
+        </div>
         <p class="sub-examples-label">Fuentes citadas</p>
-        <ul class="sub-examples"><li>Oficina Nacional de Emprendimiento (ONE) — Guía práctica para comenzar a invertir en startups (2025)</li><li>Observatorio de Startups, Fundación Innovación Bankinter</li><li>Asociación Española de Business Angels (AEBAN)</li><li>Einforma — Las empresas startup en España</li></ul>
+        <ul class="sub-examples"><li>Oficina Nacional de Emprendimiento (ONE) — Guía práctica para comenzar a invertir en startups (2025)</li><li>Asociación Española de Business Angels, AEBAN (2025) — Informe Business Angels 2025</li><li>Observatorio del Ecosistema de Startups en España, Fundación Innovación Bankinter (2025)</li><li>SpainCap y EY (2023) — Estudio de la rentabilidad de los fondos de capital privado en España</li><li>COTEC (2024) — Las primeras 1.000 empresas emergentes certificadas por ENISA</li><li>Einforma (2022) — Las empresas startup en España</li></ul>
       </article>
     </div>
   </section>
@@ -5855,7 +5923,7 @@
     <div class="footer-inner">
       <div class="footer-brand">A por el Millón €</div>
       <div class="footer-note">Portada en construcción · aporelmillon.com</div>
-      <div class="footer-version">v3.24 (26.09.2026)</div>
+      <div class="footer-version">v3.26 (26.09.2026)</div>
     </div>
   </footer>
     </div>
