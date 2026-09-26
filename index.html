@@ -196,6 +196,16 @@
   .sub-table tbody tr:nth-child(even) td { background: #EFEFEF; }
   .sub-table td:first-child { font-weight: 700; }
   .sub-table td.money { font-weight: 700; color: #006400; }
+  .quad-tables-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 6px 12px 12px 12px; align-items: start; }
+  .quad-table-wrap { overflow-x: auto; border: 1px solid #808080; }
+  .quad-table-wrap h4 { margin: 0; padding: 5px 7px; background: linear-gradient(90deg, #000080, #1084D0); color: #FFFFFF; font-family: 'Tahoma', 'Segoe UI', Verdana, sans-serif; font-size: 11px; text-align: center; }
+  .quad-table { width: 100%; border-collapse: collapse; font-family: 'Tahoma', 'Segoe UI', Verdana, sans-serif; font-size: 10px; table-layout: fixed; }
+  .quad-table th { background: #C0C0C0; color: #000000; text-align: left; padding: 4px 6px; border: 1px solid #808080; }
+  .quad-table td { background: #FFFFFF; color: #000000; padding: 4px 6px; border: 1px solid #C0C0C0; vertical-align: top; white-space: normal; line-height: 1.35; }
+  .quad-table tbody tr:nth-child(even) td { background: #EFEFEF; }
+  .quad-table td:first-child { font-weight: 700; white-space: normal; }
+  @media (max-width: 1100px) { .quad-tables-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .quad-tables-grid { grid-template-columns: 1fr; } }
   .glossary-table td:nth-child(2) { white-space: normal; line-height: 1.45; }
   .glossary-table td:first-child { white-space: nowrap; vertical-align: top; }
   .glossary-group-row td { background: linear-gradient(90deg, #000080, #1084D0) !important; color: #FFFFFF !important; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; padding: 4px 7px; border: 1px solid #000000; }
@@ -431,158 +441,167 @@
         <button type="button" class="sidebar-sub-link" data-nav="fondos">3.5 Fondos de Inversión (gestión activa)</button>
         <button type="button" class="sidebar-sub-link" data-nav="a3-futuros">3.6 Futuros</button>
         <button type="button" class="sidebar-sub-link" data-nav="a3-warrants">3.7 Warrants</button>
-        <button type="button" class="sidebar-sub-link" data-nav="startups">3.8 Startups / Venture Capital</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a3-venture-capital-guia-tecnica">3.9 Venture Capital — Guía Técnica</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a3-materias-primas">3.10 Materias Primas</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a3-crowdfunding-equity">3.11 Crowdfunding Equity</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a3-crowlending">3.12 Crowlending</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a3-otras-renta-variable">3.13 Otras (Renta Variable)</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a3-glosario-renta-variable">3.14 Glosario de Renta Variable</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a3-materias-primas">3.8 Materias Primas</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a3-crowlending">3.9 Crowlending</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a3-otras-renta-variable">3.10 Otras (Renta Variable)</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a3-glosario-renta-variable">3.11 Glosario de Renta Variable</button>
         </div>
       </details>
       <details class="sidebar-area">
         <summary class="sidebar-area-summary">
-          <button type="button" class="sidebar-area-link" data-nav="inmobiliaria">4. INVERSIÓN INMOBILIARIA</button>
+          <button type="button" class="sidebar-area-link" data-nav="area-4">4. STARTUPS Y VENTURE CAPITAL</button>
           <span class="sidebar-chevron">&#8250;</span>
         </summary>
         <div class="sidebar-sub-list">
-        <button type="button" class="sidebar-sub-link" data-nav="a4-pisos-en-alquiler-renta">4.1 Pisos en Alquiler (renta)</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a4-piso-turistico">4.2 Piso Turístico</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a4-oficinas-coworking">4.3 Oficinas / Coworking</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a4-habitaciones-para-estudiantes">4.4 Habitaciones para Estudiantes</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a4-residencias-de-ancianos">4.5 Residencias de Ancianos</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a4-crowdfunding-inmobiliario-urbanitae-housers">4.6 Crowdfunding / Crowdlending Inmobiliario</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a4-locales-renta-y-transformacion-a-piso">4.7 Locales: Renta y Transformación a Vivienda</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a4-plaza-de-garaje">4.8 Plaza de Garaje</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a4-terreno-rustico-en-explotacion-cereales-arboles-etc">4.9 Terreno Rústico en Explotación (Cereales, Árboles, etc.)</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a4-terreno-para-otros-usos-eolica-solar-gaseoducto-etc">4.10 Terreno para Otros Usos (Eólica, Solar, Gaseoducto, etc.)</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a4-otras-inmobiliario">4.11 Otras (Inmobiliario)</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a4-glosario-inmobiliario">4.12 Glosario de Inversión Inmobiliaria</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a4-startups">4.1 Startups</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a4-venture-capital-business-angels">4.2 Venture Capital y Business Angels</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a4-crowdfunding-equity">4.3 Crowdfunding Equity</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a4-guia-practica-invertir-startups">4.4 Guía Práctica para Invertir en Startups</button>
         </div>
       </details>
       <details class="sidebar-area">
         <summary class="sidebar-area-summary">
-          <button type="button" class="sidebar-area-link" data-nav="area-5">5. OTRAS INVERSIONES</button>
+          <button type="button" class="sidebar-area-link" data-nav="inmobiliaria">5. INVERSIÓN INMOBILIARIA</button>
           <span class="sidebar-chevron">&#8250;</span>
         </summary>
         <div class="sidebar-sub-list">
-        <button type="button" class="sidebar-sub-link" data-nav="oro-plata">5.1 Oro y Plata</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a5-diamantes-y-piedras-preciosas">5.2 Diamantes y Piedras Preciosas</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a5-numismatica-y-notafilia">5.3 Numismática y Notafilia</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a5-coleccionismo-relojes-cartas-comics">5.4 Coleccionismo (relojes, cartas, cómics...)</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a5-antiguedades">5.5 Antigüedades</button>
-        <button type="button" class="sidebar-sub-link" data-nav="arte">5.6 Arte</button>
-        <button type="button" class="sidebar-sub-link" data-nav="criptos">5.7 Criptomonedas y NFT</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a5-otros-split-invest-whisky-vino">5.8 Otros (Split Invest, Whisky, Vino)</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a5-glosario-otras-inversiones">5.9 Glosario de Otras Inversiones</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a4-pisos-en-alquiler-renta">5.1 Pisos en Alquiler (renta)</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a4-piso-turistico">5.2 Piso Turístico</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a4-oficinas-coworking">5.3 Oficinas / Coworking</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a4-habitaciones-para-estudiantes">5.4 Habitaciones para Estudiantes</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a4-residencias-de-ancianos">5.5 Residencias de Ancianos</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a4-crowdfunding-inmobiliario-urbanitae-housers">5.6 Crowdfunding / Crowdlending Inmobiliario</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a4-locales-renta-y-transformacion-a-piso">5.7 Locales: Renta y Transformación a Vivienda</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a4-plaza-de-garaje">5.8 Plaza de Garaje</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a4-terreno-rustico-en-explotacion-cereales-arboles-etc">5.9 Terreno Rústico en Explotación (Cereales, Árboles, etc.)</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a4-terreno-para-otros-usos-eolica-solar-gaseoducto-etc">5.10 Terreno para Otros Usos (Eólica, Solar, Gaseoducto, etc.)</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a4-otras-inmobiliario">5.11 Otras (Inmobiliario)</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a4-glosario-inmobiliario">5.12 Glosario de Inversión Inmobiliaria</button>
         </div>
       </details>
       <details class="sidebar-area">
         <summary class="sidebar-area-summary">
-          <button type="button" class="sidebar-area-link" data-nav="area-6">6. NEGOCIOS DIGITALES</button>
+          <button type="button" class="sidebar-area-link" data-nav="area-5">6. OTRAS INVERSIONES</button>
           <span class="sidebar-chevron">&#8250;</span>
         </summary>
         <div class="sidebar-sub-list">
-        <button type="button" class="sidebar-sub-link" data-nav="a6-bolsa-trading-analisis-tecnico-forex-scalping-intradia">6.1 Bolsa - Trading (análisis técnico, forex, scalping, intradía)</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a6-fba-dropshipping">6.2 FBA / Dropshipping</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a6-webs-de-nicho">6.3 Webs de Nicho</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a6-apps-modelos-de-negocio">6.4 Apps: Modelos de Negocio</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a6-dominios-domain-trading">6.5 Dominios (Domain Trading)</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a6-libros-en-amazon-kdp">6.6 Libros en Amazon (KDP)</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a6-royalty-arte-y-musica">6.7 Royalty Arte y Música</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a6-yt-twitch">6.8 YT / Twitch</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a6-infoproductos">6.9 Infoproductos</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a6-redes-sociales-publicidad-digital">6.10 Redes Sociales / Publicidad Digital</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a6-glosario-negocios-digitales">6.11 Glosario de Negocios Digitales</button>
+        <button type="button" class="sidebar-sub-link" data-nav="oro-plata">6.1 Oro y Plata</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a5-diamantes-y-piedras-preciosas">6.2 Diamantes y Piedras Preciosas</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a5-numismatica-y-notafilia">6.3 Numismática y Notafilia</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a5-coleccionismo-relojes-cartas-comics">6.4 Coleccionismo (relojes, cartas, cómics...)</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a5-antiguedades">6.5 Antigüedades</button>
+        <button type="button" class="sidebar-sub-link" data-nav="arte">6.6 Arte</button>
+        <button type="button" class="sidebar-sub-link" data-nav="criptos">6.7 Criptomonedas y NFT</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a5-otros-split-invest-whisky-vino">6.8 Otros (Split Invest, Whisky, Vino)</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a5-glosario-otras-inversiones">6.9 Glosario de Otras Inversiones</button>
         </div>
       </details>
       <details class="sidebar-area">
         <summary class="sidebar-area-summary">
-          <button type="button" class="sidebar-area-link" data-nav="area-7">7. NEGOCIOS FÍSICOS</button>
+          <button type="button" class="sidebar-area-link" data-nav="area-6">7. NEGOCIOS DIGITALES</button>
           <span class="sidebar-chevron">&#8250;</span>
         </summary>
         <div class="sidebar-sub-list">
-        <button type="button" class="sidebar-sub-link" data-nav="a7f-maquinas-vending">7.1 Máquinas Vending</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a7f-tiendas-autoservicio">7.2 Tiendas Autoservicio</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a7f-maquinas-recreativas">7.3 Máquinas Recreativas (Slots, Billar, Futbolín, Dardos)</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a7f-bares-restaurantes">7.4 Hostelería: Bares y Restaurantes</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a7f-tiendas-barrio">7.5 Tiendas Barrio</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a7f-compraventa-coches">7.6 Compraventa de Coches</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a7f-franquicias-bajo-coste">7.7 Franquicias</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a7f-glosario-negocios-fisicos">7.8 Glosario de Negocios Físicos</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a6-bolsa-trading-analisis-tecnico-forex-scalping-intradia">7.1 Bolsa - Trading (análisis técnico, forex, scalping, intradía)</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a6-fba-dropshipping">7.2 FBA / Dropshipping</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a6-webs-de-nicho">7.3 Webs de Nicho</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a6-apps-modelos-de-negocio">7.4 Apps: Modelos de Negocio</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a6-dominios-domain-trading">7.5 Dominios (Domain Trading)</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a6-libros-en-amazon-kdp">7.6 Libros en Amazon (KDP)</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a6-royalty-arte-y-musica">7.7 Royalty Arte y Música</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a6-yt-twitch">7.8 YT / Twitch</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a6-infoproductos">7.9 Infoproductos</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a6-redes-sociales-publicidad-digital">7.10 Redes Sociales / Publicidad Digital</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a6-glosario-negocios-digitales">7.11 Glosario de Negocios Digitales</button>
         </div>
       </details>
       <details class="sidebar-area">
         <summary class="sidebar-area-summary">
-          <button type="button" class="sidebar-area-link" data-nav="area-8">8. JUEGO / AZAR</button>
+          <button type="button" class="sidebar-area-link" data-nav="area-7">8. NEGOCIOS FÍSICOS</button>
           <span class="sidebar-chevron">&#8250;</span>
         </summary>
         <div class="sidebar-sub-list">
-        <button type="button" class="sidebar-sub-link" data-nav="a7-loteria">8.1 Lotería</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a7-slots">8.2 Slots</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a7-ruleta">8.3 Ruleta</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a7-poker">8.4 Poker</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a7-blackjack">8.5 Blackjack</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a7-apuestas-deportivas">8.6 Apuestas Deportivas</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a7-otros-juego-bingo-bacara">8.7 Otros Juego (Bingo, Bacará)</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a7-glosario-juego-azar">8.8 Glosario de Juego y Azar</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a7f-maquinas-vending">8.1 Máquinas Vending</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a7f-tiendas-autoservicio">8.2 Tiendas Autoservicio</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a7f-maquinas-recreativas">8.3 Máquinas Recreativas (Slots, Billar, Futbolín, Dardos)</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a7f-bares-restaurantes">8.4 Hostelería: Bares y Restaurantes</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a7f-tiendas-barrio">8.5 Tiendas Barrio</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a7f-compraventa-coches">8.6 Compraventa de Coches</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a7f-franquicias-bajo-coste">8.7 Franquicias</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a7f-glosario-negocios-fisicos">8.8 Glosario de Negocios Físicos</button>
         </div>
       </details>
       <details class="sidebar-area">
         <summary class="sidebar-area-summary">
-          <button type="button" class="sidebar-area-link" data-nav="area-9">9. OTROS NEGOCIOS O INVERSIONES</button>
+          <button type="button" class="sidebar-area-link" data-nav="area-8">9. JUEGO / AZAR</button>
           <span class="sidebar-chevron">&#8250;</span>
         </summary>
         <div class="sidebar-sub-list">
-        <button type="button" class="sidebar-sub-link" data-nav="a8-otros-inversion-analisis-fundamental-fiscalidad-basica">9.1 Otras inversiones (Análisis Fundamental, Fiscalidad Básica)</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a9-otros-negocios">9.2 Otros negocios</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a8-herramientas-glosario-calc-inversion-if-calc-dividendos">9.3 Calculadora de Dividendos</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a9-fiscalidad-irpf-ahorro-patrimonio-sucesiones-iva">9.4 Fiscalidad</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a9-psicologia-del-inversor">9.5 Psicología del Inversor</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a9-formacion-libros-inversion-negocios">9.6 Formación</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a7-loteria">9.1 Lotería</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a7-slots">9.2 Slots</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a7-ruleta">9.3 Ruleta</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a7-poker">9.4 Poker</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a7-blackjack">9.5 Blackjack</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a7-apuestas-deportivas">9.6 Apuestas Deportivas</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a7-otros-juego-bingo-bacara">9.7 Otros Juego (Bingo, Bacará)</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a7-glosario-juego-azar">9.8 Glosario de Juego y Azar</button>
         </div>
       </details>
       <details class="sidebar-area">
         <summary class="sidebar-area-summary">
-          <button type="button" class="sidebar-area-link" data-nav="longevidad-salud">10. LONGEVIDAD Y SALUD</button>
+          <button type="button" class="sidebar-area-link" data-nav="area-9">10. OTROS NEGOCIOS O INVERSIONES</button>
           <span class="sidebar-chevron">&#8250;</span>
         </summary>
         <div class="sidebar-sub-list">
-        <button type="button" class="sidebar-sub-link" data-nav="a10-nutricion">10.1 Nutrición</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a10-suplementacion">10.2 Suplementación</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a10-longevidad">10.3 Longevidad</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a10-deporte">10.4 Deporte</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a8-otros-inversion-analisis-fundamental-fiscalidad-basica">10.1 Otras inversiones (Análisis Fundamental, Fiscalidad Básica)</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a9-otros-negocios">10.2 Otros negocios</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a8-herramientas-glosario-calc-inversion-if-calc-dividendos">10.3 Calculadora de Dividendos</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a9-fiscalidad-irpf-ahorro-patrimonio-sucesiones-iva">10.4 Fiscalidad</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a9-psicologia-del-inversor">10.5 Psicología del Inversor</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a9-formacion-libros-inversion-negocios">10.6 Formación</button>
         </div>
       </details>
       <details class="sidebar-area">
         <summary class="sidebar-area-summary">
-          <button type="button" class="sidebar-area-link" data-nav="tecnologia">11. TECNOLOGÍA</button>
+          <button type="button" class="sidebar-area-link" data-nav="longevidad-salud">11. LONGEVIDAD Y SALUD</button>
           <span class="sidebar-chevron">&#8250;</span>
         </summary>
         <div class="sidebar-sub-list">
-        <button type="button" class="sidebar-sub-link" data-nav="a11-ia">11.1 IA</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a11-sistemas-infraestructura">11.2 Sistemas e Infraestructura</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a11-redes-conectividad">11.3 Redes y Conectividad</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a11-desarrollo-software">11.4 Desarrollo de Software</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a11-ciberseguridad">11.5 Ciberseguridad</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a11-hardware-chips">11.6 Hardware y Chips</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a11-software-saas">11.7 Software y SaaS</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a11-cloud-devops">11.8 Cloud y DevOps</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a11-data-analytics">11.9 Data y Analytics</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a11-blockchain-web3">11.10 Blockchain y Web3</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a10-nutricion">11.1 Nutrición</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a10-suplementacion">11.2 Suplementación</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a10-longevidad">11.3 Longevidad</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a10-deporte">11.4 Deporte</button>
         </div>
       </details>
       <details class="sidebar-area">
         <summary class="sidebar-area-summary">
-          <button type="button" class="sidebar-area-link" data-nav="sobre-mi">12. SOBRE MÍ</button>
+          <button type="button" class="sidebar-area-link" data-nav="tecnologia">12. TECNOLOGÍA</button>
           <span class="sidebar-chevron">&#8250;</span>
         </summary>
         <div class="sidebar-sub-list">
-        <button type="button" class="sidebar-sub-link" data-nav="a9-cv">12.1 CV</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a9-contacto">12.2 Contacto</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a9-planificacion-personal">12.3 Planificación Personal</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a9-recomendado-libros-leidos-podcast-blogs">12.4 Recomendado: Libros Leídos, Podcast, Blogs</button>
-        <button type="button" class="sidebar-sub-link" data-nav="a9-podcast-recomendados">12.5 Podcast Recomendados</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a11-ia">12.1 IA</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a11-sistemas-infraestructura">12.2 Sistemas e Infraestructura</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a11-redes-conectividad">12.3 Redes y Conectividad</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a11-desarrollo-software">12.4 Desarrollo de Software</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a11-ciberseguridad">12.5 Ciberseguridad</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a11-hardware-chips">12.6 Hardware y Chips</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a11-software-saas">12.7 Software y SaaS</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a11-cloud-devops">12.8 Cloud y DevOps</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a11-data-analytics">12.9 Data y Analytics</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a11-blockchain-web3">12.10 Blockchain y Web3</button>
+        </div>
+      </details>
+      <details class="sidebar-area">
+        <summary class="sidebar-area-summary">
+          <button type="button" class="sidebar-area-link" data-nav="sobre-mi">13. SOBRE MÍ</button>
+          <span class="sidebar-chevron">&#8250;</span>
+        </summary>
+        <div class="sidebar-sub-list">
+        <button type="button" class="sidebar-sub-link" data-nav="a9-cv">13.1 CV</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a9-contacto">13.2 Contacto</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a9-planificacion-personal">13.3 Planificación Personal</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a9-recomendado-libros-leidos-podcast-blogs">13.4 Recomendado: Libros Leídos, Podcast, Blogs</button>
+        <button type="button" class="sidebar-sub-link" data-nav="a9-podcast-recomendados">13.5 Podcast Recomendados</button>
         </div>
       </details>
       </nav>
@@ -1010,15 +1029,16 @@
       <button type="button" class="toc-link" data-nav="area-1">1. GENERAL</button>
       <button type="button" class="toc-link" data-nav="area-2">2. RENTA FIJA</button>
       <button type="button" class="toc-link" data-nav="area-3">3. RENTA VARIABLE</button>
-      <button type="button" class="toc-link" data-nav="inmobiliaria">4. INVERSIÓN INMOBILIARIA</button>
-      <button type="button" class="toc-link" data-nav="area-5">5. OTRAS INVERSIONES</button>
-      <button type="button" class="toc-link" data-nav="area-6">6. NEGOCIOS DIGITALES</button>
-      <button type="button" class="toc-link" data-nav="area-7">7. NEGOCIOS FÍSICOS</button>
-      <button type="button" class="toc-link" data-nav="area-8">8. JUEGO / AZAR</button>
-      <button type="button" class="toc-link" data-nav="area-9">9. OTROS NEGOCIOS O INVERSIONES</button>
-      <button type="button" class="toc-link" data-nav="longevidad-salud">10. LONGEVIDAD Y SALUD</button>
-      <button type="button" class="toc-link" data-nav="tecnologia">11. TECNOLOGÍA</button>
-      <button type="button" class="toc-link" data-nav="sobre-mi">12. SOBRE MÍ</button>
+      <button type="button" class="toc-link" data-nav="area-4">4. STARTUPS Y VENTURE CAPITAL</button>
+      <button type="button" class="toc-link" data-nav="inmobiliaria">5. INVERSIÓN INMOBILIARIA</button>
+      <button type="button" class="toc-link" data-nav="area-5">6. OTRAS INVERSIONES</button>
+      <button type="button" class="toc-link" data-nav="area-6">7. NEGOCIOS DIGITALES</button>
+      <button type="button" class="toc-link" data-nav="area-7">8. NEGOCIOS FÍSICOS</button>
+      <button type="button" class="toc-link" data-nav="area-8">9. JUEGO / AZAR</button>
+      <button type="button" class="toc-link" data-nav="area-9">10. OTROS NEGOCIOS O INVERSIONES</button>
+      <button type="button" class="toc-link" data-nav="longevidad-salud">11. LONGEVIDAD Y SALUD</button>
+      <button type="button" class="toc-link" data-nav="tecnologia">12. TECNOLOGÍA</button>
+      <button type="button" class="toc-link" data-nav="sobre-mi">13. SOBRE MÍ</button>
     </div>
   </section>
 </div>
@@ -1107,185 +1127,197 @@
           <li><button type="button" class="sitemap-sublink" data-nav="fondos">3.5 Fondos de Inversión (gestión activa)</button></li>
           <li><button type="button" class="sitemap-sublink" data-nav="a3-futuros">3.6 Futuros</button></li>
           <li><button type="button" class="sitemap-sublink" data-nav="a3-warrants">3.7 Warrants</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="startups">3.8 Startups / Venture Capital</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a3-venture-capital-guia-tecnica">3.9 Venture Capital — Guía Técnica</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a3-materias-primas">3.10 Materias Primas</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a3-crowdfunding-equity">3.11 Crowdfunding Equity</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a3-crowlending">3.12 Crowlending</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a3-otras-renta-variable">3.13 Otras (Renta Variable)</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a3-glosario-renta-variable">3.14 Glosario de Renta Variable</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a3-materias-primas">3.8 Materias Primas</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a3-crowlending">3.9 Crowlending</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a3-otras-renta-variable">3.10 Otras (Renta Variable)</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a3-glosario-renta-variable">3.11 Glosario de Renta Variable</button></li>
           </ul>
         </div>
       </div>
       <div class="sitemap-window">
         <div class="win95-titlebar">
           <span class="win95-titlebar-icon" aria-hidden="true"></span>
-          <button type="button" class="sitemap-titlebar-link" data-nav="inmobiliaria">4. INVERSIÓN INMOBILIARIA</button>
+          <button type="button" class="sitemap-titlebar-link" data-nav="area-4">4. STARTUPS Y VENTURE CAPITAL</button>
           <span class="win95-titlebar-btns"><span class="win95-btn" aria-hidden="true">_</span><span class="win95-btn" aria-hidden="true">□</span><span class="win95-btn win95-btn-close" aria-hidden="true">✕</span></span>
         </div>
         <div class="sitemap-body">
           <ul class="sitemap-sublist">
-          <li><button type="button" class="sitemap-sublink" data-nav="a4-pisos-en-alquiler-renta">4.1 Pisos en Alquiler (renta)</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a4-piso-turistico">4.2 Piso Turístico</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a4-oficinas-coworking">4.3 Oficinas / Coworking</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a4-habitaciones-para-estudiantes">4.4 Habitaciones para Estudiantes</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a4-residencias-de-ancianos">4.5 Residencias de Ancianos</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a4-crowdfunding-inmobiliario-urbanitae-housers">4.6 Crowdfunding / Crowdlending Inmobiliario</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a4-locales-renta-y-transformacion-a-piso">4.7 Locales: Renta y Transformación a Vivienda</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a4-plaza-de-garaje">4.8 Plaza de Garaje</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a4-terreno-rustico-en-explotacion-cereales-arboles-etc">4.9 Terreno Rústico en Explotación (Cereales, Árboles, etc.)</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a4-terreno-para-otros-usos-eolica-solar-gaseoducto-etc">4.10 Terreno para Otros Usos (Eólica, Solar, Gaseoducto, etc.)</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a4-otras-inmobiliario">4.11 Otras (Inmobiliario)</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a4-glosario-inmobiliario">4.12 Glosario de Inversión Inmobiliaria</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a4-startups">4.1 Startups</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a4-venture-capital-business-angels">4.2 Venture Capital y Business Angels</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a4-crowdfunding-equity">4.3 Crowdfunding Equity</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a4-guia-practica-invertir-startups">4.4 Guía Práctica para Invertir en Startups</button></li>
           </ul>
         </div>
       </div>
       <div class="sitemap-window">
         <div class="win95-titlebar">
           <span class="win95-titlebar-icon" aria-hidden="true"></span>
-          <button type="button" class="sitemap-titlebar-link" data-nav="area-5">5. OTRAS INVERSIONES</button>
+          <button type="button" class="sitemap-titlebar-link" data-nav="inmobiliaria">5. INVERSIÓN INMOBILIARIA</button>
           <span class="win95-titlebar-btns"><span class="win95-btn" aria-hidden="true">_</span><span class="win95-btn" aria-hidden="true">□</span><span class="win95-btn win95-btn-close" aria-hidden="true">✕</span></span>
         </div>
         <div class="sitemap-body">
           <ul class="sitemap-sublist">
-          <li><button type="button" class="sitemap-sublink" data-nav="oro-plata">5.1 Oro y Plata</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a5-diamantes-y-piedras-preciosas">5.2 Diamantes y Piedras Preciosas</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a5-numismatica-y-notafilia">5.3 Numismática y Notafilia</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a5-coleccionismo-relojes-cartas-comics">5.4 Coleccionismo (relojes, cartas, cómics...)</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a5-antiguedades">5.5 Antigüedades</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="arte">5.6 Arte</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="criptos">5.7 Criptomonedas y NFT</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a5-otros-split-invest-whisky-vino">5.8 Otros (Split Invest, Whisky, Vino)</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a5-glosario-otras-inversiones">5.9 Glosario de Otras Inversiones</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a4-pisos-en-alquiler-renta">5.1 Pisos en Alquiler (renta)</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a4-piso-turistico">5.2 Piso Turístico</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a4-oficinas-coworking">5.3 Oficinas / Coworking</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a4-habitaciones-para-estudiantes">5.4 Habitaciones para Estudiantes</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a4-residencias-de-ancianos">5.5 Residencias de Ancianos</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a4-crowdfunding-inmobiliario-urbanitae-housers">5.6 Crowdfunding / Crowdlending Inmobiliario</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a4-locales-renta-y-transformacion-a-piso">5.7 Locales: Renta y Transformación a Vivienda</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a4-plaza-de-garaje">5.8 Plaza de Garaje</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a4-terreno-rustico-en-explotacion-cereales-arboles-etc">5.9 Terreno Rústico en Explotación (Cereales, Árboles, etc.)</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a4-terreno-para-otros-usos-eolica-solar-gaseoducto-etc">5.10 Terreno para Otros Usos (Eólica, Solar, Gaseoducto, etc.)</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a4-otras-inmobiliario">5.11 Otras (Inmobiliario)</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a4-glosario-inmobiliario">5.12 Glosario de Inversión Inmobiliaria</button></li>
           </ul>
         </div>
       </div>
       <div class="sitemap-window">
         <div class="win95-titlebar">
           <span class="win95-titlebar-icon" aria-hidden="true"></span>
-          <button type="button" class="sitemap-titlebar-link" data-nav="area-6">6. NEGOCIOS DIGITALES</button>
+          <button type="button" class="sitemap-titlebar-link" data-nav="area-5">6. OTRAS INVERSIONES</button>
           <span class="win95-titlebar-btns"><span class="win95-btn" aria-hidden="true">_</span><span class="win95-btn" aria-hidden="true">□</span><span class="win95-btn win95-btn-close" aria-hidden="true">✕</span></span>
         </div>
         <div class="sitemap-body">
           <ul class="sitemap-sublist">
-          <li><button type="button" class="sitemap-sublink" data-nav="a6-bolsa-trading-analisis-tecnico-forex-scalping-intradia">6.1 Bolsa - Trading (análisis técnico, forex, scalping, intradía)</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a6-fba-dropshipping">6.2 FBA / Dropshipping</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a6-webs-de-nicho">6.3 Webs de Nicho</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a6-apps-modelos-de-negocio">6.4 Apps: Modelos de Negocio</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a6-dominios-domain-trading">6.5 Dominios (Domain Trading)</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a6-libros-en-amazon-kdp">6.6 Libros en Amazon (KDP)</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a6-royalty-arte-y-musica">6.7 Royalty Arte y Música</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a6-yt-twitch">6.8 YT / Twitch</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a6-infoproductos">6.9 Infoproductos</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a6-redes-sociales-publicidad-digital">6.10 Redes Sociales / Publicidad Digital</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a6-glosario-negocios-digitales">6.11 Glosario de Negocios Digitales</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="oro-plata">6.1 Oro y Plata</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a5-diamantes-y-piedras-preciosas">6.2 Diamantes y Piedras Preciosas</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a5-numismatica-y-notafilia">6.3 Numismática y Notafilia</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a5-coleccionismo-relojes-cartas-comics">6.4 Coleccionismo (relojes, cartas, cómics...)</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a5-antiguedades">6.5 Antigüedades</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="arte">6.6 Arte</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="criptos">6.7 Criptomonedas y NFT</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a5-otros-split-invest-whisky-vino">6.8 Otros (Split Invest, Whisky, Vino)</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a5-glosario-otras-inversiones">6.9 Glosario de Otras Inversiones</button></li>
           </ul>
         </div>
       </div>
       <div class="sitemap-window">
         <div class="win95-titlebar">
           <span class="win95-titlebar-icon" aria-hidden="true"></span>
-          <button type="button" class="sitemap-titlebar-link" data-nav="area-7">7. NEGOCIOS FÍSICOS</button>
+          <button type="button" class="sitemap-titlebar-link" data-nav="area-6">7. NEGOCIOS DIGITALES</button>
           <span class="win95-titlebar-btns"><span class="win95-btn" aria-hidden="true">_</span><span class="win95-btn" aria-hidden="true">□</span><span class="win95-btn win95-btn-close" aria-hidden="true">✕</span></span>
         </div>
         <div class="sitemap-body">
           <ul class="sitemap-sublist">
-          <li><button type="button" class="sitemap-sublink" data-nav="a7f-maquinas-vending">7.1 Máquinas Vending</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a7f-tiendas-autoservicio">7.2 Tiendas Autoservicio</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a7f-maquinas-recreativas">7.3 Máquinas Recreativas (Slots, Billar, Futbolín, Dardos)</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a7f-bares-restaurantes">7.4 Hostelería: Bares y Restaurantes</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a7f-tiendas-barrio">7.5 Tiendas Barrio</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a7f-compraventa-coches">7.6 Compraventa de Coches</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a7f-franquicias-bajo-coste">7.7 Franquicias</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a7f-glosario-negocios-fisicos">7.8 Glosario de Negocios Físicos</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a6-bolsa-trading-analisis-tecnico-forex-scalping-intradia">7.1 Bolsa - Trading (análisis técnico, forex, scalping, intradía)</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a6-fba-dropshipping">7.2 FBA / Dropshipping</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a6-webs-de-nicho">7.3 Webs de Nicho</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a6-apps-modelos-de-negocio">7.4 Apps: Modelos de Negocio</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a6-dominios-domain-trading">7.5 Dominios (Domain Trading)</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a6-libros-en-amazon-kdp">7.6 Libros en Amazon (KDP)</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a6-royalty-arte-y-musica">7.7 Royalty Arte y Música</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a6-yt-twitch">7.8 YT / Twitch</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a6-infoproductos">7.9 Infoproductos</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a6-redes-sociales-publicidad-digital">7.10 Redes Sociales / Publicidad Digital</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a6-glosario-negocios-digitales">7.11 Glosario de Negocios Digitales</button></li>
           </ul>
         </div>
       </div>
       <div class="sitemap-window">
         <div class="win95-titlebar">
           <span class="win95-titlebar-icon" aria-hidden="true"></span>
-          <button type="button" class="sitemap-titlebar-link" data-nav="area-8">8. JUEGO / AZAR</button>
+          <button type="button" class="sitemap-titlebar-link" data-nav="area-7">8. NEGOCIOS FÍSICOS</button>
           <span class="win95-titlebar-btns"><span class="win95-btn" aria-hidden="true">_</span><span class="win95-btn" aria-hidden="true">□</span><span class="win95-btn win95-btn-close" aria-hidden="true">✕</span></span>
         </div>
         <div class="sitemap-body">
           <ul class="sitemap-sublist">
-          <li><button type="button" class="sitemap-sublink" data-nav="a7-loteria">8.1 Lotería</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a7-slots">8.2 Slots</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a7-ruleta">8.3 Ruleta</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a7-poker">8.4 Poker</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a7-blackjack">8.5 Blackjack</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a7-apuestas-deportivas">8.6 Apuestas Deportivas</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a7-otros-juego-bingo-bacara">8.7 Otros Juego (Bingo, Bacará)</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a7-glosario-juego-azar">8.8 Glosario de Juego y Azar</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a7f-maquinas-vending">8.1 Máquinas Vending</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a7f-tiendas-autoservicio">8.2 Tiendas Autoservicio</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a7f-maquinas-recreativas">8.3 Máquinas Recreativas (Slots, Billar, Futbolín, Dardos)</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a7f-bares-restaurantes">8.4 Hostelería: Bares y Restaurantes</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a7f-tiendas-barrio">8.5 Tiendas Barrio</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a7f-compraventa-coches">8.6 Compraventa de Coches</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a7f-franquicias-bajo-coste">8.7 Franquicias</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a7f-glosario-negocios-fisicos">8.8 Glosario de Negocios Físicos</button></li>
           </ul>
         </div>
       </div>
       <div class="sitemap-window">
         <div class="win95-titlebar">
           <span class="win95-titlebar-icon" aria-hidden="true"></span>
-          <button type="button" class="sitemap-titlebar-link" data-nav="area-9">9. OTROS NEGOCIOS O INVERSIONES</button>
+          <button type="button" class="sitemap-titlebar-link" data-nav="area-8">9. JUEGO / AZAR</button>
           <span class="win95-titlebar-btns"><span class="win95-btn" aria-hidden="true">_</span><span class="win95-btn" aria-hidden="true">□</span><span class="win95-btn win95-btn-close" aria-hidden="true">✕</span></span>
         </div>
         <div class="sitemap-body">
           <ul class="sitemap-sublist">
-          <li><button type="button" class="sitemap-sublink" data-nav="a8-otros-inversion-analisis-fundamental-fiscalidad-basica">9.1 Otras inversiones (Análisis Fundamental, Fiscalidad Básica)</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a9-otros-negocios">9.2 Otros negocios</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a8-herramientas-glosario-calc-inversion-if-calc-dividendos">9.3 Calculadora de Dividendos</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a9-fiscalidad-irpf-ahorro-patrimonio-sucesiones-iva">9.4 Fiscalidad</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a9-psicologia-del-inversor">9.5 Psicología del Inversor</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a9-formacion-libros-inversion-negocios">9.6 Formación</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a7-loteria">9.1 Lotería</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a7-slots">9.2 Slots</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a7-ruleta">9.3 Ruleta</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a7-poker">9.4 Poker</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a7-blackjack">9.5 Blackjack</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a7-apuestas-deportivas">9.6 Apuestas Deportivas</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a7-otros-juego-bingo-bacara">9.7 Otros Juego (Bingo, Bacará)</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a7-glosario-juego-azar">9.8 Glosario de Juego y Azar</button></li>
           </ul>
         </div>
       </div>
       <div class="sitemap-window">
         <div class="win95-titlebar">
           <span class="win95-titlebar-icon" aria-hidden="true"></span>
-          <button type="button" class="sitemap-titlebar-link" data-nav="longevidad-salud">10. LONGEVIDAD Y SALUD</button>
+          <button type="button" class="sitemap-titlebar-link" data-nav="area-9">10. OTROS NEGOCIOS O INVERSIONES</button>
           <span class="win95-titlebar-btns"><span class="win95-btn" aria-hidden="true">_</span><span class="win95-btn" aria-hidden="true">□</span><span class="win95-btn win95-btn-close" aria-hidden="true">✕</span></span>
         </div>
         <div class="sitemap-body">
           <ul class="sitemap-sublist">
-          <li><button type="button" class="sitemap-sublink" data-nav="a10-nutricion">10.1 Nutrición</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a10-suplementacion">10.2 Suplementación</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a10-longevidad">10.3 Longevidad</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a10-deporte">10.4 Deporte</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a8-otros-inversion-analisis-fundamental-fiscalidad-basica">10.1 Otras inversiones (Análisis Fundamental, Fiscalidad Básica)</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a9-otros-negocios">10.2 Otros negocios</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a8-herramientas-glosario-calc-inversion-if-calc-dividendos">10.3 Calculadora de Dividendos</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a9-fiscalidad-irpf-ahorro-patrimonio-sucesiones-iva">10.4 Fiscalidad</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a9-psicologia-del-inversor">10.5 Psicología del Inversor</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a9-formacion-libros-inversion-negocios">10.6 Formación</button></li>
           </ul>
         </div>
       </div>
       <div class="sitemap-window">
         <div class="win95-titlebar">
           <span class="win95-titlebar-icon" aria-hidden="true"></span>
-          <button type="button" class="sitemap-titlebar-link" data-nav="tecnologia">11. TECNOLOGÍA</button>
+          <button type="button" class="sitemap-titlebar-link" data-nav="longevidad-salud">11. LONGEVIDAD Y SALUD</button>
           <span class="win95-titlebar-btns"><span class="win95-btn" aria-hidden="true">_</span><span class="win95-btn" aria-hidden="true">□</span><span class="win95-btn win95-btn-close" aria-hidden="true">✕</span></span>
         </div>
         <div class="sitemap-body">
           <ul class="sitemap-sublist">
-          <li><button type="button" class="sitemap-sublink" data-nav="a11-ia">11.1 IA</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a11-sistemas-infraestructura">11.2 Sistemas e Infraestructura</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a11-redes-conectividad">11.3 Redes y Conectividad</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a11-desarrollo-software">11.4 Desarrollo de Software</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a11-ciberseguridad">11.5 Ciberseguridad</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a11-hardware-chips">11.6 Hardware y Chips</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a11-software-saas">11.7 Software y SaaS</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a11-cloud-devops">11.8 Cloud y DevOps</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a11-data-analytics">11.9 Data y Analytics</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a11-blockchain-web3">11.10 Blockchain y Web3</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a10-nutricion">11.1 Nutrición</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a10-suplementacion">11.2 Suplementación</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a10-longevidad">11.3 Longevidad</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a10-deporte">11.4 Deporte</button></li>
           </ul>
         </div>
       </div>
       <div class="sitemap-window">
         <div class="win95-titlebar">
           <span class="win95-titlebar-icon" aria-hidden="true"></span>
-          <button type="button" class="sitemap-titlebar-link" data-nav="sobre-mi">12. SOBRE MÍ</button>
+          <button type="button" class="sitemap-titlebar-link" data-nav="tecnologia">12. TECNOLOGÍA</button>
           <span class="win95-titlebar-btns"><span class="win95-btn" aria-hidden="true">_</span><span class="win95-btn" aria-hidden="true">□</span><span class="win95-btn win95-btn-close" aria-hidden="true">✕</span></span>
         </div>
         <div class="sitemap-body">
           <ul class="sitemap-sublist">
-          <li><button type="button" class="sitemap-sublink" data-nav="a9-cv">12.1 CV</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a9-contacto">12.2 Contacto</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a9-planificacion-personal">12.3 Planificación Personal</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a9-recomendado-libros-leidos-podcast-blogs">12.4 Recomendado: Libros Leídos, Podcast, Blogs</button></li>
-          <li><button type="button" class="sitemap-sublink" data-nav="a9-podcast-recomendados">12.5 Podcast Recomendados</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a11-ia">12.1 IA</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a11-sistemas-infraestructura">12.2 Sistemas e Infraestructura</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a11-redes-conectividad">12.3 Redes y Conectividad</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a11-desarrollo-software">12.4 Desarrollo de Software</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a11-ciberseguridad">12.5 Ciberseguridad</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a11-hardware-chips">12.6 Hardware y Chips</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a11-software-saas">12.7 Software y SaaS</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a11-cloud-devops">12.8 Cloud y DevOps</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a11-data-analytics">12.9 Data y Analytics</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a11-blockchain-web3">12.10 Blockchain y Web3</button></li>
+          </ul>
+        </div>
+      </div>
+      <div class="sitemap-window">
+        <div class="win95-titlebar">
+          <span class="win95-titlebar-icon" aria-hidden="true"></span>
+          <button type="button" class="sitemap-titlebar-link" data-nav="sobre-mi">13. SOBRE MÍ</button>
+          <span class="win95-titlebar-btns"><span class="win95-btn" aria-hidden="true">_</span><span class="win95-btn" aria-hidden="true">□</span><span class="win95-btn win95-btn-close" aria-hidden="true">✕</span></span>
+        </div>
+        <div class="sitemap-body">
+          <ul class="sitemap-sublist">
+          <li><button type="button" class="sitemap-sublink" data-nav="a9-cv">13.1 CV</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a9-contacto">13.2 Contacto</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a9-planificacion-personal">13.3 Planificación Personal</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a9-recomendado-libros-leidos-podcast-blogs">13.4 Recomendado: Libros Leídos, Podcast, Blogs</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a9-podcast-recomendados">13.5 Podcast Recomendados</button></li>
           </ul>
         </div>
       </div>
@@ -1755,7 +1787,7 @@
     </div>
     <p class="area-intro-text">La renta variable reúne las inversiones cuyo valor y rentabilidad dependen de la evolución de los mercados y, en muchos casos, de los resultados de las empresas. Puede invertirse directamente mediante acciones o indirectamente a través de fondos de inversión, fondos indexados y ETF. A diferencia de la renta fija, no existe una rentabilidad pactada de antemano ni se garantiza la recuperación del capital: el inversor puede ganar mediante la subida del precio de los activos y, en determinados casos, mediante dividendos, pero también puede sufrir pérdidas. Dentro de esta categoría hay desde estrategias diversificadas de largo plazo, como la inversión indexada, hasta estrategias más específicas como la inversión por dividendos o el value investing (con representantes españoles de referencia como azValor o Cobas), pasando por inversiones de mayor riesgo como startups y venture capital. Algunos productos que aparecen habitualmente asociados a la renta variable —futuros, warrants, CFDs o determinados estructurados— son jurídicamente <strong>derivados o productos complejos</strong>, según la CNMV, no renta variable en sentido estricto: se incluyen aquí como productos relacionados, pero conviene distinguirlos de la inversión directa en acciones o fondos.</p>
     <div class="area-terminal-panel">
-      <p class="area-terminal-line">&gt; <strong>14</strong> subapartados en esta área</p>
+      <p class="area-terminal-line">&gt; <strong>11</strong> subapartados en esta área</p>
       <p class="area-terminal-line">&gt; Rentabilidad variable según el activo, desde fondos indexados de bajo coste hasta futuros y warrants apalancados</p>
     </div>
     <div class="area-summary-table-wrap">
@@ -1769,9 +1801,7 @@
           <tr><td>Fondos de Inversión (activa)</td><td>Vehículos en los que una gestora selecciona activamente los activos de la cartera siguiendo una estrategia determinada.</td><td>Variable</td></tr>
           <tr><td>Futuros*</td><td>Contratos derivados que obligan a comprar o vender un activo en una fecha futura según las condiciones pactadas; suelen incorporar apalancamiento.</td><td>Muy variable</td></tr>
           <tr><td>Warrants*</td><td>Valores que otorgan un derecho de compra o venta sobre un activo subyacente a un precio determinado y hasta una fecha de vencimiento.</td><td>Muy variable</td></tr>
-          <tr><td>Startups / Venture Capital</td><td>Inversión en empresas no cotizadas, normalmente en fases iniciales o de crecimiento, a cambio de una participación en su capital.</td><td>Muy variable</td></tr>
           <tr><td>Materias Primas</td><td>Exposición a activos como oro, petróleo, gas o productos agrícolas, directamente o mediante futuros, ETF, ETC u otras estructuras.</td><td>Muy variable</td></tr>
-          <tr><td>Crowdfunding Equity</td><td>Inversión colectiva en empresas a través de plataformas autorizadas, recibiendo participaciones o instrumentos vinculados al capital.</td><td>Muy variable</td></tr>
           <tr><td>Otras inversiones relacionadas</td><td>Acciones preferentes, determinados fondos sectoriales, REITs, productos estructurados, CFDs y otros instrumentos con exposición a mercados de renta variable.</td><td>Muy variable</td></tr>
         </tbody>
       </table>
@@ -2047,117 +2077,6 @@
         </div>
         <p class="sub-table-note">Producto complejo y de riesgo elevado según la CNMV: la operativa con warrants no es adecuada para ahorradores de perfil conservador o sin experiencia previa en derivados, con riesgo de pérdida del 100% de la prima. Datos orientativos de septiembre de 2026, sujetos a cambio.</p>
       </article>
-      <article class="sub-card sub-card-wide" id="startups">
-        <h3>Startups / Venture Capital</h3>
-        <p class="sub-examples-label">Qué es y tipos</p>
-        <p class="sub-intro">El <strong>Venture Capital (capital riesgo)</strong> es una forma de financiación mediante la que inversores aportan capital a empresas jóvenes con potencial de crecimiento, normalmente startups, a cambio de una participación en su capital, buscando que la empresa aumente significativamente su valor y poder vender esa participación más adelante (nueva ronda, adquisición o, en algunos casos, salida a bolsa). Startup y Venture Capital no son exactamente lo mismo: la primera es una fase de desarrollo de una empresa, el segundo una forma de financiación e inversión. Las principales etapas son <strong>pre-seed</strong> (idea, producto y equipo), <strong>seed</strong> (validar producto y modelo de negocio), <strong>Series A</strong> (crecimiento con cierta validación comercial), <strong>Series B y posteriores</strong> (expansión, internacionalización) y <strong>growth</strong> (empresas maduras que necesitan grandes cantidades de capital).</p>
-        <p class="sub-examples-label">Cómo funciona</p>
-        <p class="sub-intro">Un fondo de Venture Capital reúne dinero de inversores y lo utiliza para adquirir participaciones en distintas startups, analizando equipo fundador, mercado, producto, tecnología, competencia e ingresos antes de invertir. La inversión suele realizarse mediante ampliaciones de capital y puede provocar <strong>dilución</strong> de los accionistas existentes; en algunas rondas se usan también instrumentos convertibles o estructuras como los <strong>SAFE</strong>. El horizonte de inversión suele ser largo y la salida puede producirse mediante venta de la participación, adquisición de la empresa, recompra por los fundadores o salida a bolsa, sin garantía de que llegue a producirse. Los particulares también pueden acceder mediante <strong>equity crowdfunding</strong> en plataformas autorizadas y registradas por la CNMV, como Crowdcube o Capital Cell, con inversión posible desde 10 € en determinadas operaciones.</p>
-        <p class="sub-examples-label">Factores que influyen en la rentabilidad</p>
-        <p class="sub-intro">No existe una rentabilidad anual estable ni una horquilla fiable aplicable a todas las startups: el resultado puede ir desde la pérdida total del capital hasta una multiplicación muy elevada de la inversión. Influyen el crecimiento de la empresa, la valoración de entrada (a mayor valoración, más crecimiento se necesita para rentabilizar), el equipo fundador, el tamaño y competencia del mercado, la financiación posterior (nuevas rondas aportan recursos pero también diluyen), la probabilidad de fracaso y, finalmente, el precio y el momento del <em>exit</em>. Los fondos de Venture Capital construyen carteras diversificadas porque unas pocas inversiones exitosas pueden pesar mucho sobre el conjunto, por lo que una sola startup no permite extrapolar la rentabilidad del sector.</p>
-        <div class="pros-cons-wrap">
-          <table class="pros-cons-table">
-            <thead><tr><th>Ventajas</th><th>Desventajas</th></tr></thead>
-            <tbody>
-              <tr><td class="pro">Permite participar en empresas jóvenes con potencial de crecimiento elevado.</td><td class="con">Riesgo elevado de perder parte o todo el capital invertido.</td></tr>
-              <tr><td class="pro">El potencial de revalorización puede ser muy superior al de inversiones más maduras.</td><td class="con">Inversión muy poco líquida durante años.</td></tr>
-              <tr><td class="pro">Permite invertir en sectores innovadores (tecnología, biotecnología, IA...).</td><td class="con">Difícil valorar correctamente empresas con pocos ingresos o beneficios.</td></tr>
-              <tr><td class="pro">El equity crowdfunding da acceso con importes reducidos.</td><td class="con">Las nuevas rondas pueden diluir la participación del inversor.</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="sub-examples-label">Frente a Acciones</p>
-        <p class="sub-intro">Una acción cotizada representa una participación en una empresa cuyo precio se negocia habitualmente en un mercado organizado; una startup no cotizada tiene mucha menos liquidez y una valoración basada en rondas privadas, no en cotización continua. En España, determinadas inversiones en empresas de nueva o reciente creación pueden acogerse a una <strong>deducción estatal del 50%</strong> de las cantidades invertidas, con una base máxima de <strong>100.000 € anuales</strong>, siempre que se cumplan los requisitos de la normativa (deducción exclusivamente estatal, no aplicable al tramo autonómico); no todas las inversiones cumplen esos requisitos. Al vender una participación, la diferencia entre el valor de adquisición y el de transmisión genera una ganancia o pérdida patrimonial en el IRPF.</p>
-        <p class="sub-examples-label">Ejemplos reales</p>
-        <ul class="sub-examples"><li>Crowdcube (Reino Unido / España)</li><li>Capital Cell (España)</li><li>The Crowd Angel (España)</li><li>Y Combinator (Estados Unidos)</li><li>Sequoia Capital (Estados Unidos)</li><li>Andreessen Horowitz — a16z (Estados Unidos)</li><li>Accel (Estados Unidos / Reino Unido)</li></ul>
-        <p class="sub-examples-label">Comparativa de ofertas</p>
-        <div class="sub-table-wrap">
-          <table class="sub-table">
-            <thead><tr><th>Plataforma / entidad</th><th>Tipo</th><th>Acceso / inversión</th><th>Características</th></tr></thead>
-            <tbody>
-              <tr><td>Crowdcube</td><td>Equity crowdfunding</td><td>Desde 10 € según operación</td><td>Comisión de inversión del 2,49%, con un mínimo de 5 € (confirmado por Crowdcube).</td></tr>
-              <tr><td>Capital Cell</td><td>Equity crowdfunding</td><td>Variable según campaña</td><td>Plataforma española especializada en biotecnología y salud, registrada en la CNMV.</td></tr>
-              <tr><td>The Crowd Angel</td><td>Equity crowdfunding / VC</td><td>Según cada operación</td><td>Plataforma española orientada a startups en crecimiento.</td></tr>
-              <tr><td>Y Combinator</td><td>Aceleradora + Venture Capital</td><td class="money">500.000 $ por startup aceptada</td><td>125.000 $ mediante SAFE por un 7% + 375.000 $ mediante SAFE uncapped con cláusula MFN.</td></tr>
-              <tr><td>Sequoia Capital</td><td>Venture Capital</td><td>Sin mínimo público para minoristas</td><td>Invierte mediante fondos y vehículos de Venture Capital.</td></tr>
-              <tr><td>Andreessen Horowitz (a16z)</td><td>Venture Capital</td><td>Sin oferta minorista estándar</td><td>Centrada principalmente en compañías tecnológicas y de crecimiento.</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="sub-table-note">Deducción fiscal del 50% (base máxima 100.000 €/año) confirmada en Agencia Tributaria (vigente desde el 1 de enero de 2023). Deal estándar de Y Combinator y comisión de Crowdcube (2,49%) confirmados en fuentes oficiales. Para invertir directamente conviene revisar valoración, porcentaje adquirido, derechos de los accionistas, dilución, deuda y ausencia de liquidez; en equity crowdfunding, comprobar que la plataforma esté autorizada por la CNMV. Datos orientativos de septiembre de 2026, sujetos a cambio.</p>
-      </article>
-
-      <article class="sub-card sub-card-wide" id="a3-venture-capital-guia-tecnica">
-        <h3>Venture Capital — Guía Técnica Completa</h3>
-        <div class="outline-tags"><span class="outline-tag">Ecosistema y fases de financiación</span><span class="outline-tag">Métricas SaaS (MRR, ARR, LTV/CAC, NRR)</span><span class="outline-tag">Fosos competitivos</span><span class="outline-tag">Power law y economía de un fondo</span><span class="outline-tag">Ser Business Angel</span></div>
-        <p class="sub-intro">Complemento técnico al apartado anterior: cómo funciona por dentro el ecosistema de inversión en startups — quién invierte en cada fase, qué métricas importan de verdad, qué hace a una empresa difícil de destruir, cómo se reparten los retornos dentro de un fondo y qué implica en la práctica invertir como Business Angel.</p>
-
-        <p class="sub-h4">El ecosistema y sus actores, según la fase</p>
-        <p class="sub-intro">La financiación de startups funciona en capas, cada una con perfil de riesgo, ticket y expectativa de retorno distintos. <strong>FFF (Family, Friends & Fools):</strong> primera fuente de capital, tickets de 5.000 a 50.000€, sin estructura formal, alto riesgo por falta de herramientas de evaluación. <strong>Business Angels:</strong> inversores privados en fases pre-seed y seed, tickets de 25.000 a 250.000€, aportan además red de contactos y experiencia operativa — en España, a través de redes como ESBAN o Big Ban Angels, o de forma individual. <strong>Venture Capital (VC):</strong> fondos institucionales que gestionan capital de terceros (LPs: fondos de pensiones, family offices, corporates, grandes patrimonios), invierten desde seed hasta fases posteriores, tickets desde 500.000€ hasta decenas de millones. <strong>Corporate Venture Capital (CVC):</strong> brazo inversor de grandes corporaciones, con criterios financieros y estratégicos mixtos — riesgo: si la corporación cambia de estrategia, el apoyo desaparece. <strong>Growth Equity / Late Stage:</strong> fondos que invierten en empresas ya probadas para acelerar la expansión, con menor riesgo y menor potencial de revalorización.</p>
-
-        <p class="sub-h4">Las fases de financiación y sus hitos</p>
-        <p class="sub-intro">Cada ronda financia un hito concreto, no el negocio en abstracto. <strong>Pre-seed</strong> financia la validación del problema — demostrar que existe y que hay quien pagaría por resolverlo (ticket 50.000–500.000€, valoración pre-money habitual en España 1–3M€). <strong>Seed</strong> financia la búsqueda del product-market fit (ticket 500.000€–2M€, valoración 3–8M€). <strong>Serie A</strong> financia el escalado de lo que ya funciona, con PMF demostrado, unit economics positivas y un canal de adquisición repetible (ticket 2–10M€, valoración 8–30M€, múltiplo EV/ARR típico en 2024: 6–10x). <strong>Serie B y posteriores</strong> financian la expansión geográfica, de producto y la consolidación de mercado; los múltiplos se comprimen porque el riesgo es menor.</p>
-        <div class="sub-table-wrap">
-          <table class="sub-table">
-            <thead><tr><th>Fase</th><th>Hito a demostrar</th><th>Métrica clave</th></tr></thead>
-            <tbody>
-              <tr><td>Pre-seed</td><td>Problema real, equipo fundacional</td><td>Entrevistas, LOIs, primeras ventas</td></tr>
-              <tr><td>Seed</td><td>Product-Market Fit inicial</td><td>Retención &gt;40%, NPS &gt;30</td></tr>
-              <tr><td>Serie A</td><td>Escalabilidad demostrada</td><td>LTV/CAC &gt;3, payback &lt;18 meses, ARR &gt;1M€</td></tr>
-              <tr><td>Serie B</td><td>Liderazgo de categoría</td><td>ARR &gt;5M€, NRR &gt;110%, crecimiento &gt;80% YoY</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <p class="sub-h4">Las métricas que importan (vocabulario SaaS)</p>
-        <p class="sub-intro"><strong>MRR</strong> (Monthly Recurring Revenue): ingresos recurrentes mensuales, la métrica de salud más importante de un negocio de suscripción. <strong>ARR</strong> (Annual Recurring Revenue): MRR × 12, estándar para comparar empresas SaaS y calcular valoraciones (los múltiplos se expresan como EV/ARR). <strong>Churn:</strong> porcentaje de clientes o revenue que se pierde cada mes — un 2% mensual implica perder el 22% de los clientes al año; por encima del 3% mensual en B2B es señal de alarma. <strong>NRR</strong> (Net Revenue Retention): la métrica más honesta de la calidad del producto, mide si los clientes existentes generan más o menos revenue que el período anterior; por encima de 100% significa que el ARR crecería aunque no entrase ningún cliente nuevo — las mejores SaaS tienen NRR de 120-140%. <strong>CAC:</strong> coste total de adquirir un cliente (marketing, ventas, comisiones, overhead). <strong>LTV:</strong> valor total que genera un cliente durante toda su relación con la empresa (ARPU mensual × margen bruto / churn mensual). <strong>LTV/CAC:</strong> el ratio más importante de salud y escalabilidad — por debajo de 1 destruye valor, entre 1 y 3 es marginal, por encima de 3 puede escalar, por encima de 5 es excelente. <strong>Payback period:</strong> meses para recuperar el CAC con el margen del cliente — menos de 12 meses es excelente, 12-18 aceptable para Serie A, más de 24 difícil de financiar sin capital externo continuo.</p>
-
-        <p class="sub-h4">Los múltiplos de valoración y su relación con los tipos de interés</p>
-        <p class="sub-intro">Los múltiplos en tecnología no son arbitrarios: reflejan las expectativas de crecimiento, el margen y la durabilidad del negocio, descontadas a la tasa libre de riesgo vigente. La relación con los tipos es directa: cuando suben, el valor presente de los flujos futuros cae y los múltiplos comprimen — el ciclo reciente lo ilustra con claridad. Los factores que más mueven el múltiplo dentro de cada contexto macro son la tasa de crecimiento YoY (el más importante), el NRR, el margen bruto y el tamaño del mercado direccionable. Regla práctica: el múltiplo de una SaaS en un entorno de tipos normales se aproxima a su tasa de crecimiento anual — al 80% YoY, unas 8x ARR; al 150%, hasta 15x; si el crecimiento cae al 30%, el múltiplo comprime a 3-5x aunque los fundamentales sean sólidos.</p>
-        <div class="sub-table-wrap">
-          <table class="sub-table">
-            <thead><tr><th>Período</th><th>Contexto macro</th><th>Múltiplo EV/ARR típico SaaS</th></tr></thead>
-            <tbody>
-              <tr><td>2020–2021</td><td>Tipos en 0%, QE masivo</td><td>20–40x ARR</td></tr>
-              <tr><td>2022</td><td>Subida agresiva de tipos</td><td>8–15x ARR</td></tr>
-              <tr><td>2023–2024</td><td>Tipos altos, normalización</td><td>5–10x ARR</td></tr>
-              <tr><td>2025–2026</td><td>Bajada gradual de tipos</td><td>8–14x ARR</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <p class="sub-h4">Los 7 fosos competitivos que hacen a una empresa difícil de destruir</p>
-        <p class="sub-intro">No todas las ventajas competitivas son iguales: las que duran décadas generan margen superior y tienen una barrera que impide que la competencia las elimine. <strong>1. Economías de escala:</strong> los costes unitarios bajan con el volumen (AWS). <strong>2. Efectos de red:</strong> el valor crece con el número de usuarios (WhatsApp, Visa). <strong>3. Contra-posicionamiento:</strong> un modelo superior que el incumbente no puede copiar sin dañarse a sí mismo (Netflix frente a Blockbuster). <strong>4. Costes de cambio:</strong> migrar de proveedor tiene un coste alto para el cliente (Salesforce, SAP, Oracle). <strong>5. Recurso cautivo:</strong> acceso privilegiado a algo escaso — datos propietarios, acuerdos exclusivos, licencias regulatorias. <strong>6. Proceso innovador:</strong> cultura y sistemas tan específicos que son casi imposibles de replicar desde fuera (Toyota Production System). <strong>7. Marca:</strong> reputación que genera disposición a pagar un premium (Apple, Hermès, Ferrari) — se construye en décadas, no con dinero.</p>
-        <p class="sub-intro">En fases tempranas el foso está en construcción, no terminado: la pregunta correcta es si se está construyendo algo que, con éxito, será difícil de destruir. Señales: ¿cada cliente nuevo hace el producto mejor para los siguientes (red o datos)? ¿los clientes de más de 12 meses tienen churn cercano a cero (costes de cambio)? ¿el incumbente no puede copiar el modelo sin canibalizar su negocio (contra-posicionamiento)? ¿hay acceso a datos, relaciones o activos que nadie más puede obtener (recurso cautivo)?</p>
-
-        <p class="sub-h4">Cómo funciona un fondo de Venture Capital por dentro</p>
-        <p class="sub-intro">Los <strong>LPs</strong> (Limited Partners) aportan el capital: fondos de pensiones, endowments universitarios, family offices, fondos soberanos y grandes patrimonios. Los <strong>GPs</strong> (General Partners) gestionan el fondo, deciden las inversiones y cobran una comisión de gestión (normalmente 2% anual del capital comprometido) y el <strong>carried interest</strong> o carry (20% de los beneficios una vez devuelto el capital a los LPs). Un fondo típico dura 10 años: 5 de inversión y 5 de gestión de cartera y desinversión. Los retornos se miden en múltiplo sobre capital invertido (MOIC/TVPI) y en TIR/IRR.</p>
-
-        <p class="sub-h4">La matemática de la power law</p>
-        <p class="sub-intro">Los retornos del venture capital siguen una distribución de poder, no una normal. En un fondo típico bien gestionado: el 50-60% de las inversiones van a cero o devuelven menos del capital, el 20-30% devuelven el capital con retorno modesto (1-3x), el 10-20% generan retornos buenos (3-10x), y 1-3 inversiones generan el mismo retorno que todo el resto del fondo junto. La implicación: en VC, tener razón en el análisis no basta — hay que tener razón en las inversiones que importan. Un fondo con 20 inversiones que devuelven todas 2x tiene MOIC 2x pero TIR mediocre; uno donde 18 de 20 van a cero y 2 devuelven 50x tiene MOIC 5x y TIR excelente. Para el founder, esto implica que el VC está estructuralmente incentivado a buscar outliers, no buenos negocios — un negocio que con alta probabilidad devolverá 3-4x no encaja en el modelo VC aunque sea excelente; para eso existen el bootstrapping, el revenue-based finance y el growth equity.</p>
-        <div class="sub-table-wrap">
-          <table class="sub-table">
-            <thead><tr><th>Fase de entrada</th><th>Retorno esperado (éxito)</th><th>Retorno que justifica el riesgo</th></tr></thead>
-            <tbody>
-              <tr><td>Pre-seed</td><td>50–100x</td><td>&gt;20x</td></tr>
-              <tr><td>Seed</td><td>20–50x</td><td>&gt;10x</td></tr>
-              <tr><td>Serie A</td><td>10–20x</td><td>&gt;5x</td></tr>
-              <tr><td>Serie B</td><td>5–10x</td><td>&gt;3x</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <p class="sub-h4">Los tipos de exit</p>
-        <p class="sub-intro"><strong>Adquisición (M&amp;A):</strong> el exit más frecuente — una empresa más grande compra la startup, con múltiplos muy variables según sector y momento (10-20x ARR en pujas estratégicas). <strong>IPO:</strong> el de mayor visibilidad pero con requisitos exigentes — ARR generalmente superior a 100M€, crecimiento sostenido, gobernanza institucional. <strong>Secondary:</strong> venta de participaciones entre inversores sin salida a bolsa, para dar liquidez a los LPs antes del exit final. <strong>Liquidación:</strong> el resultado del 50-60% de las inversiones VC — la empresa no funciona y se liquidan los activos; las cláusulas de liquidación preferente determinan quién cobra primero.</p>
-
-        <p class="sub-h4">Ser Business Angel — lo que nadie te cuenta</p>
-        <p class="sub-intro">Tipos de angel: <strong>operativo</strong> (founder o ejecutivo que aporta experiencia directa en producto, ventas o contratación), <strong>financiero</strong> (perfil de banca, consultoría o private equity, más rigor analítico que valor operativo), <strong>sectorial</strong> (experto en una industria concreta) y <strong>de red</strong> (acceso a deal flow de calidad o capacidad de introducir a founders con inversores institucionales). Para que la power law funcione a favor de un angel hacen falta un mínimo de 10-15 inversiones: con menos, el riesgo de no tener ningún outlier en cartera es demasiado alto. Tickets habituales: 25.000-100.000€ por operación (una cartera de 15 × 25.000€ requiere 375.000€ comprometidos, capital que debe poder perderse en su totalidad). Horizonte: 7-12 años sin liquidez antes del exit. Retorno esperado en una cartera bien diversificada: 15-25% TIR anual en escenarios razonablemente buenos, con años en cero y años que multiplican el capital.</p>
-        <p class="sub-intro">Un angel profesional revisa muchas más oportunidades de las que invierte: de 200-300 al año que entran como deal flow, pasan a primera revisión (deck + reunión) unas 30-50, a due diligence 10-15, y a inversión final solo 3-8. Los criterios con más peso en fases tempranas, por orden: <strong>equipo</strong> (capacidad de ejecución, complementariedad entre cofundadores — el producto puede cambiar, el equipo es más difícil), <strong>mercado</strong> (tamaño suficiente para un retorno VC), <strong>insight</strong> (ventaja de información o tecnológica), <strong>tracción</strong> (cartas de intención, primeras ventas, retención) y <strong>términos</strong> (valoración, instrumentos, cláusulas de protección). Instrumentos habituales: <strong>equity directo</strong> (participaciones al precio acordado, requiere valoración formal y notaría), <strong>nota convertible</strong> (préstamo que se convierte en la siguiente ronda con descuento del 15-25%), <strong>SAFE</strong> (similar pero sin intereses ni vencimiento, formato estándar de Y Combinator, más founder-friendly) y <strong>participaciones preferentes</strong> (las de los inversores institucionales, con liquidación preferente, anti-dilución y derechos de arrastre y acompañamiento).</p>
-
-        <p class="sub-examples-label">La conclusión técnica</p>
-        <p class="sub-intro">El ecosistema de startups y venture capital tiene una lógica propia, alejada de la inversión tradicional: retornos no lineales, horizontes largos, iliquidez como norma y tasa de fracaso estructuralmente alta. Lo que funciona: equipos excepcionales en mercados grandes con un insight diferencial, construyendo fosos desde el primer día, con disciplina en las métricas, y entendiendo que la velocidad correcta llega después del product-market fit, no antes.</p>
-      </article>
-
       <article class="sub-card sub-card-wide" id="a3-materias-primas">
         <h3>Materias Primas</h3>
         <p class="sub-examples-label">Qué es y tipos</p>
@@ -2196,45 +2115,6 @@
           </table>
         </div>
         <p class="sub-table-note">TER de PHAU (0,39%), iShares Physical Silver (0,20%), Invesco Bloomberg Commodity (0,19%) y WisdomTree Brent Crude Oil (0,49%) confirmados de forma independiente (justETF). El precio de entrada por participación no se incluye por ser variable según cotización diaria; conviene comprobarlo en el bróker antes de invertir. Antes de invertir hay que comprobar qué exposición ofrece realmente el producto (física, futuro, índice o acciones), ya que en productos basados en futuros la rentabilidad puede diferir de forma significativa del precio al contado. Datos orientativos de septiembre de 2026, sujetos a cambio.</p>
-      </article>
-      <article class="sub-card sub-card-wide" id="a3-crowdfunding-equity">
-        <h3>Crowdfunding Equity</h3>
-        <p class="sub-examples-label">Qué es y tipos</p>
-        <p class="sub-intro">El <strong>equity crowdfunding</strong> o financiación participativa de capital permite a una empresa captar dinero de numerosos inversores a través de una plataforma online; a cambio, el participante adquiere una participación en la empresa y puede convertirse en accionista o titular de derechos económicos vinculados al capital. Es una modalidad especialmente usada por startups y empresas en crecimiento, aunque también hay operaciones de compañías más maduras. Existen distintos formatos: <strong>equity crowdfunding directo</strong> (el inversor adquiere acciones o participaciones), <strong>mediante vehículo</strong> (a través de una sociedad que agrupa a los accionistas) e <strong>instrumentos convertibles</strong> (la aportación se estructura como un préstamo que se convierte en acciones bajo ciertas condiciones). No debe confundirse con el crowdfunding de recompensas (Kickstarter, Indiegogo), donde se aporta dinero a cambio de un producto o servicio y no se adquieren acciones. En España y la UE, las plataformas de financiación participativa están sujetas a un marco regulatorio específico; la CNMV mantiene un registro de proveedores autorizados, entre ellos Crowdcube Europe y Capital Cell.</p>
-        <p class="sub-examples-label">Cómo funciona</p>
-        <p class="sub-intro">El proceso habitual: la empresa presenta la oportunidad a la plataforma, que la analiza conforme a sus procedimientos y a la normativa; se establece una valoración y las condiciones de la ronda; los inversores consultan la información y deciden cuánto invertir; si se alcanza el objetivo, el capital se incorpora a la empresa a cambio de acciones o de los derechos pactados; el inversor mantiene la participación hasta que se produzca una venta, una nueva operación corporativa u otro evento de liquidez. La inversión mínima depende de cada plataforma y operación: Crowdcube permite invertir desde <strong>10 €</strong>, aunque la cantidad efectiva puede ser mayor según el precio por participación de cada empresa, y aplica normalmente una comisión de inversión del <strong>2,49%</strong> con un mínimo de 5 € (hasta el 5% en determinadas operaciones). Una característica clave es la <strong>iliquidez</strong>: no existe un mercado bursátil donde vender la participación al día siguiente, y puede haber que esperar años hasta una operación que permita recuperar el capital.</p>
-        <p class="sub-examples-label">Factores que influyen en la rentabilidad</p>
-        <p class="sub-intro">No existe una rentabilidad anual estable: el resultado puede ser una pérdida parcial o total, o una revalorización elevada si la empresa crece y se produce una salida favorable. Influyen la valoración de entrada (a mayor valoración, más crecimiento necesario para rentabilizar), el crecimiento de ventas y beneficios, el mercado potencial, el equipo gestor, la competencia, las nuevas rondas (aportan capital pero pueden diluir a los primeros accionistas), la valoración de esas rondas posteriores, la existencia y el precio del <em>exit</em>, y el riesgo de fracaso empresarial, que puede suponer perder todo el capital. Por su elevada dispersión de resultados, no es adecuado aplicar una cifra fija de rentabilidad esperada a esta categoría.</p>
-        <div class="pros-cons-wrap">
-          <table class="pros-cons-table">
-            <thead><tr><th>Ventajas</th><th>Desventajas</th></tr></thead>
-            <tbody>
-              <tr><td class="pro">Permite invertir en empresas privadas desde importes relativamente reducidos.</td><td class="con">Riesgo de perder parte o todo el capital invertido.</td></tr>
-              <tr><td class="pro">Da acceso a startups y empresas que no cotizan en bolsa.</td><td class="con">La inversión puede permanecer ilíquida durante muchos años.</td></tr>
-              <tr><td class="pro">Permite diversificar entre diferentes empresas y sectores.</td><td class="con">Las nuevas rondas pueden diluir la participación inicial.</td></tr>
-              <tr><td class="pro">Las plataformas reguladas dan un marco específico de información.</td><td class="con">Comisiones, condiciones y derechos del inversor varían entre plataformas.</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="sub-examples-label">Frente a Startups / Venture Capital</p>
-        <p class="sub-intro">Ambos financian empresas privadas mediante capital, pero se diferencian sobre todo en quién invierte y cómo se estructura la operación: el equity crowdfunding reúne a numerosos inversores particulares y profesionales con importes individuales normalmente reducidos, en operaciones seleccionadas por la plataforma y por el propio inversor; el Venture Capital lo aportan principalmente fondos e inversores profesionales, con importes mucho más elevados, una selección realizada por el fondo y, a menudo, una participación activa en la empresa. En ambos casos la liquidez es normalmente muy baja. En España, la venta de las acciones o participaciones genera ganancia o pérdida patrimonial en el IRPF, y determinadas inversiones en empresas de nueva o reciente creación pueden beneficiarse de la <strong>deducción estatal del 50%</strong> (base máxima 100.000 €/año) si cumplen los requisitos de la normativa, aunque no todas las operaciones de equity crowdfunding los cumplen automáticamente.</p>
-        <p class="sub-examples-label">Ejemplos reales</p>
-        <ul class="sub-examples"><li>Crowdcube (España / Reino Unido)</li><li>Capital Cell (España)</li><li>The Crowd Angel (España)</li><li>Seedrs (Reino Unido)</li><li>StartEngine (Estados Unidos)</li><li>Kickstarter (Estados Unidos) — recompensas, no equity</li><li>Indiegogo (Estados Unidos) — recompensas, no equity</li></ul>
-        <p class="sub-examples-label">Comparativa de ofertas</p>
-        <div class="sub-table-wrap">
-          <table class="sub-table">
-            <thead><tr><th>Plataforma</th><th>Tipo</th><th>Inversión / acceso</th><th>Características</th></tr></thead>
-            <tbody>
-              <tr><td>Crowdcube</td><td>Equity crowdfunding</td><td class="money">Desde 10 €</td><td>Comisión habitual del 2,49% (mínimo 5 €), hasta el 5% en algunas operaciones.</td></tr>
-              <tr><td>Capital Cell</td><td>Equity crowdfunding</td><td>Variable según campaña</td><td>Registrada en la CNMV desde el 10 de noviembre de 2023; especializada en biotecnología y ciencias de la vida.</td></tr>
-              <tr><td>The Crowd Angel</td><td>Equity crowdfunding</td><td>Variable según operación</td><td>Plataforma española orientada a startups y empresas en crecimiento.</td></tr>
-              <tr><td>Seedrs</td><td>Equity crowdfunding</td><td>Variable según operación</td><td>Plataforma británica integrada en el ecosistema de Republic desde 2022.</td></tr>
-              <tr><td>StartEngine</td><td>Equity crowdfunding</td><td>Variable según operación</td><td>Plataforma estadounidense de inversión en empresas privadas.</td></tr>
-              <tr><td>Kickstarter / Indiegogo</td><td>Crowdfunding de recompensas</td><td>Variable según proyecto</td><td>No son equity crowdfunding: el participante recibe un producto o recompensa, no acciones.</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="sub-table-note">Comisión de Crowdcube (2,49%) y fecha de registro de Capital Cell en la CNMV (10/11/2023) confirmadas de forma independiente. Antes de invertir conviene revisar valoración, porcentaje adquirido, derechos económicos y políticos, futuras ampliaciones de capital, dilución, comisiones y posibles vías de salida: que una plataforma esté regulada no elimina el riesgo económico de la empresa financiada. Datos orientativos de septiembre de 2026, sujetos a cambio.</p>
       </article>
       <article class="sub-card sub-card-wide" id="a3-crowlending">
         <h3>Crowlending</h3>
@@ -2439,11 +2319,11 @@
     </div>
   </section>
 
-  <section class="area-section area-alt" id="inmobiliaria">
+  <section class="area-section area-alt" id="area-4">
     <div class="win95-window">
       <div class="win95-titlebar">
         <span class="win95-titlebar-icon" aria-hidden="true"></span>
-        <span class="win95-titlebar-text">4 — INVERSIN_INMOBILIARIA.EXE</span>
+        <span class="win95-titlebar-text">4 — STARTUPS_VC.EXE</span>
         <span class="win95-titlebar-btns"><span class="win95-btn" aria-hidden="true">_</span><span class="win95-btn" aria-hidden="true">□</span><span class="win95-btn win95-btn-close" aria-hidden="true">✕</span></span>
       </div>
       <div class="win95-toolbar">
@@ -2452,6 +2332,264 @@
     </div>
     <div class="area-head">
       <span class="area-number">4</span>
+      <h2>STARTUPS Y VENTURE CAPITAL</h2>
+    </div>
+    <p class="area-intro-text">Invertir en empresas no cotizadas es uno de los terrenos más atractivos y a la vez más arriesgados del mapa inversor: horizontes largos, iliquidez casi total y una probabilidad de fracaso estructuralmente alta, compensadas por un potencial de revalorización que ningún otro activo de esta lista ofrece. Esta sección recorre el ecosistema completo, desde qué es una startup y cómo evoluciona por fases, hasta cómo invertir en ella —como Business Angel, a través de un fondo de Venture Capital o mediante equity crowdfunding— y una guía práctica para dar los primeros pasos con cabeza.</p>
+    <div class="area-terminal-panel">
+      <p class="area-terminal-line">&gt; <strong>4</strong> subapartados en esta área</p>
+      <p class="area-terminal-line">&gt; Rentabilidad muy variable: desde la pérdida total del capital hasta multiplicaciones muy elevadas de la inversión inicial</p>
+    </div>
+    <div class="area-summary-table-wrap">
+      <table class="area-summary-table">
+        <thead><tr><th>Apartado</th><th>Descripción</th><th>Rentabilidad anual aprox.</th></tr></thead>
+        <tbody>
+          <tr><td>Startups</td><td>Qué son, tipos, fases, métricas principales, aceleradoras y eventos del ecosistema.</td><td>No aplica (fase informativa)</td></tr>
+          <tr><td>Venture Capital y Business Angels</td><td>Inversión profesional en startups: fondos de VC y business angels, etapas, exits y cómo funciona un fondo por dentro.</td><td>Muy variable</td></tr>
+          <tr><td>Crowdfunding Equity</td><td>Inversión colectiva en empresas no cotizadas a través de plataformas reguladas por la CNMV, a modo particular.</td><td>Muy variable</td></tr>
+          <tr><td>Guía práctica para invertir</td><td>Ecosistema español en cifras, hoja de ruta para empezar y errores más comunes al invertir en startups.</td><td>No aplica (guía)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="sub-table-note" style="max-width:1180px;margin:-16px auto 24px auto;">No existe una rentabilidad anual estable ni una horquilla fiable aplicable a todas las startups: el resultado puede ir desde la pérdida total del capital hasta una multiplicación muy elevada de la inversión. Datos orientativos de septiembre de 2026, sujetos a cambio.</p>
+    <div class="sub-grid">
+      <article class="sub-card sub-card-wide" id="a4-startups">
+        <h3>Startups: qué son y cómo funcionan</h3>
+        <p class="sub-examples-label">Qué es una startup y sus fases</p>
+        <p class="sub-intro">Una <strong>startup</strong> es una empresa de nueva creación, normalmente ligada a la tecnología o a un modelo de negocio innovador, diseñada para crecer muy rápido y escalar con recursos limitados, a diferencia de un negocio tradicional que crece de forma más lineal. Su desarrollo pasa por distintas fases, cada una con un hito propio que demostrar: <strong>pre-seed</strong> (idea, producto y equipo, validar que el problema existe), <strong>seed</strong> (producto mínimo viable y primera validación del modelo de negocio), <strong>Series A</strong> (crecimiento con cierta validación comercial y unit economics positivas), <strong>Series B y posteriores</strong> (expansión geográfica y de producto, consolidación de mercado) y <strong>growth</strong> (empresas maduras que necesitan grandes cantidades de capital para acelerar la expansión).</p>
+        <div class="sub-table-wrap">
+          <table class="sub-table">
+            <thead><tr><th>Fase</th><th>Características</th><th>Perfil de inversor típico</th></tr></thead>
+            <tbody>
+              <tr><td>Pre-seed</td><td>Idea o primer prototipo; riesgo extremadamente alto</td><td>Fundadores, círculo cercano, primeros business angels</td></tr>
+              <tr><td>Seed</td><td>Producto mínimo viable (MVP), primera validación del modelo de negocio</td><td>Business angels, fondos semilla</td></tr>
+              <tr><td>Series A y B</td><td>Producto validado, tracción en el mercado, búsqueda de escalabilidad</td><td>Fondos de venture capital, family offices</td></tr>
+              <tr><td>Growth y Series C/D</td><td>Crecimiento probado, expansión a nuevos mercados</td><td>Grandes fondos, private equity, corporates</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="sub-examples-label">Ejemplos de startups españolas por sector</p>
+        <div class="sub-table-wrap">
+          <table class="sub-table">
+            <thead><tr><th>Sector</th><th>Ejemplos</th></tr></thead>
+            <tbody>
+              <tr><td>Fintech</td><td>Fintonic, Flywire, Bnext</td></tr>
+              <tr><td>Movilidad y logística</td><td>Glovo, Cabify, Wallbox</td></tr>
+              <tr><td>Recursos humanos</td><td>Factorial, Jobandtalent</td></tr>
+              <tr><td>Diseño y contenido digital</td><td>Freepik</td></tr>
+              <tr><td>Inmobiliario / marketplace</td><td>Idealista, Wallapop</td></tr>
+              <tr><td>Software / SaaS</td><td>Typeform, TravelPerk, Red Points</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="sub-table-note">Selección de startups españolas conocidas, algunas ya en fase de crecimiento avanzada o adquiridas; no constituye una recomendación de inversión.</p>
+        <p class="sub-examples-label">Las métricas principales para evaluar una startup</p>
+        <p class="sub-intro"><strong>MRR</strong> (Monthly Recurring Revenue): ingresos recurrentes mensuales, la métrica de salud más importante de un negocio de suscripción. <strong>ARR</strong> (Annual Recurring Revenue): MRR × 12, estándar para comparar empresas y calcular valoraciones. <strong>Churn:</strong> porcentaje de clientes o ingresos que se pierde cada mes. <strong>NRR</strong> (Net Revenue Retention): mide si los clientes existentes generan más o menos ingresos que el período anterior; por encima del 100% implica crecimiento aunque no entre ningún cliente nuevo. <strong>CAC:</strong> coste de adquirir un cliente. <strong>LTV:</strong> valor total que genera un cliente durante toda su relación con la empresa. <strong>LTV/CAC:</strong> el ratio más importante de escalabilidad — por debajo de 1 destruye valor, por encima de 3 puede escalar. <strong>Payback period:</strong> meses para recuperar el CAC con el margen del cliente.</p>
+        <div class="sub-table-wrap">
+          <table class="sub-table">
+            <thead><tr><th>Fase</th><th>Hito a demostrar</th><th>Métrica clave</th></tr></thead>
+            <tbody>
+              <tr><td>Pre-seed</td><td>Problema real, equipo fundacional</td><td>Entrevistas, LOIs, primeras ventas</td></tr>
+              <tr><td>Seed</td><td>Product-Market Fit inicial</td><td>Retención &gt;40%, NPS &gt;30</td></tr>
+              <tr><td>Serie A</td><td>Escalabilidad demostrada</td><td>LTV/CAC &gt;3, payback &lt;18 meses, ARR &gt;1M€</td></tr>
+              <tr><td>Serie B</td><td>Liderazgo de categoría</td><td>ARR &gt;5M€, NRR &gt;110%, crecimiento &gt;80% YoY</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="sub-examples-label">Aceleradoras e incubadoras en España</p>
+        <p class="sub-intro">Las aceleradoras ofrecen programas intensivos de meses de duración con mentoría, formación y, en muchos casos, una primera inversión a cambio de una pequeña participación; las incubadoras acompañan fases más tempranas, a menudo sin tomar equity.</p>
+        <div class="sub-table-wrap">
+          <table class="sub-table">
+            <thead><tr><th>Entidad</th><th>Descripción</th></tr></thead>
+            <tbody>
+              <tr><td>Lanzadera</td><td>Valencia, fundada en 2013, aceleración + educación (EDEM)</td></tr>
+              <tr><td>BIC Euronova</td><td>Málaga, 34 años de trayectoria, startups tecnológicas</td></tr>
+              <tr><td>Berriup</td><td>Donostia, programas de 4 meses, inversión de 50.000 €</td></tr>
+              <tr><td>Tetuan Valley</td><td>Madrid, comunidad tech desde 2009, +900 participantes</td></tr>
+              <tr><td>Fundación Empresa y Sociedad</td><td>Madrid, ecosistemas B2B colaborativos</td></tr>
+              <tr><td>Wolaria</td><td>Castilla y León, campus y acompañamiento de 6 meses</td></tr>
+              <tr><td>Barcelona Activa</td><td>Desde 1986, asesoramiento, formación e incubadora</td></tr>
+              <tr><td>Google for Startups Campus</td><td>Madrid, mentoría y eventos del ecosistema Google</td></tr>
+              <tr><td>Decelera</td><td>Proyectos sostenibles e impacto social desde 2015</td></tr>
+              <tr><td>CEEI Valencia</td><td>Desde 1991, incubación no equity en la C. Valenciana</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="sub-examples-label">Eventos del ecosistema startup en España</p>
+        <div class="sub-table-wrap">
+          <table class="sub-table">
+            <thead><tr><th>Evento</th><th>Cuándo / dónde</th></tr></thead>
+            <tbody>
+              <tr><td>MWC / 4YFN</td><td>Marzo, Barcelona — IA, conectividad, ciberseguridad</td></tr>
+              <tr><td>South Summit</td><td>Junio, Madrid — innovación abierta, competición de startups</td></tr>
+              <tr><td>Transfiere</td><td>Febrero, Málaga — transferencia de conocimiento, deeptech</td></tr>
+              <tr><td>B-Venture</td><td>Abril, Bilbao — financiación seed y pre-Series A</td></tr>
+              <tr><td>Smart City Expo</td><td>Noviembre, Barcelona — urbantech, movilidad, energía</td></tr>
+              <tr><td>Valencia Digital Summit</td><td>Octubre, Valencia — deeptech y SaaS</td></tr>
+              <tr><td>Madrid Tech Show</td><td>Noviembre, Madrid — cloud, ciberseguridad, IA, ecommerce</td></tr>
+              <tr><td>AAIV</td><td>Septiembre, Sevilla — energía, industria, logística</td></tr>
+              <tr><td>Bizbarcelona</td><td>Octubre, Barcelona — comercialización para SaaS B2B</td></tr>
+              <tr><td>The Way Startup Summit</td><td>Mayo, Vigo — encuentro boutique, industria y energía</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="sub-table-note">Fechas orientativas de 2026, sujetas a confirmación por parte de cada organizador cada año. Datos de septiembre de 2026, sujetos a cambio.</p>
+      </article>
+
+      <article class="sub-card sub-card-wide" id="a4-venture-capital-business-angels">
+        <h3>Venture Capital y Business Angels</h3>
+        <div class="outline-tags"><span class="outline-tag">Etapas de inversión</span><span class="outline-tag">Cómo funciona un fondo</span><span class="outline-tag">Power law</span><span class="outline-tag">Exits</span><span class="outline-tag">Ser Business Angel</span></div>
+        <p class="sub-examples-label">Qué es el Venture Capital</p>
+        <p class="sub-intro">El <strong>Venture Capital (capital riesgo)</strong> es una forma de financiación mediante la que inversores aportan capital a startups con potencial de crecimiento a cambio de una participación en su capital, buscando que la empresa aumente significativamente su valor y poder vender esa participación más adelante (nueva ronda, adquisición o, en algunos casos, salida a bolsa). Un fondo de Venture Capital reúne dinero de inversores y lo utiliza para adquirir participaciones en distintas startups, analizando equipo fundador, mercado, producto, tecnología, competencia e ingresos antes de invertir. La inversión suele realizarse mediante ampliaciones de capital y puede provocar <strong>dilución</strong> de los accionistas existentes; en algunas rondas se usan también instrumentos convertibles o estructuras como los <strong>SAFE</strong>.</p>
+        <p class="sub-examples-label">El ecosistema y sus actores, según la fase</p>
+        <p class="sub-intro">La financiación de startups funciona en capas, cada una con perfil de riesgo, ticket y expectativa de retorno distintos. <strong>FFF (Family, Friends &amp; Fools):</strong> primera fuente de capital, tickets de 5.000 a 50.000€, sin estructura formal. <strong>Business Angels:</strong> inversores privados en fases pre-seed y seed, tickets de 25.000 a 250.000€, aportan además red de contactos y experiencia operativa — en España, a través de redes como ESBAN o Big Ban Angels, o de forma individual. <strong>Venture Capital (VC):</strong> fondos institucionales que gestionan capital de terceros (LPs: fondos de pensiones, family offices, corporates, grandes patrimonios), invierten desde seed hasta fases posteriores, tickets desde 500.000€ hasta decenas de millones. <strong>Corporate Venture Capital (CVC):</strong> brazo inversor de grandes corporaciones, con criterios financieros y estratégicos mixtos. <strong>Growth Equity / Late Stage:</strong> fondos que invierten en empresas ya probadas para acelerar la expansión, con menor riesgo y menor potencial de revalorización.</p>
+        <p class="sub-examples-label">Cómo funciona un fondo por dentro</p>
+        <p class="sub-intro">Los <strong>LPs</strong> (Limited Partners) aportan el capital: fondos de pensiones, endowments universitarios, family offices, fondos soberanos y grandes patrimonios. Los <strong>GPs</strong> (General Partners) gestionan el fondo, deciden las inversiones y cobran una comisión de gestión (normalmente 2% anual del capital comprometido) y el <strong>carried interest</strong> o carry (20% de los beneficios una vez devuelto el capital a los LPs). Un fondo típico dura 10 años: 5 de inversión y 5 de gestión de cartera y desinversión. Los retornos se miden en múltiplo sobre capital invertido (MOIC/TVPI) y en TIR/IRR.</p>
+        <p class="sub-intro">Los retornos del venture capital siguen una distribución de poder (<em>power law</em>), no una normal: en un fondo típico bien gestionado, el 50-60% de las inversiones van a cero o devuelven menos del capital, el 20-30% devuelven el capital con retorno modesto (1-3x), el 10-20% generan retornos buenos (3-10x), y 1-3 inversiones generan el mismo retorno que todo el resto del fondo junto. Esto explica por qué el VC está estructuralmente incentivado a buscar outliers, no simplemente buenos negocios.</p>
+        <p class="sub-examples-label">Los tipos de exit</p>
+        <p class="sub-intro"><strong>Adquisición (M&amp;A):</strong> el exit más frecuente — una empresa más grande compra la startup, con múltiplos muy variables según sector y momento. <strong>IPO:</strong> el de mayor visibilidad pero con requisitos exigentes — ARR generalmente superior a 100M€, crecimiento sostenido, gobernanza institucional. <strong>Secondary:</strong> venta de participaciones entre inversores sin salida a bolsa, para dar liquidez a los LPs antes del exit final. <strong>Liquidación:</strong> el resultado del 50-60% de las inversiones VC — la empresa no funciona y se liquidan los activos.</p>
+        <div class="sub-table-wrap">
+          <table class="sub-table">
+            <thead><tr><th>Empresa</th><th>Año</th><th>Tipo de exit / comprador</th><th>Importe aproximado</th></tr></thead>
+            <tbody>
+              <tr><td>Idealista</td><td>2024</td><td>Adquisición — Cinven Fund</td><td class="money">2.900 M€</td></tr>
+              <tr><td>Wallbox</td><td>2021</td><td>IPO / SPAC</td><td class="money">1.263 M€</td></tr>
+              <tr><td>Adamo</td><td>2021</td><td>Adquisición — Ardian</td><td class="money">800 M€</td></tr>
+              <tr><td>Glovo</td><td>2022</td><td>Adquisición — Delivery Hero</td><td class="money">780 M€</td></tr>
+              <tr><td>Rastreator</td><td>2020</td><td>Adquisición — Red Ventures</td><td class="money">560 M€</td></tr>
+              <tr><td>Busuu</td><td>2021</td><td>Adquisición — Chegg</td><td class="money">385 M€</td></tr>
+              <tr><td>Returnly</td><td>2021</td><td>Adquisición — Affirm</td><td class="money">280 M€</td></tr>
+              <tr><td>Panda Security</td><td>2020</td><td>Adquisición — WatchGuard</td><td class="money">250 M€</td></tr>
+              <tr><td>Freepik</td><td>2020</td><td>Adquisición — EQT Mid Market Europe</td><td class="money">250 M€</td></tr>
+              <tr><td>Holded</td><td>2021</td><td>Adquisición — Visma</td><td class="money">120 M€</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="sub-table-note">Selección de las mayores desinversiones (exits) del ecosistema tecnológico español entre 2020 y 2024; importes aproximados según fuentes públicas.</p>
+        <p class="sub-examples-label">Principales fondos de Venture Capital en España</p>
+        <div class="sub-table-wrap">
+          <table class="sub-table">
+            <thead><tr><th>Fondo</th><th>Foco</th></tr></thead>
+            <tbody>
+              <tr><td>Inveready</td><td>Biotech, medtech, salud digital y B2B tech, de seed a etapas posteriores</td></tr>
+              <tr><td>Nauta Capital</td><td>B2B software, IA y marketplaces, Series A-B, ámbito paneuropeo</td></tr>
+              <tr><td>K Fund</td><td>SaaS, marketplaces y fintech, seed y Series A</td></tr>
+              <tr><td>Samaipata</td><td>Marketplaces y plataformas digitales con efectos de red</td></tr>
+              <tr><td>All Iron Ventures</td><td>Cloud, ecommerce y blockchain, tickets pequeños</td></tr>
+              <tr><td>Caixa Capital Risc</td><td>Biotech, TIC e industria tecnológica, +250 operaciones</td></tr>
+              <tr><td>Asabys Partners</td><td>Salud: biotech, medtech y diagnóstico</td></tr>
+              <tr><td>Encomenda</td><td>Deeptech, biotech e Industria 4.0</td></tr>
+              <tr><td>Aldea Ventures</td><td>Cloud, marketplace y movilidad, coinversión paneuropea</td></tr>
+              <tr><td>Lanai Partners</td><td>SaaS, salud digital y fintech, Series A+</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="sub-examples-label">Ser Business Angel — lo que nadie te cuenta</p>
+        <p class="sub-intro">Tipos de angel: <strong>operativo</strong> (founder o ejecutivo que aporta experiencia directa en producto, ventas o contratación), <strong>financiero</strong> (perfil de banca, consultoría o private equity), <strong>sectorial</strong> (experto en una industria concreta) y <strong>de red</strong> (acceso a deal flow de calidad). Para que la power law funcione a favor de un angel hacen falta un mínimo de 10-15 inversiones: con menos, el riesgo de no tener ningún outlier en cartera es demasiado alto. Tickets habituales: 25.000-100.000€ por operación. Horizonte: 7-12 años sin liquidez antes del exit. Retorno esperado en una cartera bien diversificada: 15-25% TIR anual en escenarios razonablemente buenos, con años en cero y años que multiplican el capital.</p>
+        <p class="sub-intro">Un angel profesional revisa muchas más oportunidades de las que invierte: de 200-300 al año que entran como deal flow, pasan a primera revisión (deck + reunión) unas 30-50, a due diligence 10-15, y a inversión final solo 3-8. Los criterios con más peso en fases tempranas, por orden: <strong>equipo</strong> (capacidad de ejecución, complementariedad entre cofundadores), <strong>mercado</strong> (tamaño suficiente para un retorno VC), <strong>insight</strong> (ventaja de información o tecnológica), <strong>tracción</strong> (cartas de intención, primeras ventas, retención) y <strong>términos</strong> (valoración, instrumentos, cláusulas de protección). Instrumentos habituales: <strong>equity directo</strong> (participaciones al precio acordado, requiere valoración formal y notaría), <strong>nota convertible</strong> (préstamo que se convierte en la siguiente ronda con descuento del 15-25%), <strong>SAFE</strong> (similar pero sin intereses ni vencimiento, formato estándar de Y Combinator) y <strong>participaciones preferentes</strong> (las de los inversores institucionales, con liquidación preferente, anti-dilución y derechos de arrastre y acompañamiento).</p>
+        <p class="sub-examples-label">Principales redes de Business Angels en España</p>
+        <div class="sub-table-wrap">
+          <table class="sub-table">
+            <thead><tr><th>Red</th><th>Descripción</th></tr></thead>
+            <tbody>
+              <tr><td>BigBAN Investors</td><td>Red líder desde 2007 (Valencia), +300 startups financiadas</td></tr>
+              <tr><td>ESADE Alumni Business Angels</td><td>Desde 2007, +45M€ canalizados en +300 startups</td></tr>
+              <tr><td>BAN madri+d</td><td>Red madrileña, +150 inversores activos</td></tr>
+              <tr><td>BANC (Cataluña)</td><td>Primera red catalana (2002), biotech e Industria 4.0</td></tr>
+              <tr><td>Keiretsu Forum</td><td>Mayor red internacional, capítulos en varias ciudades españolas</td></tr>
+              <tr><td>Angels Capital</td><td>Vehículo de Marina de Empresas (Valencia), +40M€ invertidos</td></tr>
+              <tr><td>IESE Business Angels</td><td>Conecta family offices e inversores con startups internacionales</td></tr>
+              <tr><td>Araban</td><td>Red aragonesa, startups en fases tempranas</td></tr>
+              <tr><td>AABAN</td><td>Red andaluza de referencia regional</td></tr>
+              <tr><td>MedAngels</td><td>Especializada en salud, medicina y ciencias de la vida</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="sub-table-note">Comisión de gestión y carry confirmados en fuentes del sector VC. Datos de exits, fondos y redes de Business Angels orientativos, septiembre de 2026, sujetos a cambio.</p>
+      </article>
+
+      <article class="sub-card sub-card-wide" id="a4-crowdfunding-equity">
+        <h3>Crowdfunding Equity</h3>
+        <p class="sub-examples-label">Qué es y tipos</p>
+        <p class="sub-intro">El <strong>equity crowdfunding</strong> o financiación participativa de capital permite a una empresa captar dinero de numerosos inversores a través de una plataforma online; a cambio, el participante adquiere una participación en la empresa y puede convertirse en accionista o titular de derechos económicos vinculados al capital. Es una modalidad especialmente usada por startups y empresas en crecimiento, aunque también hay operaciones de compañías más maduras. Existen distintos formatos: <strong>equity crowdfunding directo</strong> (el inversor adquiere acciones o participaciones), <strong>mediante vehículo</strong> (a través de una sociedad que agrupa a los accionistas) e <strong>instrumentos convertibles</strong> (la aportación se estructura como un préstamo que se convierte en acciones bajo ciertas condiciones). No debe confundirse con el crowdfunding de recompensas (Kickstarter, Indiegogo), donde se aporta dinero a cambio de un producto o servicio y no se adquieren acciones. En España y la UE, las plataformas de financiación participativa están sujetas a un marco regulatorio específico; la CNMV mantiene un registro de proveedores autorizados, entre ellos Crowdcube Europe y Capital Cell.</p>
+        <p class="sub-examples-label">Cómo funciona</p>
+        <p class="sub-intro">El proceso habitual: la empresa presenta la oportunidad a la plataforma, que la analiza conforme a sus procedimientos y a la normativa; se establece una valoración y las condiciones de la ronda; los inversores consultan la información y deciden cuánto invertir; si se alcanza el objetivo, el capital se incorpora a la empresa a cambio de acciones o de los derechos pactados; el inversor mantiene la participación hasta que se produzca una venta, una nueva operación corporativa u otro evento de liquidez. La inversión mínima depende de cada plataforma y operación: Crowdcube permite invertir desde <strong>10 €</strong>, aunque la cantidad efectiva puede ser mayor según el precio por participación de cada empresa, y aplica normalmente una comisión de inversión del <strong>2,49%</strong> con un mínimo de 5 € (hasta el 5% en determinadas operaciones). Una característica clave es la <strong>iliquidez</strong>: no existe un mercado bursátil donde vender la participación al día siguiente, y puede haber que esperar años hasta una operación que permita recuperar el capital.</p>
+        <p class="sub-examples-label">Factores que influyen en la rentabilidad</p>
+        <p class="sub-intro">No existe una rentabilidad anual estable: el resultado puede ser una pérdida parcial o total, o una revalorización elevada si la empresa crece y se produce una salida favorable. Influyen la valoración de entrada (a mayor valoración, más crecimiento necesario para rentabilizar), el crecimiento de ventas y beneficios, el mercado potencial, el equipo gestor, la competencia, las nuevas rondas (aportan capital pero pueden diluir a los primeros accionistas), la valoración de esas rondas posteriores, la existencia y el precio del <em>exit</em>, y el riesgo de fracaso empresarial, que puede suponer perder todo el capital. Por su elevada dispersión de resultados, no es adecuado aplicar una cifra fija de rentabilidad esperada a esta categoría.</p>
+        <div class="pros-cons-wrap">
+          <table class="pros-cons-table">
+            <thead><tr><th>Ventajas</th><th>Desventajas</th></tr></thead>
+            <tbody>
+              <tr><td class="pro">Permite invertir en empresas privadas desde importes relativamente reducidos.</td><td class="con">Riesgo de perder parte o todo el capital invertido.</td></tr>
+              <tr><td class="pro">Da acceso a startups y empresas que no cotizan en bolsa.</td><td class="con">La inversión puede permanecer ilíquida durante muchos años.</td></tr>
+              <tr><td class="pro">Permite diversificar entre diferentes empresas y sectores.</td><td class="con">Las nuevas rondas pueden diluir la participación inicial.</td></tr>
+              <tr><td class="pro">Las plataformas reguladas dan un marco específico de información.</td><td class="con">Comisiones, condiciones y derechos del inversor varían entre plataformas.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="sub-examples-label">Frente a Startups / Venture Capital</p>
+        <p class="sub-intro">Ambos financian empresas privadas mediante capital, pero se diferencian sobre todo en quién invierte y cómo se estructura la operación: el equity crowdfunding reúne a numerosos inversores particulares y profesionales con importes individuales normalmente reducidos, en operaciones seleccionadas por la plataforma y por el propio inversor; el Venture Capital lo aportan principalmente fondos e inversores profesionales, con importes mucho más elevados, una selección realizada por el fondo y, a menudo, una participación activa en la empresa. En ambos casos la liquidez es normalmente muy baja. En España, la venta de las acciones o participaciones genera ganancia o pérdida patrimonial en el IRPF, y determinadas inversiones en empresas de nueva o reciente creación pueden beneficiarse de la <strong>deducción estatal del 50%</strong> (base máxima 100.000 €/año) si cumplen los requisitos de la normativa, aunque no todas las operaciones de equity crowdfunding los cumplen automáticamente.</p>
+        <p class="sub-examples-label">Ejemplos reales</p>
+        <ul class="sub-examples"><li>Crowdcube (España / Reino Unido)</li><li>Capital Cell (España)</li><li>The Crowd Angel (España)</li><li>Seedrs (Reino Unido)</li><li>StartEngine (Estados Unidos)</li><li>Kickstarter (Estados Unidos) — recompensas, no equity</li><li>Indiegogo (Estados Unidos) — recompensas, no equity</li></ul>
+        <p class="sub-examples-label">Comparativa de ofertas</p>
+        <div class="sub-table-wrap">
+          <table class="sub-table">
+            <thead><tr><th>Plataforma</th><th>Tipo</th><th>Inversión / acceso</th><th>Características</th></tr></thead>
+            <tbody>
+              <tr><td>Crowdcube</td><td>Equity crowdfunding</td><td class="money">Desde 10 €</td><td>Comisión habitual del 2,49% (mínimo 5 €), hasta el 5% en algunas operaciones.</td></tr>
+              <tr><td>Capital Cell</td><td>Equity crowdfunding</td><td>Variable según campaña</td><td>Registrada en la CNMV desde el 10 de noviembre de 2023; especializada en biotecnología y ciencias de la vida.</td></tr>
+              <tr><td>The Crowd Angel</td><td>Equity crowdfunding</td><td>Variable según operación</td><td>Plataforma española orientada a startups y empresas en crecimiento.</td></tr>
+              <tr><td>Seedrs</td><td>Equity crowdfunding</td><td>Variable según operación</td><td>Plataforma británica integrada en el ecosistema de Republic desde 2022.</td></tr>
+              <tr><td>StartEngine</td><td>Equity crowdfunding</td><td>Variable según operación</td><td>Plataforma estadounidense de inversión en empresas privadas.</td></tr>
+              <tr><td>Kickstarter / Indiegogo</td><td>Crowdfunding de recompensas</td><td>Variable según proyecto</td><td>No son equity crowdfunding: el participante recibe un producto o recompensa, no acciones.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="sub-table-note">Comisión de Crowdcube (2,49%) y fecha de registro de Capital Cell en la CNMV (10/11/2023) confirmadas de forma independiente. Antes de invertir conviene revisar valoración, porcentaje adquirido, derechos económicos y políticos, futuras ampliaciones de capital, dilución, comisiones y posibles vías de salida: que una plataforma esté regulada no elimina el riesgo económico de la empresa financiada. Datos orientativos de septiembre de 2026, sujetos a cambio.</p>
+      </article>
+
+      <article class="sub-card sub-card-wide" id="a4-guia-practica-invertir-startups">
+        <h3>Guía práctica para comenzar a invertir en Startups</h3>
+        <div class="outline-tags"><span class="outline-tag">Ecosistema en cifras</span><span class="outline-tag">Hoja de ruta</span><span class="outline-tag">Errores comunes</span></div>
+        <p class="sub-h4">El ecosistema español, en cifras</p>
+        <p class="sub-intro">La inversión en startups en España alcanzó los 3.100 millones de euros en 2024, un 36% más que el año anterior, aunque el número total de operaciones cayó un 14%, afectando sobre todo a las fases más tempranas. Sectores como fintech/insurtech, viajes/turismo y movilidad/logística lideran la captación de fondos, mientras que salud y bienestar acumula el mayor número de operaciones. El valor total del ecosistema español de startups supera ya los 100.000 millones de euros, y el capital privado ha multiplicado por 1,8 sus activos bajo gestión desde 2006. Barcelona y Madrid se consolidan como los principales polos de atracción de capital del país. A pesar de la percepción de alto riesgo, el 92% de las startups españolas sobrevive más allá de los primeros cinco años, frente al 73,4% de las empresas tradicionales — un ecosistema más resiliente de lo que la intuición sugiere.</p>
+        <p class="sub-h4">Qué significa realmente invertir en una startup</p>
+        <p class="sub-intro">Invertir en una startup consiste en aportar capital a una empresa emergente con alto potencial de crecimiento a cambio de una participación en su capital. A diferencia de la inversión tradicional, implica mayor riesgo, horizontes temporales largos (habitualmente entre 5 y 10 años) y la recuperación del capital solo se produce mediante un evento de liquidez —adquisición, fusión o salida a bolsa— sin garantía de que llegue a ocurrir. A cambio, el potencial de revalorización puede ser muy superior al de activos más convencionales. El activo más determinante en una startup en fase temprana no es el producto ni la cifra de negocio (que apenas existen), sino el propio equipo fundador: su visión, complementariedad de capacidades y capacidad de ejecución.</p>
+        <p class="sub-h4">Hoja de ruta para dar los primeros pasos</p>
+        <p class="sub-intro">Antes de la primera inversión conviene: <strong>1) Definir el presupuesto</strong> — qué cantidad se destina, asumiendo que ese capital quedará inmovilizado durante años y puede perderse por completo; una referencia habitual es no superar el 10% del patrimonio total y destinar solo lo que no se necesite y se pueda dar por perdido. <strong>2) Establecer una estrategia</strong> — en qué sectores, fases o tipos de startup se quiere invertir, en función del conocimiento y los intereses propios; especializarse en un sector conocido facilita valorar el modelo de negocio y las posibles salidas. <strong>3) Explorar las opciones disponibles</strong> — plataformas de equity crowdfunding y redes de business angels. <strong>4) Invertir con cautela</strong> — empezar con tickets pequeños y diversificar entre varias startups (una referencia habitual es no concentrar en menos de 5 operaciones) en lugar de comprometer todo el presupuesto en la primera oportunidad que aparece.</p>
+        <p class="sub-h4">Errores más comunes al empezar</p>
+        <div class="sub-table-wrap">
+          <table class="sub-table">
+            <thead><tr><th>Error</th><th>Por qué perjudica</th></tr></thead>
+            <tbody>
+              <tr><td>No diversificar adecuadamente</td><td>Concentrar demasiado capital en pocas startups aumenta significativamente el riesgo total de la cartera</td></tr>
+              <tr><td>Ignorar aspectos legales</td><td>No revisar pactos de socios o condiciones de inversión puede derivar en problemas graves más adelante</td></tr>
+              <tr><td>Falta de paciencia</td><td>Las inversiones en startups requieren tiempo para madurar, generalmente entre 5 y 10 años</td></tr>
+              <tr><td>No aportar valor más allá del capital</td><td>El apoyo en forma de contactos, mentoría o conocimiento sectorial puede ser tan valioso como el dinero</td></tr>
+              <tr><td>Invertir en sectores desconocidos</td><td>Dificulta evaluar el equipo, el mercado y aportar valor real a la empresa</td></tr>
+              <tr><td>No reservar capital para rondas posteriores</td><td>Sin capital de seguimiento (<em>follow-on</em>) la participación se diluye en las siguientes rondas de financiación</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="sub-table-note">Una vez realizada la primera inversión, conviene mantener un seguimiento activo, reservar entre un 30% y un 40% del presupuesto para rondas de seguimiento, ampliar la red de contactos con otros inversores y seguir formándose de manera continua: el ecosistema evoluciona rápido y la especialización suele llegar de forma progresiva, con la experiencia.</p>
+        <p class="sub-examples-label">Fuentes citadas</p>
+        <ul class="sub-examples"><li>Oficina Nacional de Emprendimiento (ONE) — Guía práctica para comenzar a invertir en startups (2025)</li><li>Observatorio de Startups, Fundación Innovación Bankinter</li><li>Asociación Española de Business Angels (AEBAN)</li><li>Einforma — Las empresas startup en España</li></ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="area-section area-alt" id="inmobiliaria">
+    <div class="win95-window">
+      <div class="win95-titlebar">
+        <span class="win95-titlebar-icon" aria-hidden="true"></span>
+        <span class="win95-titlebar-text">5 — INVERSIN_INMOBILIARIA.EXE</span>
+        <span class="win95-titlebar-btns"><span class="win95-btn" aria-hidden="true">_</span><span class="win95-btn" aria-hidden="true">□</span><span class="win95-btn win95-btn-close" aria-hidden="true">✕</span></span>
+      </div>
+      <div class="win95-toolbar">
+        <button type="button" class="area-back-link" data-nav="inicio">‹ Volver al inicio</button>
+      </div>
+    </div>
+    <div class="area-head">
+      <span class="area-number">5</span>
       <h2>INVERSIÓN INMOBILIARIA</h2>
     </div>
     <p class="area-intro-text">El ladrillo sigue siendo, para buena parte de los inversores españoles, el activo de referencia por excelencia: tangible, comprensible y con una larga tradición cultural como forma de generar patrimonio. Esta sección recorre todas sus variantes, desde el piso en alquiler tradicional hasta fórmulas mucho más recientes como el crowdfunding inmobiliario, pasando por segmentos especializados como las residencias de estudiantes o de ancianos, cada vez más profesionalizados. A diferencia de la renta variable, la inversión inmobiliaria directa se caracteriza por su iliquidez (vender un piso lleva semanas o meses) y por requerir tickets de entrada elevados, aunque las nuevas plataformas de crowdfunding como Urbanitae han reducido ese umbral a unos pocos cientos de euros.</p>
@@ -3053,7 +3191,7 @@
     <div class="win95-window">
       <div class="win95-titlebar">
         <span class="win95-titlebar-icon" aria-hidden="true"></span>
-        <span class="win95-titlebar-text">5 — OTRAS_INVERSIONES.EXE</span>
+        <span class="win95-titlebar-text">6 — OTRAS_INVERSIONES.EXE</span>
         <span class="win95-titlebar-btns"><span class="win95-btn" aria-hidden="true">_</span><span class="win95-btn" aria-hidden="true">□</span><span class="win95-btn win95-btn-close" aria-hidden="true">✕</span></span>
       </div>
       <div class="win95-toolbar">
@@ -3061,7 +3199,7 @@
       </div>
     </div>
     <div class="area-head">
-      <span class="area-number">5</span>
+      <span class="area-number">6</span>
       <h2>OTRAS INVERSIONES</h2>
     </div>
     <p class="area-intro-text">Esta sección agrupa activos alternativos que escapan a las categorías tradicionales de renta fija, renta variable e inmobiliario: metales preciosos, piedras y objetos de coleccionismo, arte y criptoactivos. Comparten varios rasgos: suelen ser más ilíquidos (cuesta más encontrar comprador rápido), su valoración es más subjetiva o dependiente de nichos de mercado especializados, y en muchos casos requieren conocimiento experto para no pagar de más o comprar una falsificación. A cambio, ofrecen diversificación real frente a los activos financieros tradicionales y, en el caso del oro, una larga trayectoria histórica como refugio de valor. Plataformas relativamente nuevas como Masterworks o Splint Invest han empezado a fraccionar activos antes reservados a grandes patrimonios, como el arte o el whisky de alta gama.</p>
@@ -3527,7 +3665,7 @@
     <div class="win95-window">
       <div class="win95-titlebar">
         <span class="win95-titlebar-icon" aria-hidden="true"></span>
-        <span class="win95-titlebar-text">6 — NEGOCIOS_DIGITALES.EXE</span>
+        <span class="win95-titlebar-text">7 — NEGOCIOS_DIGITALES.EXE</span>
         <span class="win95-titlebar-btns"><span class="win95-btn" aria-hidden="true">_</span><span class="win95-btn" aria-hidden="true">□</span><span class="win95-btn win95-btn-close" aria-hidden="true">✕</span></span>
       </div>
       <div class="win95-toolbar">
@@ -3535,7 +3673,7 @@
       </div>
     </div>
     <div class="area-head">
-      <span class="area-number">6</span>
+      <span class="area-number">7</span>
       <h2>NEGOCIOS DIGITALES</h2>
     </div>
     <p class="area-intro-text">Más allá de invertir en activos existentes, esta sección explora cómo generar ingresos pasivos creando y gestionando pequeños negocios digitales propios en Internet. Son modelos que, en muchos casos, permiten empezar con una inversión inicial relativamente reducida, pero cuyo resultado depende mucho más del tiempo, el trabajo, las habilidades y la capacidad comercial del emprendedor que del capital aportado. Aquí se incluyen desde el trading activo hasta modelos de comercio electrónico como FBA y dropshipping, pasando por webs de nicho, aplicaciones, venta de dominios, publicación de libros, royalties, creación de contenido, infoproductos y servicios de publicidad digital. A diferencia de las inversiones financieras o inmobiliarias, estos modelos no tienen una rentabilidad anual homogénea que pueda aplicarse a todos los casos: un negocio digital puede generar beneficios elevados, mantenerse prácticamente sin beneficios o incluso acumular pérdidas, y conceptos como margen sobre ventas, ROI sobre el capital invertido y rentabilidad anual para el propietario no son equivalentes y deben distinguirse. Los negocios que requieren principalmente un local físico, maquinaria o instalaciones se recogen en la sección Negocios Físicos.</p>
@@ -4081,7 +4219,7 @@
     <div class="win95-window">
       <div class="win95-titlebar">
         <span class="win95-titlebar-icon" aria-hidden="true"></span>
-        <span class="win95-titlebar-text">7 — NEGOCIOS_FSICOS.EXE</span>
+        <span class="win95-titlebar-text">8 — NEGOCIOS_FSICOS.EXE</span>
         <span class="win95-titlebar-btns"><span class="win95-btn" aria-hidden="true">_</span><span class="win95-btn" aria-hidden="true">□</span><span class="win95-btn win95-btn-close" aria-hidden="true">✕</span></span>
       </div>
       <div class="win95-toolbar">
@@ -4089,7 +4227,7 @@
       </div>
     </div>
     <div class="area-head">
-      <span class="area-number">7</span>
+      <span class="area-number">8</span>
       <h2>NEGOCIOS FÍSICOS</h2>
     </div>
     <p class="area-intro-text">Esta sección reúne negocios que, a diferencia de los del apartado anterior, exigen un local físico, maquinaria o inventario tangible: desde máquinas de vending y lavanderías autoservicio hasta comercios de barrio, hostelería o máquinas recreativas. Suelen requerir una inversión inicial más alta y una gestión más operativa —elegir bien la ubicación, reponer stock, dar mantenimiento, a veces contratar personal— pero también ofrecen flujos de caja más predecibles una vez en marcha. Los datos de ventas, costes y neto mensual son estimaciones orientativas de mercado; varían mucho según la ubicación concreta, la gestión y la competencia local.</p>
@@ -4517,7 +4655,7 @@
     <div class="win95-window">
       <div class="win95-titlebar">
         <span class="win95-titlebar-icon" aria-hidden="true"></span>
-        <span class="win95-titlebar-text">8 — JUEGO_AZAR.EXE</span>
+        <span class="win95-titlebar-text">9 — JUEGO_AZAR.EXE</span>
         <span class="win95-titlebar-btns"><span class="win95-btn" aria-hidden="true">_</span><span class="win95-btn" aria-hidden="true">□</span><span class="win95-btn win95-btn-close" aria-hidden="true">✕</span></span>
       </div>
       <div class="win95-toolbar">
@@ -4525,7 +4663,7 @@
       </div>
     </div>
     <div class="area-head">
-      <span class="area-number">8</span>
+      <span class="area-number">9</span>
       <h2>JUEGO / AZAR</h2>
     </div>
     <p class="area-intro-text">A diferencia de todas las secciones anteriores, el juego de azar no es inversión: la esperanza matemática de la mayoría de estos juegos es negativa para el jugador, es decir, a largo plazo se pierde dinero de forma estructural porque la casa o el organizador siempre se reserva un margen. Esta sección se incluye con un propósito puramente informativo y de cultura financiera —entender cómo funciona matemáticamente cada juego y qué margen se lleva la casa— y nunca como recomendación de estrategia de apuestas ni como alternativa a la inversión real. Si el juego deja de ser entretenimiento ocasional y empieza a sentirse como una necesidad, es importante saber que en España existen recursos de ayuda para el juego problemático, como el teléfono de FEJAR o el Plan de Adicciones de cada comunidad autónoma.</p>
@@ -4942,7 +5080,7 @@
     <div class="win95-window">
       <div class="win95-titlebar">
         <span class="win95-titlebar-icon" aria-hidden="true"></span>
-        <span class="win95-titlebar-text">9 — OTROS.EXE</span>
+        <span class="win95-titlebar-text">10 — OTROS.EXE</span>
         <span class="win95-titlebar-btns"><span class="win95-btn" aria-hidden="true">_</span><span class="win95-btn" aria-hidden="true">□</span><span class="win95-btn win95-btn-close" aria-hidden="true">✕</span></span>
       </div>
       <div class="win95-toolbar">
@@ -4950,7 +5088,7 @@
       </div>
     </div>
     <div class="area-head">
-      <span class="area-number">9</span>
+      <span class="area-number">10</span>
       <h2>OTROS NEGOCIOS O INVERSIONES</h2>
     </div>
     <p class="area-intro-text">Esta sección reúne el contenido de apoyo que no es en sí mismo una categoría de inversión, pero que resulta necesario para aprovechar el resto de la web: herramientas prácticas como una calculadora de independencia financiera para saber cuánto invertir al mes para llegar a tu primer millón, un glosario y contenido transversal sobre análisis y fiscalidad aplicable a varias categorías a la vez. Es contenido más funcional que narrativo: su objetivo es que el lector pueda volver a consultarlo como referencia rápida mientras navega por las secciones de inversión propiamente dichas.</p>
@@ -5157,7 +5295,7 @@
     <div class="win95-window">
       <div class="win95-titlebar">
         <span class="win95-titlebar-icon" aria-hidden="true"></span>
-        <span class="win95-titlebar-text">10 — LONGEVIDAD.EXE</span>
+        <span class="win95-titlebar-text">11 — LONGEVIDAD.EXE</span>
         <span class="win95-titlebar-btns"><span class="win95-btn" aria-hidden="true">_</span><span class="win95-btn" aria-hidden="true">□</span><span class="win95-btn win95-btn-close" aria-hidden="true">✕</span></span>
       </div>
       <div class="win95-toolbar">
@@ -5165,7 +5303,7 @@
       </div>
     </div>
     <div class="area-head">
-      <span class="area-number">10</span>
+      <span class="area-number">11</span>
       <h2>LONGEVIDAD Y SALUD</h2>
     </div>
     <p class="area-intro-text">La independencia financiera no tiene mucho sentido como meta aislada si no va acompañada de salud, energía y años de vida de calidad para disfrutarla. Esta sección reúne contenido sobre bienestar, longevidad y hábitos personales como complemento —nunca sustituto— del contenido puramente financiero del resto de la web.</p>
@@ -5302,7 +5440,7 @@
     <div class="win95-window">
       <div class="win95-titlebar">
         <span class="win95-titlebar-icon" aria-hidden="true"></span>
-        <span class="win95-titlebar-text">11 — TECNOLOGIA.EXE</span>
+        <span class="win95-titlebar-text">12 — TECNOLOGIA.EXE</span>
         <span class="win95-titlebar-btns"><span class="win95-btn" aria-hidden="true">_</span><span class="win95-btn" aria-hidden="true">□</span><span class="win95-btn win95-btn-close" aria-hidden="true">✕</span></span>
       </div>
       <div class="win95-toolbar">
@@ -5310,7 +5448,7 @@
       </div>
     </div>
     <div class="area-head">
-      <span class="area-number">11</span>
+      <span class="area-number">12</span>
       <h2>TECNOLOGÍA</h2>
     </div>
     <p class="area-intro-text">La tecnología pesa cada vez más en cómo se invierte y en cómo se generan ingresos: desde la inteligencia artificial como herramienta de análisis y automejora, hasta el freelancing online como fuente de ingresos complementaria que acelera el camino hacia la independencia financiera.</p>
@@ -5550,7 +5688,7 @@
     <div class="win95-window">
       <div class="win95-titlebar">
         <span class="win95-titlebar-icon" aria-hidden="true"></span>
-        <span class="win95-titlebar-text">12 — SOBRE_M.EXE</span>
+        <span class="win95-titlebar-text">13 — SOBRE_M.EXE</span>
         <span class="win95-titlebar-btns"><span class="win95-btn" aria-hidden="true">_</span><span class="win95-btn" aria-hidden="true">□</span><span class="win95-btn win95-btn-close" aria-hidden="true">✕</span></span>
       </div>
       <div class="win95-toolbar">
@@ -5558,7 +5696,7 @@
       </div>
     </div>
     <div class="area-head">
-      <span class="area-number">12</span>
+      <span class="area-number">13</span>
       <h2>SOBRE MÍ</h2>
     </div>
     <p class="area-intro-text">Una web de contenido financiero gana credibilidad cuando el lector sabe quién hay detrás: su formación, su propia experiencia invirtiendo y sus motivaciones para compartir este conocimiento. Esta sección humaniza el proyecto y sirve también como canal de contacto y de recomendaciones personales (libros, podcasts, blogs) que han influido en la forma de entender la inversión y la independencia financiera, ofreciendo al lector un punto de partida curado en lugar de tener que buscar por su cuenta entre el enorme volumen de contenido financiero disponible online.</p>
@@ -5626,7 +5764,7 @@
     <div class="footer-inner">
       <div class="footer-brand">A por el Millón €</div>
       <div class="footer-note">Portada en construcción · aporelmillon.com</div>
-      <div class="footer-version">v3.20 (25.09.2026)</div>
+      <div class="footer-version">v3.22 (26.09.2026)</div>
     </div>
   </footer>
     </div>
@@ -5724,8 +5862,8 @@
 
 <script>
 (function () {
-  var SECTION_URLS = {"a1-panorama-vida-laboral-impuestos-40-anos": "/general/panorama/", "a1-solucion-independencia-financiera": "/general/solucion-independencia-financiera/", "a1-mapa-de-inversion": "/general/mapa-de-inversion/", "a2-cuenta-remunerada": "/renta-fija/cuenta-remunerada/", "a2-deposito-a-plazo-fijo": "/renta-fija/deposito-a-plazo-fijo/", "bonos": "/renta-fija/bonos-y-letras-del-tesoro/", "a2-plan-de-pensiones": "/renta-fija/plan-de-pensiones/", "a2-cuentas-de-ahorro-a-largo-plazo-calculadora": "/renta-fija/cuentas-de-ahorro-a-largo-plazo/", "a2-pias-plan-individual-de-ahorro-sistematico": "/renta-fija/pias/", "a2-otros-renta-fija": "/renta-fija/otros/", "a2-glosario-renta-fija": "/renta-fija/glosario/", "a3-fondos-indexados": "/renta-variable/fondos-indexados/", "etf": "/renta-variable/etf/", "dividendos": "/renta-variable/bolsa-de-dividendos/", "a3-value-investing": "/renta-variable/value-investing/", "fondos": "/renta-variable/fondos-de-inversion/", "a3-futuros": "/renta-variable/futuros/", "a3-warrants": "/renta-variable/warrants/", "startups": "/renta-variable/startups-venture-capital/", "a3-venture-capital-guia-tecnica": "/renta-variable/venture-capital-guia-tecnica/", "a3-materias-primas": "/renta-variable/materias-primas/", "a3-crowdfunding-equity": "/renta-variable/crowdfunding-equity/", "a3-crowlending": "/renta-variable/crowlending/", "a3-otras-renta-variable": "/renta-variable/otras/", "a3-glosario-renta-variable": "/renta-variable/glosario/", "a4-pisos-en-alquiler-renta": "/inmobiliaria/pisos-en-alquiler/", "a4-piso-turistico": "/inmobiliaria/piso-turistico/", "a4-oficinas-coworking": "/inmobiliaria/oficinas-coworking/", "a4-habitaciones-para-estudiantes": "/inmobiliaria/habitaciones-para-estudiantes/", "a4-residencias-de-ancianos": "/inmobiliaria/residencias-de-ancianos/", "a4-crowdfunding-inmobiliario-urbanitae-housers": "/inmobiliaria/crowdfunding-crowdlending-inmobiliario/", "a4-locales-renta-y-transformacion-a-piso": "/inmobiliaria/locales-renta-y-transformacion-a-vivienda/", "a4-plaza-de-garaje": "/inmobiliaria/plaza-de-garaje/", "a4-terreno-rustico-en-explotacion-cereales-arboles-etc": "/inmobiliaria/terreno-rustico-en-explotacion/", "a4-terreno-para-otros-usos-eolica-solar-gaseoducto-etc": "/inmobiliaria/terreno-para-otros-usos/", "a4-otras-inmobiliario": "/inmobiliaria/otras/", "a4-glosario-inmobiliario": "/inmobiliaria/glosario/", "oro-plata": "/otras-inversiones/oro-y-plata/", "a5-diamantes-y-piedras-preciosas": "/otras-inversiones/diamantes-y-piedras-preciosas/", "a5-numismatica-y-notafilia": "/otras-inversiones/numismatica-y-notafilia/", "a5-coleccionismo-relojes-cartas-comics": "/otras-inversiones/coleccionismo/", "a5-antiguedades": "/otras-inversiones/antiguedades-y-bienes-historicos/", "arte": "/otras-inversiones/arte-e-inversion-fraccionada-en-arte/", "criptos": "/otras-inversiones/criptoactivos-criptomonedas-y-nft/", "a5-otros-split-invest-whisky-vino": "/otras-inversiones/otros/", "a5-glosario-otras-inversiones": "/otras-inversiones/glosario/", "a6-bolsa-trading-analisis-tecnico-forex-scalping-intradia": "/negocios-digitales/bolsa-trading/", "a6-fba-dropshipping": "/negocios-digitales/fba-dropshipping/", "a6-webs-de-nicho": "/negocios-digitales/webs-de-nicho/", "a6-apps-modelos-de-negocio": "/negocios-digitales/apps-modelos-de-negocio/", "a6-dominios-domain-trading": "/negocios-digitales/dominios-domain-trading/", "a6-libros-en-amazon-kdp": "/negocios-digitales/libros-en-amazon/", "a6-royalty-arte-y-musica": "/negocios-digitales/royalty-arte-y-musica/", "a6-yt-twitch": "/negocios-digitales/yt-twitch/", "a6-infoproductos": "/negocios-digitales/infoproductos/", "a6-redes-sociales-publicidad-digital": "/negocios-digitales/redes-sociales-publicidad-digital/", "a6-glosario-negocios-digitales": "/negocios-digitales/glosario/", "a7f-maquinas-vending": "/negocios-fisicos/maquinas-vending/", "a7f-tiendas-autoservicio": "/negocios-fisicos/tiendas-autoservicio/", "a7f-maquinas-recreativas": "/negocios-fisicos/maquinas-recreativas/", "a7f-bares-restaurantes": "/negocios-fisicos/hosteleria-bares-y-restaurantes/", "a7f-tiendas-barrio": "/negocios-fisicos/tiendas-de-barrio/", "a7f-compraventa-coches": "/negocios-fisicos/compraventa-de-coches/", "a7f-franquicias-bajo-coste": "/negocios-fisicos/franquicias/", "a7f-glosario-negocios-fisicos": "/negocios-fisicos/glosario/", "a7-loteria": "/juego-azar/loteria/", "a7-slots": "/juego-azar/slots-tragaperras/", "a7-ruleta": "/juego-azar/ruleta/", "a7-poker": "/juego-azar/poker/", "a7-blackjack": "/juego-azar/blackjack/", "a7-apuestas-deportivas": "/juego-azar/apuestas-deportivas/", "a7-otros-juego-bingo-bacara": "/juego-azar/otros-juego/", "a7-glosario-juego-azar": "/juego-azar/glosario/", "a8-herramientas-glosario-calc-inversion-if-calc-dividendos": "/otros/herramientas/", "a8-otros-inversion-analisis-fundamental-fiscalidad-basica": "/otros/otros-inversion/", "a9-otros-negocios": "/otros/otros-negocios/", "a9-fiscalidad-irpf-ahorro-patrimonio-sucesiones-iva": "/otros/fiscalidad/", "a9-psicologia-del-inversor": "/otros/psicologia-del-inversor/", "a9-formacion-libros-inversion-negocios": "/otros/formacion/", "a10-nutricion": "/otros/otros-no-inversion/nutricion/", "a10-suplementacion": "/otros/otros-no-inversion/suplementacion/", "a10-longevidad": "/otros/otros-no-inversion/longevidad/", "a10-deporte": "/otros/otros-no-inversion/deporte/", "a9-cv": "/sobre-mi/guillermo-angona/", "a9-contacto": "/sobre-mi/contacto/", "a9-planificacion-personal": "/sobre-mi/planificacion-personal/", "a9-recomendado-libros-leidos-podcast-blogs": "/sobre-mi/recomendado-libros-leidos-podcast-blogs/", "a9-podcast-recomendados": "/sobre-mi/podcast-recomendados/", "a11-ia": "/otros-extra/ia/", "a11-sistemas-infraestructura": "/otros-extra/sistemas-infraestructura/", "a11-redes-conectividad": "/otros-extra/redes-conectividad/", "a11-desarrollo-software": "/otros-extra/desarrollo-software/", "a11-ciberseguridad": "/otros-extra/ciberseguridad/", "a11-hardware-chips": "/otros-extra/hardware-chips/", "a11-software-saas": "/otros-extra/software-saas/", "a11-cloud-devops": "/otros-extra/cloud-devops/", "a11-data-analytics": "/otros-extra/data-analytics/", "a11-blockchain-web3": "/otros-extra/blockchain-web3/"};
-  var AREA_URLS = {"area-1": "/general/", "area-2": "/renta-fija/", "area-3": "/renta-variable/", "inmobiliaria": "/inmobiliaria/", "area-5": "/otras-inversiones/", "area-6": "/negocios-digitales/", "area-7": "/negocios-fisicos/", "area-8": "/juego-azar/", "area-9": "/otros/", "longevidad-salud": "/otros/otros-no-inversion/", "tecnologia": "/otros-extra/", "sobre-mi": "/sobre-mi/"};
+  var SECTION_URLS = {"a1-panorama-vida-laboral-impuestos-40-anos": "/general/panorama/", "a1-solucion-independencia-financiera": "/general/solucion-independencia-financiera/", "a1-mapa-de-inversion": "/general/mapa-de-inversion/", "a2-cuenta-remunerada": "/renta-fija/cuenta-remunerada/", "a2-deposito-a-plazo-fijo": "/renta-fija/deposito-a-plazo-fijo/", "bonos": "/renta-fija/bonos-y-letras-del-tesoro/", "a2-plan-de-pensiones": "/renta-fija/plan-de-pensiones/", "a2-cuentas-de-ahorro-a-largo-plazo-calculadora": "/renta-fija/cuentas-de-ahorro-a-largo-plazo/", "a2-pias-plan-individual-de-ahorro-sistematico": "/renta-fija/pias/", "a2-otros-renta-fija": "/renta-fija/otros/", "a2-glosario-renta-fija": "/renta-fija/glosario/", "a3-fondos-indexados": "/renta-variable/fondos-indexados/", "etf": "/renta-variable/etf/", "dividendos": "/renta-variable/bolsa-de-dividendos/", "a3-value-investing": "/renta-variable/value-investing/", "fondos": "/renta-variable/fondos-de-inversion/", "a3-futuros": "/renta-variable/futuros/", "a3-warrants": "/renta-variable/warrants/", "a3-materias-primas": "/renta-variable/materias-primas/", "a3-crowlending": "/renta-variable/crowlending/", "a4-startups": "/startups-vc/startups/", "a4-venture-capital-business-angels": "/startups-vc/venture-capital-business-angels/", "a4-crowdfunding-equity": "/startups-vc/crowdfunding-equity/", "a4-guia-practica-invertir-startups": "/startups-vc/guia-practica-invertir-startups/", "a3-otras-renta-variable": "/renta-variable/otras/", "a3-glosario-renta-variable": "/renta-variable/glosario/", "a4-pisos-en-alquiler-renta": "/inmobiliaria/pisos-en-alquiler/", "a4-piso-turistico": "/inmobiliaria/piso-turistico/", "a4-oficinas-coworking": "/inmobiliaria/oficinas-coworking/", "a4-habitaciones-para-estudiantes": "/inmobiliaria/habitaciones-para-estudiantes/", "a4-residencias-de-ancianos": "/inmobiliaria/residencias-de-ancianos/", "a4-crowdfunding-inmobiliario-urbanitae-housers": "/inmobiliaria/crowdfunding-crowdlending-inmobiliario/", "a4-locales-renta-y-transformacion-a-piso": "/inmobiliaria/locales-renta-y-transformacion-a-vivienda/", "a4-plaza-de-garaje": "/inmobiliaria/plaza-de-garaje/", "a4-terreno-rustico-en-explotacion-cereales-arboles-etc": "/inmobiliaria/terreno-rustico-en-explotacion/", "a4-terreno-para-otros-usos-eolica-solar-gaseoducto-etc": "/inmobiliaria/terreno-para-otros-usos/", "a4-otras-inmobiliario": "/inmobiliaria/otras/", "a4-glosario-inmobiliario": "/inmobiliaria/glosario/", "oro-plata": "/otras-inversiones/oro-y-plata/", "a5-diamantes-y-piedras-preciosas": "/otras-inversiones/diamantes-y-piedras-preciosas/", "a5-numismatica-y-notafilia": "/otras-inversiones/numismatica-y-notafilia/", "a5-coleccionismo-relojes-cartas-comics": "/otras-inversiones/coleccionismo/", "a5-antiguedades": "/otras-inversiones/antiguedades-y-bienes-historicos/", "arte": "/otras-inversiones/arte-e-inversion-fraccionada-en-arte/", "criptos": "/otras-inversiones/criptoactivos-criptomonedas-y-nft/", "a5-otros-split-invest-whisky-vino": "/otras-inversiones/otros/", "a5-glosario-otras-inversiones": "/otras-inversiones/glosario/", "a6-bolsa-trading-analisis-tecnico-forex-scalping-intradia": "/negocios-digitales/bolsa-trading/", "a6-fba-dropshipping": "/negocios-digitales/fba-dropshipping/", "a6-webs-de-nicho": "/negocios-digitales/webs-de-nicho/", "a6-apps-modelos-de-negocio": "/negocios-digitales/apps-modelos-de-negocio/", "a6-dominios-domain-trading": "/negocios-digitales/dominios-domain-trading/", "a6-libros-en-amazon-kdp": "/negocios-digitales/libros-en-amazon/", "a6-royalty-arte-y-musica": "/negocios-digitales/royalty-arte-y-musica/", "a6-yt-twitch": "/negocios-digitales/yt-twitch/", "a6-infoproductos": "/negocios-digitales/infoproductos/", "a6-redes-sociales-publicidad-digital": "/negocios-digitales/redes-sociales-publicidad-digital/", "a6-glosario-negocios-digitales": "/negocios-digitales/glosario/", "a7f-maquinas-vending": "/negocios-fisicos/maquinas-vending/", "a7f-tiendas-autoservicio": "/negocios-fisicos/tiendas-autoservicio/", "a7f-maquinas-recreativas": "/negocios-fisicos/maquinas-recreativas/", "a7f-bares-restaurantes": "/negocios-fisicos/hosteleria-bares-y-restaurantes/", "a7f-tiendas-barrio": "/negocios-fisicos/tiendas-de-barrio/", "a7f-compraventa-coches": "/negocios-fisicos/compraventa-de-coches/", "a7f-franquicias-bajo-coste": "/negocios-fisicos/franquicias/", "a7f-glosario-negocios-fisicos": "/negocios-fisicos/glosario/", "a7-loteria": "/juego-azar/loteria/", "a7-slots": "/juego-azar/slots-tragaperras/", "a7-ruleta": "/juego-azar/ruleta/", "a7-poker": "/juego-azar/poker/", "a7-blackjack": "/juego-azar/blackjack/", "a7-apuestas-deportivas": "/juego-azar/apuestas-deportivas/", "a7-otros-juego-bingo-bacara": "/juego-azar/otros-juego/", "a7-glosario-juego-azar": "/juego-azar/glosario/", "a8-herramientas-glosario-calc-inversion-if-calc-dividendos": "/otros/herramientas/", "a8-otros-inversion-analisis-fundamental-fiscalidad-basica": "/otros/otros-inversion/", "a9-otros-negocios": "/otros/otros-negocios/", "a9-fiscalidad-irpf-ahorro-patrimonio-sucesiones-iva": "/otros/fiscalidad/", "a9-psicologia-del-inversor": "/otros/psicologia-del-inversor/", "a9-formacion-libros-inversion-negocios": "/otros/formacion/", "a10-nutricion": "/otros/otros-no-inversion/nutricion/", "a10-suplementacion": "/otros/otros-no-inversion/suplementacion/", "a10-longevidad": "/otros/otros-no-inversion/longevidad/", "a10-deporte": "/otros/otros-no-inversion/deporte/", "a9-cv": "/sobre-mi/guillermo-angona/", "a9-contacto": "/sobre-mi/contacto/", "a9-planificacion-personal": "/sobre-mi/planificacion-personal/", "a9-recomendado-libros-leidos-podcast-blogs": "/sobre-mi/recomendado-libros-leidos-podcast-blogs/", "a9-podcast-recomendados": "/sobre-mi/podcast-recomendados/", "a11-ia": "/otros-extra/ia/", "a11-sistemas-infraestructura": "/otros-extra/sistemas-infraestructura/", "a11-redes-conectividad": "/otros-extra/redes-conectividad/", "a11-desarrollo-software": "/otros-extra/desarrollo-software/", "a11-ciberseguridad": "/otros-extra/ciberseguridad/", "a11-hardware-chips": "/otros-extra/hardware-chips/", "a11-software-saas": "/otros-extra/software-saas/", "a11-cloud-devops": "/otros-extra/cloud-devops/", "a11-data-analytics": "/otros-extra/data-analytics/", "a11-blockchain-web3": "/otros-extra/blockchain-web3/"};
+  var AREA_URLS = {"area-1": "/general/", "area-2": "/renta-fija/", "area-3": "/renta-variable/", "area-4": "/startups-vc/", "inmobiliaria": "/inmobiliaria/", "area-5": "/otras-inversiones/", "area-6": "/negocios-digitales/", "area-7": "/negocios-fisicos/", "area-8": "/juego-azar/", "area-9": "/otros/", "longevidad-salud": "/otros/otros-no-inversion/", "tecnologia": "/otros-extra/", "sobre-mi": "/sobre-mi/"};
   var REVERSE_URLS = {};
   Object.keys(SECTION_URLS).forEach(function (id) { REVERSE_URLS[SECTION_URLS[id]] = id; });
   Object.keys(AREA_URLS).forEach(function (id) { if (!REVERSE_URLS[AREA_URLS[id]]) REVERSE_URLS[AREA_URLS[id]] = id; });
