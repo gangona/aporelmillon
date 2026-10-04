@@ -245,6 +245,13 @@
   .area-summary-table th:last-child { white-space: nowrap; text-align: center; }
   .sub-table.wrap th, .sub-table.wrap td { white-space: normal; vertical-align: top; }
   .sub-table-note { font-size: 10px; color: #5B564C; font-style: italic; margin: 0 12px 12px 12px; }
+  .referral-panel { margin: 4px 12px 16px 12px; background: #FFFDE8; border-top: 2px solid #FFFFFF; border-left: 2px solid #FFFFFF; border-right: 2px solid #808080; border-bottom: 2px solid #808080; padding: 12px 16px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
+  .referral-panel-text { flex: 1 1 320px; }
+  .referral-panel-title { font-family: 'Courier New', monospace; font-weight: 700; font-size: 12.5px; color: #000080; margin: 0 0 3px 0; }
+  .referral-panel-desc { font-size: 11.5px; color: #4a4a40; margin: 0; }
+  .referral-btn { flex: 0 0 auto; font-family: 'Tahoma', 'Segoe UI', Verdana, sans-serif; font-size: 12px; font-weight: 700; text-decoration: none; padding: 7px 18px; background: #C0C0C0; color: #000000; border-top: 1px solid #FFFFFF; border-left: 1px solid #FFFFFF; border-right: 1px solid #000000; border-bottom: 1px solid #000000; cursor: pointer; }
+  .referral-btn:hover { background: #D4D0C8; }
+  .referral-btn:active { border-top: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #FFFFFF; border-bottom: 1px solid #FFFFFF; }
   .coin-rank { text-align: center; font-weight: 700; color: #000080; white-space: nowrap; }
   .coin-photo-cell { text-align: center; white-space: nowrap; }
   .coin-photo-link { display: inline-block; position: relative; cursor: zoom-in; }
@@ -293,6 +300,7 @@
   .sidebar-search-input { flex-grow: 1; min-width: 0; border: none; outline: none; background: transparent; font-family: 'Courier New', monospace; font-size: 12px; color: #000000; padding: 3px 2px; }
   .sidebar-search-empty { margin: 0 12px 4px 12px; color: #603030; font-family: 'Courier New', monospace; font-size: 11px; font-weight: 700; }
   .sidebar-search-hidden { display: none !important; }
+  .sidebar-search-snippet { font-family: 'Courier New', monospace; font-style: italic; font-size: 10px; line-height: 1.4; color: #505050; padding: 0 10px 5px 16px; margin-top: -3px; }
   .sidebar-home-inline-btn { display: inline-flex; align-items: center; flex-shrink: 0; margin-right: 5px; padding: 2px; }
   .sidebar-home-inline-btn:hover .sidebar-home-icon path { fill: #00FF66; }
   .sidebar-nav { display: flex; flex-direction: column; padding: 4px 10px 6px 10px; gap: 7px; }
@@ -973,126 +981,251 @@
   <section class="grid-section">
     <h2>Explora cada camino</h2>
     <p class="grid-sub">Trece áreas, un mismo objetivo. Cada una explica cómo funciona, qué riesgos tiene y qué rentabilidad puedes esperar.</p>
-    <div class="cards-grid">
-
-      <article class="cat-card">
-        <div class="cat-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A6742C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M15.5 8.5l-2 5-5 2 2-5z"></path></svg>
+        <div class="sitemap-grid">
+      <div class="sitemap-window">
+        <div class="win95-titlebar">
+          <span class="win95-titlebar-icon" aria-hidden="true"></span>
+          <button type="button" class="sitemap-titlebar-link" data-nav="area-1">1. GENERAL</button>
+          <span class="win95-titlebar-btns"><span class="win95-btn" aria-hidden="true">_</span><span class="win95-btn" aria-hidden="true">□</span><span class="win95-btn win95-btn-close" aria-hidden="true">✕</span></span>
         </div>
-        <h3>1. General</h3>
-        <p>El punto de partida: por qué la nómina sola no basta, qué es la independencia financiera y cuánto necesitas para llegar al millón.</p>
-        <button type="button" class="cat-link" data-nav="area-1">Ver área →</button>
-      </article>
-
-      <article class="cat-card">
-        <div class="cat-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A6742C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19h16"></path><path d="M6 19V9l6-5 6 5v10"></path><path d="M10 19v-6h4v6"></path></svg>
+        <div class="sitemap-body">
+          <ul class="sitemap-sublist">
+          <li><button type="button" class="sitemap-sublink" data-nav="a1-panorama-vida-laboral-impuestos-40-anos">1.1 Panorama financiero</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a1-solucion-independencia-financiera">1.2 Solución: Independencia Financiera</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a1-mapa-de-inversion">1.3 Mapa de Inversión</button></li>
+          </ul>
         </div>
-        <h3>2. Renta Fija</h3>
-        <p>Cuentas remuneradas, depósitos, Letras del Tesoro y planes de pensiones: la base más conservadora de una cartera, con rentabilidad conocida.</p>
-        <button type="button" class="cat-link" data-nav="area-2">Ver área →</button>
-      </article>
-
-      <article class="cat-card">
-        <div class="cat-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A6742C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v10M9 9.5c0-1.4 1.3-2.5 3-2.5s3 1.1 3 2.3c0 3-6 1.7-6 4.7 0 1.3 1.3 2.5 3 2.5s3-1.1 3-2.5"></path></svg>
+      </div>
+      <div class="sitemap-window">
+        <div class="win95-titlebar">
+          <span class="win95-titlebar-icon" aria-hidden="true"></span>
+          <button type="button" class="sitemap-titlebar-link" data-nav="area-2">2. RENTA FIJA</button>
+          <span class="win95-titlebar-btns"><span class="win95-btn" aria-hidden="true">_</span><span class="win95-btn" aria-hidden="true">□</span><span class="win95-btn win95-btn-close" aria-hidden="true">✕</span></span>
         </div>
-        <h3>3. Renta Variable</h3>
-        <p>Acciones, dividendos, ETF y fondos indexados: la vía principal para que el interés compuesto trabaje a largo plazo.</p>
-        <button type="button" class="cat-link" data-nav="area-3">Ver área →</button>
-      </article>
-
-      <article class="cat-card">
-        <div class="cat-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A6742C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1-2 3.5-2 3.5s2.5-.5 3.5-2c.5-.9.5-2-.2-2.8-.8-.7-1.9-.7-2.8-.2Z"></path><path d="M12 15l-3-3 6.5-8.5a4 4 0 0 1 5.5 5.5L12 15Z"></path><path d="M9 12 5.5 15"></path></svg>
+        <div class="sitemap-body">
+          <ul class="sitemap-sublist">
+          <li><button type="button" class="sitemap-sublink" data-nav="a2-cuenta-remunerada">2.1 Cuenta Remunerada</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a2-deposito-a-plazo-fijo">2.2 Depósito a Plazo Fijo</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="bonos">2.3 Bonos y Letras del Tesoro</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a2-plan-de-pensiones">2.4 Plan de Pensiones</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a2-cuentas-de-ahorro-a-largo-plazo-calculadora">2.5 Planes de Ahorro a Largo Plazo (CIALP y SIALP)</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a2-pias-plan-individual-de-ahorro-sistematico">2.6 PIAS (Plan Individual de Ahorro Sistemático)</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a2-otros-renta-fija">2.7 Otros (Renta Fija)</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a2-glosario-renta-fija">2.8 Glosario de Renta Fija</button></li>
+          </ul>
         </div>
-        <h3>4. Startups y Venture Capital</h3>
-        <p>Invertir en empresas en fase temprana: business angels, fondos VC y crowdfunding. Máximo riesgo y máximo potencial.</p>
-        <button type="button" class="cat-link" data-nav="area-4">Ver área →</button>
-      </article>
-
-      <article class="cat-card">
-        <div class="cat-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A6742C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"></path><path d="M5 10v10h14V10"></path><path d="M9 20v-6h6v6"></path></svg>
+      </div>
+      <div class="sitemap-window">
+        <div class="win95-titlebar">
+          <span class="win95-titlebar-icon" aria-hidden="true"></span>
+          <button type="button" class="sitemap-titlebar-link" data-nav="area-3">3. RENTA VARIABLE</button>
+          <span class="win95-titlebar-btns"><span class="win95-btn" aria-hidden="true">_</span><span class="win95-btn" aria-hidden="true">□</span><span class="win95-btn win95-btn-close" aria-hidden="true">✕</span></span>
         </div>
-        <h3>5. Inversión Inmobiliaria</h3>
-        <p>Del piso en alquiler al garaje, el local o el crowdfunding inmobiliario: todas las formas de generar rentas con ladrillo.</p>
-        <button type="button" class="cat-link" data-nav="inmobiliaria">Ver área →</button>
-      </article>
-
-      <article class="cat-card">
-        <div class="cat-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A6742C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="4"></circle></svg>
+        <div class="sitemap-body">
+          <ul class="sitemap-sublist">
+          <li><button type="button" class="sitemap-sublink" data-nav="a3-fondos-indexados">3.1 Fondos Indexados</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="etf">3.2 ETF</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="dividendos">3.3 Bolsa de Dividendos</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a3-value-investing">3.4 Value Investing</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="fondos">3.5 Fondos de Inversión (gestión activa)</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a3-futuros">3.6 Futuros</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a3-warrants">3.7 Warrants</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a3-materias-primas">3.8 Materias Primas</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a3-crowlending">3.9 Crowlending</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a3-otras-renta-variable">3.10 Otras (Renta Variable)</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a3-glosario-renta-variable">3.11 Glosario de Renta Variable</button></li>
+          </ul>
         </div>
-        <h3>6. Oro, Plata y Otras Inversiones</h3>
-        <p>Metales preciosos, arte, coleccionismo y criptoactivos: activos alternativos para diversificar la cartera.</p>
-        <button type="button" class="cat-link" data-nav="area-5">Ver área →</button>
-      </article>
-
-      <article class="cat-card">
-        <div class="cat-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A6742C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="1"></rect><path d="M8 20h8M12 16v4"></path></svg>
+      </div>
+      <div class="sitemap-window">
+        <div class="win95-titlebar">
+          <span class="win95-titlebar-icon" aria-hidden="true"></span>
+          <button type="button" class="sitemap-titlebar-link" data-nav="area-4">4. STARTUPS Y VENTURE CAPITAL</button>
+          <span class="win95-titlebar-btns"><span class="win95-btn" aria-hidden="true">_</span><span class="win95-btn" aria-hidden="true">□</span><span class="win95-btn win95-btn-close" aria-hidden="true">✕</span></span>
         </div>
-        <h3>7. Negocios Digitales</h3>
-        <p>Webs de nicho, apps, KDP, YouTube o infoproductos: negocios online que pueden generar ingresos pasivos.</p>
-        <button type="button" class="cat-link" data-nav="area-6">Ver área →</button>
-      </article>
-
-      <article class="cat-card">
-        <div class="cat-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A6742C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10l1.5-5h13L20 10"></path><path d="M5 10v9h14v-9"></path><path d="M10 19v-5h4v5"></path></svg>
+        <div class="sitemap-body">
+          <ul class="sitemap-sublist">
+          <li><button type="button" class="sitemap-sublink" data-nav="a4-startups">4.1 Startups</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a4-venture-capital-business-angels">4.2 Venture Capital y Business Angels</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a4-crowdfunding-equity">4.3 Crowdfunding Equity</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a4-guia-practica-invertir-startups">4.4 Guía Práctica para Invertir en Startups</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a4-metricas-glosario-startups">4.5 Métricas y Glosario de Startups</button></li>
+          </ul>
         </div>
-        <h3>8. Negocios Físicos</h3>
-        <p>Vending, tiendas autoservicio, hostelería y franquicias: negocios a pie de calle con sus números reales.</p>
-        <button type="button" class="cat-link" data-nav="area-7">Ver área →</button>
-      </article>
-
-      <article class="cat-card">
-        <div class="cat-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A6742C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"></rect><circle cx="9" cy="9" r="1"></circle><circle cx="15" cy="15" r="1"></circle><circle cx="15" cy="9" r="1"></circle><circle cx="9" cy="15" r="1"></circle></svg>
+      </div>
+      <div class="sitemap-window">
+        <div class="win95-titlebar">
+          <span class="win95-titlebar-icon" aria-hidden="true"></span>
+          <button type="button" class="sitemap-titlebar-link" data-nav="inmobiliaria">5. INVERSIÓN INMOBILIARIA</button>
+          <span class="win95-titlebar-btns"><span class="win95-btn" aria-hidden="true">_</span><span class="win95-btn" aria-hidden="true">□</span><span class="win95-btn win95-btn-close" aria-hidden="true">✕</span></span>
         </div>
-        <h3>9. Juego / Azar</h3>
-        <p>Lotería, casino y apuestas explicados con matemáticas: por qué el juego no es una inversión.</p>
-        <button type="button" class="cat-link" data-nav="area-8">Ver área →</button>
-      </article>
-
-      <article class="cat-card">
-        <div class="cat-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A6742C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="1"></rect><path d="M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2M3 13h18"></path></svg>
+        <div class="sitemap-body">
+          <ul class="sitemap-sublist">
+          <li><button type="button" class="sitemap-sublink" data-nav="a4-pisos-en-alquiler-renta">5.1 Pisos en Alquiler (renta)</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a4-piso-turistico">5.2 Piso Turístico</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a4-oficinas-coworking">5.3 Oficinas / Coworking</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a4-habitaciones-para-estudiantes">5.4 Habitaciones para Estudiantes</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a4-residencias-de-ancianos">5.5 Residencias de Ancianos</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a4-crowdfunding-inmobiliario-urbanitae-housers">5.6 Crowdfunding / Crowdlending Inmobiliario</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a4-locales-renta-y-transformacion-a-piso">5.7 Locales: Renta y Transformación a Vivienda</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a4-plaza-de-garaje">5.8 Plaza de Garaje</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a4-terreno-rustico-en-explotacion-cereales-arboles-etc">5.9 Terreno Rústico en Explotación (Cereales, Árboles, etc.)</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a4-terreno-para-otros-usos-eolica-solar-gaseoducto-etc">5.10 Terreno para Otros Usos (Eólica, Solar, Gaseoducto, etc.)</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a4-otras-inmobiliario">5.11 Otras (Inmobiliario)</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a4-glosario-inmobiliario">5.12 Glosario de Inversión Inmobiliaria</button></li>
+          </ul>
         </div>
-        <h3>10. Otros Negocios o Inversiones</h3>
-        <p>Análisis fundamental, fiscalidad, psicología del inversor, formación y la calculadora de dividendos.</p>
-        <button type="button" class="cat-link" data-nav="area-9">Ver área →</button>
-      </article>
-
-      <article class="cat-card">
-        <div class="cat-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A6742C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"></path><path d="M8 12h2l1-2 2 4 1-2h2"></path></svg>
+      </div>
+      <div class="sitemap-window">
+        <div class="win95-titlebar">
+          <span class="win95-titlebar-icon" aria-hidden="true"></span>
+          <button type="button" class="sitemap-titlebar-link" data-nav="area-5">6. ORO, PLATA Y OTRAS INVERSIONES</button>
+          <span class="win95-titlebar-btns"><span class="win95-btn" aria-hidden="true">_</span><span class="win95-btn" aria-hidden="true">□</span><span class="win95-btn win95-btn-close" aria-hidden="true">✕</span></span>
         </div>
-        <h3>11. Longevidad y Salud</h3>
-        <p>Nutrición, suplementación, deporte y longevidad: la inversión en tu propia salud, la que más rentabilidad da.</p>
-        <button type="button" class="cat-link" data-nav="longevidad-salud">Ver área →</button>
-      </article>
-
-      <article class="cat-card">
-        <div class="cat-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A6742C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="10" height="10" rx="1"></rect><path d="M10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4"></path></svg>
+        <div class="sitemap-body">
+          <ul class="sitemap-sublist">
+          <li><button type="button" class="sitemap-sublink" data-nav="oro-plata">6.1 Oro y Plata</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a5-diamantes-y-piedras-preciosas">6.2 Diamantes y Piedras Preciosas</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a5-numismatica-y-notafilia">6.3 Numismática y Notafilia</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a5-coleccionismo-relojes-cartas-comics">6.4 Coleccionismo (relojes, cartas, cómics...)</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a5-antiguedades">6.5 Antigüedades</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="arte">6.6 Arte</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="criptos">6.7 Criptomonedas y NFT</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a5-otros-split-invest-whisky-vino">6.8 Otros (Splint Invest, Whisky, Vino)</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a5-glosario-otras-inversiones">6.9 Glosario de Otras Inversiones</button></li>
+          </ul>
         </div>
-        <h3>12. Tecnología</h3>
-        <p>IA, ciberseguridad, cloud, chips y blockchain: historia, actores y claves de los sectores que mueven los mercados.</p>
-        <button type="button" class="cat-link" data-nav="tecnologia">Ver área →</button>
-      </article>
-
-      <article class="cat-card about">
-        <div class="cat-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E7B15A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"></circle><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"></path></svg>
+      </div>
+      <div class="sitemap-window">
+        <div class="win95-titlebar">
+          <span class="win95-titlebar-icon" aria-hidden="true"></span>
+          <button type="button" class="sitemap-titlebar-link" data-nav="area-6">7. NEGOCIOS DIGITALES</button>
+          <span class="win95-titlebar-btns"><span class="win95-btn" aria-hidden="true">_</span><span class="win95-btn" aria-hidden="true">□</span><span class="win95-btn win95-btn-close" aria-hidden="true">✕</span></span>
         </div>
-        <h3>13. Sobre Mí</h3>
-        <p>Quién hay detrás de este proyecto y por qué persigo la independencia financiera área a área.</p>
-        <button type="button" class="cat-link" data-nav="sobre-mi">Leer más →</button>
-      </article>
-
-    </div>
+        <div class="sitemap-body">
+          <ul class="sitemap-sublist">
+          <li><button type="button" class="sitemap-sublink" data-nav="a6-bolsa-trading-analisis-tecnico-forex-scalping-intradia">7.1 Bolsa - Trading (análisis técnico, forex, scalping, intradía)</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a6-fba-dropshipping">7.2 FBA / Dropshipping</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a6-webs-de-nicho">7.3 Webs de Nicho</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a6-apps-modelos-de-negocio">7.4 Apps: Modelos de Negocio</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a6-dominios-domain-trading">7.5 Dominios (Domain Trading)</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a6-libros-en-amazon-kdp">7.6 Libros en Amazon (KDP)</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a6-royalty-arte-y-musica">7.7 Royalty Arte y Música</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a6-yt-twitch">7.8 YT / Twitch</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a6-infoproductos">7.9 Infoproductos</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a6-redes-sociales-publicidad-digital">7.10 Redes Sociales / Publicidad Digital</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a6-glosario-negocios-digitales">7.11 Glosario de Negocios Digitales</button></li>
+          </ul>
+        </div>
+      </div>
+      <div class="sitemap-window">
+        <div class="win95-titlebar">
+          <span class="win95-titlebar-icon" aria-hidden="true"></span>
+          <button type="button" class="sitemap-titlebar-link" data-nav="area-7">8. NEGOCIOS FÍSICOS</button>
+          <span class="win95-titlebar-btns"><span class="win95-btn" aria-hidden="true">_</span><span class="win95-btn" aria-hidden="true">□</span><span class="win95-btn win95-btn-close" aria-hidden="true">✕</span></span>
+        </div>
+        <div class="sitemap-body">
+          <ul class="sitemap-sublist">
+          <li><button type="button" class="sitemap-sublink" data-nav="a7f-maquinas-vending">8.1 Máquinas Vending</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a7f-tiendas-autoservicio">8.2 Tiendas Autoservicio</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a7f-maquinas-recreativas">8.3 Máquinas Recreativas (Slots, Billar, Futbolín, Dardos)</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a7f-bares-restaurantes">8.4 Hostelería: Bares y Restaurantes</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a7f-tiendas-barrio">8.5 Tiendas de Barrio</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a7f-compraventa-coches">8.6 Compraventa de Coches</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a7f-franquicias-bajo-coste">8.7 Franquicias</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a7f-glosario-negocios-fisicos">8.8 Glosario de Negocios Físicos</button></li>
+          </ul>
+        </div>
+      </div>
+      <div class="sitemap-window">
+        <div class="win95-titlebar">
+          <span class="win95-titlebar-icon" aria-hidden="true"></span>
+          <button type="button" class="sitemap-titlebar-link" data-nav="area-8">9. JUEGO / AZAR</button>
+          <span class="win95-titlebar-btns"><span class="win95-btn" aria-hidden="true">_</span><span class="win95-btn" aria-hidden="true">□</span><span class="win95-btn win95-btn-close" aria-hidden="true">✕</span></span>
+        </div>
+        <div class="sitemap-body">
+          <ul class="sitemap-sublist">
+          <li><button type="button" class="sitemap-sublink" data-nav="a7-loteria">9.1 Lotería</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a7-slots">9.2 Slots</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a7-ruleta">9.3 Ruleta</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a7-poker">9.4 Poker</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a7-blackjack">9.5 Blackjack</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a7-apuestas-deportivas">9.6 Apuestas Deportivas</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a7-otros-juego-bingo-bacara">9.7 Otros Juego (Bingo, Bacará)</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a7-glosario-juego-azar">9.8 Glosario de Juego y Azar</button></li>
+          </ul>
+        </div>
+      </div>
+      <div class="sitemap-window">
+        <div class="win95-titlebar">
+          <span class="win95-titlebar-icon" aria-hidden="true"></span>
+          <button type="button" class="sitemap-titlebar-link" data-nav="area-9">10. OTROS NEGOCIOS O INVERSIONES</button>
+          <span class="win95-titlebar-btns"><span class="win95-btn" aria-hidden="true">_</span><span class="win95-btn" aria-hidden="true">□</span><span class="win95-btn win95-btn-close" aria-hidden="true">✕</span></span>
+        </div>
+        <div class="sitemap-body">
+          <ul class="sitemap-sublist">
+          <li><button type="button" class="sitemap-sublink" data-nav="a8-otros-inversion-analisis-fundamental-fiscalidad-basica">10.1 Otras inversiones (Análisis Fundamental, Fiscalidad Básica)</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a9-otros-negocios">10.2 Otros negocios</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a8-herramientas-glosario-calc-inversion-if-calc-dividendos">10.3 Calculadora de Dividendos</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a9-fiscalidad-irpf-ahorro-patrimonio-sucesiones-iva">10.4 Fiscalidad</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a9-psicologia-del-inversor">10.5 Psicología del Inversor</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a9-formacion-libros-inversion-negocios">10.6 Formación</button></li>
+          </ul>
+        </div>
+      </div>
+      <div class="sitemap-window">
+        <div class="win95-titlebar">
+          <span class="win95-titlebar-icon" aria-hidden="true"></span>
+          <button type="button" class="sitemap-titlebar-link" data-nav="longevidad-salud">11. LONGEVIDAD Y SALUD</button>
+          <span class="win95-titlebar-btns"><span class="win95-btn" aria-hidden="true">_</span><span class="win95-btn" aria-hidden="true">□</span><span class="win95-btn win95-btn-close" aria-hidden="true">✕</span></span>
+        </div>
+        <div class="sitemap-body">
+          <ul class="sitemap-sublist">
+          <li><button type="button" class="sitemap-sublink" data-nav="a10-nutricion">11.1 Nutrición</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a10-suplementacion">11.2 Suplementación</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a10-longevidad">11.3 Longevidad</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a10-deporte">11.4 Deporte</button></li>
+          </ul>
+        </div>
+      </div>
+      <div class="sitemap-window">
+        <div class="win95-titlebar">
+          <span class="win95-titlebar-icon" aria-hidden="true"></span>
+          <button type="button" class="sitemap-titlebar-link" data-nav="tecnologia">12. TECNOLOGÍA</button>
+          <span class="win95-titlebar-btns"><span class="win95-btn" aria-hidden="true">_</span><span class="win95-btn" aria-hidden="true">□</span><span class="win95-btn win95-btn-close" aria-hidden="true">✕</span></span>
+        </div>
+        <div class="sitemap-body">
+          <ul class="sitemap-sublist">
+          <li><button type="button" class="sitemap-sublink" data-nav="a11-ia">12.1 IA</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a11-sistemas-infraestructura">12.2 Sistemas e Infraestructura</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a11-redes-conectividad">12.3 Redes y Conectividad</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a11-desarrollo-software">12.4 Desarrollo de Software</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a11-ciberseguridad">12.5 Ciberseguridad</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a11-hardware-chips">12.6 Hardware y Chips</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a11-software-saas">12.7 Software y SaaS</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a11-cloud-devops">12.8 Cloud y DevOps</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a11-data-analytics">12.9 Data y Analytics</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a11-blockchain-web3">12.10 Blockchain y Web3</button></li>
+          </ul>
+        </div>
+      </div>
+      <div class="sitemap-window">
+        <div class="win95-titlebar">
+          <span class="win95-titlebar-icon" aria-hidden="true"></span>
+          <button type="button" class="sitemap-titlebar-link" data-nav="sobre-mi">13. SOBRE MÍ</button>
+          <span class="win95-titlebar-btns"><span class="win95-btn" aria-hidden="true">_</span><span class="win95-btn" aria-hidden="true">□</span><span class="win95-btn win95-btn-close" aria-hidden="true">✕</span></span>
+        </div>
+        <div class="sitemap-body">
+          <ul class="sitemap-sublist">
+          <li><button type="button" class="sitemap-sublink" data-nav="a9-cv">13.1 CV</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a9-contacto">13.2 Contacto</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a9-planificacion-personal">13.3 Planificación Personal</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a9-recomendado-libros-leidos-podcast-blogs">13.4 Recomendado: Libros Leídos, Podcast, Blogs</button></li>
+          <li><button type="button" class="sitemap-sublink" data-nav="a9-podcast-recomendados">13.5 Podcast Recomendados</button></li>
+          </ul>
+        </div>
+      </div>
+        </div>
   </section>
 
   <section class="toc-section" id="indice-completo">
@@ -3946,6 +4079,13 @@
           </table>
         </div>
         <p class="sub-table-note">Datos orientativos de septiembre de 2026, sujetos a cambio. La inversión en crowdfunding y crowdlending inmobiliario implica riesgo de pérdida total o parcial del capital invertido, riesgo de iliquidez y riesgo de desviación en plazos. Los rendimientos percibidos tributan en la base del ahorro del IRPF en España.</p>
+        <div class="referral-panel">
+          <div class="referral-panel-text">
+            <p class="referral-panel-title">¿Quieres probar Urbanitae?</p>
+            <p class="referral-panel-desc">Regístrate con mi enlace de invitado — es gratis y no tiene coste extra para ti.</p>
+          </div>
+          <a class="referral-btn" href="https://urbanitae.com/es/invitado/?access=U154054" target="_blank" rel="sponsored noopener noreferrer">Regístrate en Urbanitae →</a>
+        </div>
       </article>
       <article class="sub-card sub-card-wide" id="a4-locales-renta-y-transformacion-a-piso">
         <h3>5.7 Locales: Renta y Transformación a Vivienda</h3>
@@ -6725,7 +6865,7 @@
           </div>
           <div class="sfc-body" style="background:#0A0E14;padding:10px;">
             <img src="data:image/webp;base64,UklGRgojAABXRUJQVlA4IP4iAADQjwCdASqkAfQAPpFCnEslo6KhpfOq0LASCWNu1Ui6FR9GAyR1gPWUzv6uT6B3Jcd9dL6fkM+P35/J+PK+9/svVX/ZPUE/WL1Jf6f9wPc9+4/qF/ab9r/eb/6Hqn/vvqAf0f/VetN6jHoAeW5+7/wkf37/k/t/7Wv//9gD/0eoB1O/X3+8dvv+v8V/Mj7TlfOD2pN2X4tf9XwJ+S+oF+Xf0zdY9B8wj19+4d/7qNeIfYA/nnmN/tfA3/G/7D/re4D/Uv8/+y/u0f4vjx+vvYJ6aXo3Fxxy1pbkwkYfmqZFXZGCJvlHB0wgjFYsVixWLFXMfTI1OKhQUe/jdLDpPUUVspX5nHAPM/R1KQOmyW0e9PL44KlxH8KONOPju5uhJ+xWzgncI87nxQVV8cxDudSjR99fTATkdGiZQiTQcZotuhZSacM/M6J4k+Mul75qjOi2Z7T5SMYFxDEEumGXjggqSCpMQE+T1mHTGXilwMEF63xskclVwZCqSGOmnC6FslxzHF21AAxrHwj2HW7eiSicMdLr7FsTpLarar1MYfGMWkv/ycDbdzxc/57UyDoFxxZGkItHlErChYQmHPmV5NRXpiaVN7HzSK4RdGJV1UZ/zf5tPTkNMyzGmDdC1wrB1j/seoKLPlaHc4wxWWoz9ib9b4a75xBIRBT3D+zWAzg9MmweJnG9matQ11jIUoMVMByZsUcdHqxm59Am7fQ7tCeOtvXjWfZAxhkKFz25JqNhfx6Z2TfYRDj0uxGoAbgkOryZYv00ENQGtSoE7Fvw1a0+v9Egr/pvwcx9HUeeMX24Tu2HejAabXejI1XTnwhBRpjEKnYhHMyzR5VycGgunM5dlaUJS8hSOUlmupKEAXwNIl5V29kcGCuS7eV7QOurqlSvolIIs0ymSUfYLzm+02qZR3sfoCglFx54hmnMEBJAiSSAs56YLCGjObJ0L/NB5osDzOY/Gh8oPsQR8gICkneFKJgN64DbfU1eJUWMw3en1gcNJ946Yw4Z8TV7pCTjzrw6vlv5ySy5C4apJ8n3Hr7j19x6+49fcevtiVG0ux05vj1koE+eCevN6Sn4FvxR9tvYeI8V9CMhQ4njFoarjPXcALbKI8zhH3303g7ZR3mug87xRlf35T/IGhUkFRjYX/QAHO9EGL6Ob7pfTJbLHtxId7zgI784EaDEHx/+6O7GwZkSBYHiAJp3vJncmCV039MNQIkyd6NDlifmDeg14Z1wJTSZOqFIJmGPEjhrkwdhvPYd8xa4h3hAjqQXLa9pRtjjVo5WhVjNXUCyvDEB7/ZYT7OU+v5QhNop0ZJAPTflZ/QcAFhA9CUGhfBwlR+X03PH3XpyFCzCjksaxogu8hc90gRJxv1qUN97lc25vBVnDcD+Ebf7YPnVxbbTWXhACH0yMhD042qnOADp5jHQ1LGDqOExN3y+fgjonv78mBUg5ZhgXY+mRqu9p/R8u3O9OfQyGaVjHvdtTaTrrP72LAqlBIgtjnDYqnwMfKrLAHTd597ieR6ajZRstHaa5RzPpu/wP8bKNk+gAP76eTRX2GONMh5F9IP4DWX6YMzzsFCx2PCxuFPTLC/y6ZvVYRS9XBQvSKLh34W8DjczLP/vjQtoP+BG+IvJC9CSO00eoYAA9xlhFlnFlIEuc6JFVvUY3Dqdguj7irOpAA4AUqWJwvdipKhdwLTIR1ut+isBqiBKYnut7OkEZg0ERH1FPUFnsixjxVWj9lIPKyfq87JBdFlEvapgzQJA/OLtRp1rz5hfI9nXj+3lkZZhcgSrOeJjtYCcg8qZbL+56BMk+qjZ/x2W13sAjvOjA8FCS+uVMcBZvadgGTn06aLslj7jOPLXt2ux+aMWClj1Sj/IBTu7bMUTX8rk02rrmpQc+XT6i96/+vVWbgfTwP7eOzu3qH5BO/FVwGxJQzsf9E6tqX2LYkhpiX6Rg/pXKwBXGVKpFxpZySB8yOJRm5VOLLvmq1V3wwU23e+twc96rrqEdbRi+HsTutEgQV5gj34uT0V2GqGABRUiMdDf36fspqoOvcdVdsIiL2wg6FqA00sldZyyGrn5PQL0nIy7QlABhwTNehiZi/DmFEtKrhEdrdYXCAA1SI62Q+drZ05zHH7iqgeLNcaoHQPgywVC/KlSKSh8aOPZ5JoTLPgswbV76xRbtGPKiFdWNVO9OYm0H7y0wwudCsjfqJ35ZYQYC655RmpJnD3JcNGZeFeRLC8IDwSa/Pu4yNOt1Cu3Zb3TNLI7zw/Go4NAYKsP0SXU20pdYJ2sW5p3R5hbux90CWuDnkQeFwMoCFGf+UT1zpuMrm9/p62IvQxzem0woDFxbgujdKNf6LXZ5JLJSJzeio9yud1f4JMFoVtImTJP+224+AbSyFHgdjN2o5TsEdvTLKFpbMWx66r51bQvgX0xXk5e0mJLpTlMXGc3LGHsMbvUjjxD1K0ehrVJikxuicIW/0tWg7yBvCfZPoAtD2YiCHM0qRij5SjSbYeCbD0z3Of8c+ZRUBxxcQAR6FHmAOd1b5zMjwW1lzR9fPVG7P0C318fjHE3BhEqBB8kRRNIkEE3Yv/TFgK4Ldk3xFoQQW8V9aMgBDAjKq+wB56L7Um+5LIuCE+nVE1RXfB5JqxF14AI68vLFZ/nTF0w7NhVbC7l7wVREoDzvCTDShJ+xhcNL1LgxMK+LCqRdmdGs0NQcUHm5ZJJq62EA7sVF82QVUKNL9ISJUZ3bwEzVhic7/hg8Mq+Q067MiC4DCNbxPRAnll/BkVpvXSdBbrKSX9bo9Lgv4J5c3+fZxjcJUlyZd8whHcOcx6laUKi1SE9bDACLOTXiy2K8SQYKPjgzMZHHWEcsFMDK/QlYLlGd3QutRNt64hqwDxYaYW9hHBdmYAwret6qCSMs7r9OGG+NwVdOLPFN03aeVep7IKAzTvYcdrkposeaAkLOV18mT4uq9gUlMVezUbhnvcypVV06lDF6cDSvgqNXQGQ3fSX6e8ceVZ56m2dXE9i49d9wCN9eMiJ/dZlpsimS1fF1GBPgw1fx4/w53ZLnh2sLU5cinjmtQ1wpKfcl2uB+cbnkI9pZXzpHdvpU3XFAxtlCpzJCvdOwrQhkFZyUUT8fClAHpgk4LwW4GcPN/rfC7+lu39qcTqD3/tGF4qHnP8CBpFNoZD2UR+hlCTcqF7XAJRl75k6j0WQOgcUITuEusoOH7tlIiHOB+hTHM1kPsvenNfcHfpQHjakOfOivu3aHrGDU9GrYNydhbwR+Me5qhU4fflJqwZk049TGv9tedz604nfNQ/ejK3f+nneeuHomI87Vc/JERLP6cgDNTkDzCdGfXBgsJCB6DTJ6d5G2rg8HRcolucswLrN+o1Pfi1ONMg15dvGSKuKa4bJd/eyeuBvkCXg66STF7WMgt9Abd8/sxsTX4NGVH2rm7g/pzOmY8tPLXzMZe3HdOM6xUz7qPW6ljHPQAVerdFlvg6qnrfrZkWFO/9yJLmgdGfwVggSAUPXkItrG0Zc7M+kbC684mdn3e7SC7EufoWXkTlIvxNvS+uHNvNHT0hBLy6Co+ubOH95QLzGrXM7gjXQhHk0UhM9yCasMZuHETF92JFz53y3mAvjfObgMXdgo4qArNvOPkWU8Pbb236OJrJlLlujRruwc2HcsLBUJigggfwBYnCZDOlOZu++FSTFo+eZX/KN8fFLy22eLedowkSqnf9aFXcWN1m/r7MPwABWNy9r3aojLIlaOf7lJ4OO/FhXhJE0Hpd6UACDuFWkQJXEk1+4MV52rufNbz+T+7sD61BvEk0unlGRUnip90nSo/ssaqSLj6pDNUvRUTHB6Vr4XGKHRkxzoU6FsV1FQDbIrbCEFGpzSbCQnM++8AdUn0j/m3TlqBkRGsvhZPw8nBSweWV6M6/CnxDTFG/wGUL794o5rr+Z+rCLqFwe1CM+pZSB1zOIIegGPQhJvX8iiwZntMePafFjh82c60r+aWU7p+G0jklXQ6VilDohlJEWLFDvZFeszG7pEqqmdaxTPrPCvgInBUM8A/7pnOb2doH5wqxw1II1Mvu1byszMa9n4U3GJUr0oiJg3GyOPb23ExX6BTL1rInjDtBdK/7Y8jyOMo0vawSlTDUXB8O4ddP5eezB6hylQGMwrOEF2O00fmP+Y3t8kR+aJE/VcmTCrQIdU5nZODkLXMMZPdJ2+qq49CNiKDcmruqdReCl/YfJmJPeXzl/Nbgc7DUAtukYvhJNZXzRuuBO3mvzJWCnBUk1aXlWssvdI5phdQ3ajpXcCYn9J7djbY0ykidKoxRJiKqELQVSPKNbD1Sb1HxIgJ74GjULDlMTRYJm/EZTJuKSlg3DBRQxUFXgvA9z+IAqdq5vfm91PkmMSAJt0BAUm4bhfjGRhZnA4OdMlcwpmZV/RCd29VTnJvwyD7PSCTrhgb/VwcE1Ct9ZCj7CJU79QAAAB6Q3dzs4CM+1zc245/hus/DFa8WRixyjOdiJkO3+4eQX1M9WualvADbsVUBZMWeb5fXHKHp7ToY7TwfzxoNVZbIN6GsjX+C1/Zjn0NsGGLDz4e/vTy+yWLgf+AE45XJTuzBp1tFxOZZf3GlZnH29R7yMrHx52EzlEbp1NbhqgavhIs7rB35oVSSFHZpgR2mnKbs0NlxMU+8u4FXfy2m8yOwY98IIo/MuL6+8SK7tvX1PT6+m2BJC7pfCR7xrQ55i33sw3468iIs17mN8kHeDrDwuAH3tL+bsqRsTIHdtxDBm0q1f/U8R1c639+YpOQ62E6ZaaBbFuy0NgLn1cefD0ysX/bwu/p/ZeaQ6svqOB5YQh0jycbxyfl3uhGEh1Hpnv9ciFQURjx8V70i8EUYC0lj+Lz/E3qPzHQRn0RGb0EKUey6grRT4iAELZ1T7CmvyVO8Mr/1s7507IktaEq2FmLV8yD0Mj79GceIEBCuRF69W1ygkSmeF8CPYKksttsSQ6FxwZaKgDURA84CPP7FgXrg5Oc3Vvc78evdZ6Aft6QLI57ccaZ2KD14CZrIo2yjzDvDdLbSH2pMvGkFqcqI2xEQC7LvjnX9q+rdKywAl1XR3PjE+F6NTWJVFR6gnZPFrNAb9XbtuQMi0YprHPDNjBNgB6b5P+BPOvVV1/BCx498OSSbseBnmaSc5kgWkUs7L+/qdmYqPG5pfIGCONpxz3JFr4Qve7BTYzrZB6cHQn1Pvh1zcVfPwMqyg31t1uDd/IyS1VuNF5vLkP+NLhfU7o840T7xO5x+TZDx8dYrMgt7lB2JVHi04Pe76e7wvdFvRFhAWpRzzGFuRWdsQVoi4yP23WJvzGef+52IklnCD+yzvq8dgKw2IZV3Wouj4G46mqCI4xFKQU+Ftf2rhbJZRmfFPQoioE3gRJqwSWlgd+cIZ3sQXtNP4p8YXFo/a3Gh4Cwb1zRgdRjdR3EareQSyVisZ7qtFuNUduBnWShnaNcZ5fdUpNx0hH+/l0hjNbkW5Ih/ILkflV9sHEumPHbHHBuoDBi9vD2SUQkPQfhMqxw4/PPbfiLw06Mzo5Y4LjH81ARq7P0P5NhwzLLCAAv76UF/dPrdO1s+wWzqzixASK46LUvSPgGwuluJEByDJA6rhYmCBGBgt0GG3B7Q6bq4MpvC1aTMCdSZ9ihgK/FJ7O0dgSI7f4MRbqb8ZOyGIuTY5tdl/a/mXBU/ycTzecgcRbrqYTL1S1hXc6CU2OWU7zstFh2toA78dFTv7Q8leJSEfPB3mRx8tOp2fwvUEKQbKQwyqO9NIyAu9TtvXLwd96YuUDl8NSADt8SNWl9h/BNXkBowlUTXvAvkZdE8qC7xy2uLfpkOuRdfQ7tID5116SDkEJJVGbvWtHgu81cBE8xmvOnCDwSYEtl0sTtmWT2QeUKnxmzVjJgM0sN/XxQlh1HvFp9M68Fsn5UNgrPrmB8S1LNnk1Kl5hczybvOST8FmBM7CZlPs4gNdTWCsycQoxoDFkxwA/u7gEEfXJcE+zGo3KDDFKFochyGN2Z8qdZHzka0cTfWpNXBMQdaaF7+0rM6Ifcb3F1SzAm4KtrNc/6650xhN/SrMoVpiQDJ/+51fJBSr6FtFLsFxe/Rdybv5qbuJVhC2Bv8N+nUZxEYmvOVi3raWiFpHMH/6iANVXFQMLk/8+L4Wj6r3gyYUJ7GH999EyUztorVkatDRp8g0FV+m41qgAexzhiWs3Z0VJm6PsunDwYAvxgvXGHnmaf0xQiIou00KFfFcSPxejF0w7OllmAkx+WQY//DpIrHnbjRri7YluFXHbNjlAZ8AhVJJrX4YIPHMGon2zkhq4LdQloM6IYYK/CtWaembQn1X/7VEz1nrr3Nq83ciCsB/DFtBATBk0aDhhj0pgk2SHwjLM+2sPrjfyKsTawd3F21wsRtM8Yt1IwEkXAbPAEW4MAmQq0FWHU6eyuqn7Jm3TM7mZDMIP2rg1ooGaQ72qH2dpPLG3X91cNtbsk7JjzlMlKvLKBcHPvUQRxKzGs08DZd9FFHnG8kLuuLU+1cg3JwuBWD9G3CZJ7JiJpR1Wu2NWPx5zB1gnDirM0+ZryAeX41UagWnBQxTaxa5CRyqmVBPhvpClf/cCmJXLh23vCtYuOwElyIwC3kSOTvzfz9hARJeAc3o/tE6f8iyX5oxr6RzvhIN44Or6tzLG2ONQt9FyDhUvyZYYNJAqsO4RaP4uTs9hGkifR7qU8b+EqWrXbDDZW8w6gehIlSfXQHAsXpmpFSpOnxzLM9nPd7BHHdXIqumFaLJFOwcimhDWTQpYJtVQigHW1vzBdtLPYvXQxGzOmbW0sFyOlzQIUTES3UqgIXzOhpq7EbL6gQJVrPGd1G92sj4GKIahK9wyQRC51luRLx3vPc5OmvaC/KGMi7BAXwsKigQ8buoA4YS9aVbNZ9O7V4DPmWtzSuY41MKARpvuN/vUTMDUX2C92Ll1g5wZGdRrfmwTjm0Y9HDAP9fdFEoZeFW5SrsxhX42lU1l4lINnbPBJMefs9UjDtKLwe9KD6OdrOQoEjgO+XbnY4Tqe6i1WdvUVwtnrKh/OTlfMdVzGVhJGm+HC1a0wx/zC6BSJrxg0NddDXjLz15IpOvGR+vqHcs1M38EBIQQ44sgV61ArsuQO830N/Ig7ASAdH3OEnRWcCCWzno5EDztfqRcFetHOUVw6tWNs4G1jR28KAJinb6jpRmPB15lcbn4yKHIVy/kxiEqb0oWYaAAmMmd8ytDOb8l5yJ9Yn7I8xBL9PUbHWG36oRYUelRbgWp+oYXK/CaQKRK0xzzbhQXAdnmjr2i84AiA3TB7eyiAPtqNlwIO/bah/OtagdIcfxi3oCeHkXXFY9RJBw8Bi08WdxaHzXtKzXa4o433IR+1FCJ+3jklDhp1eNlOMgsjIQY3A+l22ZiuZxIM2ZGjNlJgwoJw8Rf4lLBynVH0wp7l0qc9sdSM9OP+EYOoQNQoEj6Xoo4WPWK7/XvqgQLdI+E2XKGdCnrht+hbPVB65myAI18ZVKlCSsoYVp9Wvtpd+ODgLW4RI4Ou8j7BgDIllWg6+9Sz0anqDbl/1tXsmR9uHjxlxHzPZI/NVdGQYwGLDW28jEJmgsEDwWFO6T1daDCGoZVzvBInL3xzOYclHJrXktuq7idnIgTAPA3ypKq1OxniBGE9bBn39o7+kHNPIKsfuA0g8gjovXsMcNRKk1gnXKNKC/oyNy2QqDr+XfYifUGOIqzC39D93mDLsGyuvVvTieBMpOgKd4rj/MaFenMfjbksILlo1IQQ6WYaI1sflwWpaW7Iz9E4UgOu6A7F5AHKHqBl8bHowG/JyWZGf8wd8zJqhn6j4RiOR2cIsC3PiG6hN8yJ0rs0kG9bGMorw14bsWNW0yCwoAQvOC65+EKlbtey12yPGkReskwiy00TAmmXlUpbwwxEQPFYOqrA6UaL/bSZ/bwa8VazD4tjfUjfY2OJm2BskqnwgUldhExDHLob9TJ/T3M7Gj/I962oxjTh0Gq8z1gpSxzDFGTgTRfbS3iMfSccnDL/iTow9GCh8k9fu3gI9o3ji0Oj8vJ8ZTsv0e0b61Y6UNilRiaygHC/vt1uLnvj6SOXUYYKsQAQudkyB0qaGaFJgS2XdLWTRIOwcPdT8Ve29UEkItu5m3MyKeQ/qN+DbtPxCbo9CwrRt4WzjzpJ61Tfd+1VqJ31in/NLwvYMJX2Npcr4Dyz9kJSrXC1WHzwKdhJF+3UXqn+caCtaUHw832Z+i/Wq2/TrxlxNu3iOMqXBJgAYFWOTOxzc8wWPYTv4kSXYLfNTNnW/AWOKxEr8oNNbDXS7F6ybjlUqVSkwnsLgigx6D83k/3XL1Quzf6oUsq9MujKRLBCuG9g2+EgYAYwtbWt+ATRH8o1H9uXez75lf1SPlPAFiU+UUz4sNcExN5/UTpRKfblaWLx/O/CeieTNdHN9hhXU5jyUBuu0UXS3cMFipWZHqPYyGx4UuliLmxBwCRTrSErizvROdopezPx/xtXzahuyNgyKSp8pHW5ExTEPDAc4cqV58FXHlySGDB9jKLWhdolEInXi09jZiT8ZcPx+nMhP9uo5s0hxI/fe/b1faqifM4v9KfSn0p8xN7I3rAdApxu1tKPGtWgqPp3at+dQ0Lm4nFxLDE/VqjBPzhidSAOwhIwyd0nNEaIqJRpUiP5CBwF5SrmT161XhOj/wx577Nb8lrTam90KyIyfPfCczRIg9WYEjkBWYnJpfRrg6AYRT90o5UMBdHm9IxDHslXWuDls+ebJpv4irsQUcN0y+URgf1MVgToFUNbE3M0VNWm7JfO9p0MzTFS0/1IbsjJi7MPy3qBgdUn0sAQYSC75EQLy24c0mdPkO1L4QcrRJRI1hQ0CmF2HH860l802v1XLLJhDmx1fg5mjDfv3Hqk/43DtxB23Z4anv1ZCuM0ySZ2dYBgL4PjTYqTYvosmFLYj3mcmzJA+I0RPZ046Yz/cQnmvCASMZ72bpcPHfC8uwytO8gtG0Uansufcc22WoiAvrLBMRkl+TMDVfuVCvVXsGxcqlGDRJX1BgqXRzyF2w/dag2mRUwCeYCvvhS5LHC7gDK28BTgXrDmi7syxeu9rMMjGfoC96+FFulbR0RuTfYqpwplSRXvIv/ww1fA3C34iuH5x0DeuH6YdnTGu17hKhpDGCiyglYMWhwNhzn6+1bOO2pU1KbCjNZvwm3ExX0qTYQbRNp0HdWlBfWkz6kbmbHVfYlRy/A9IVDx1o72R9uavA9N0pWNgJDBwerH61ZGHdQt+vj/QggkvwG0x9IKB8K8tWHhuHCsbu46ynN6uOWKrM1SAshi+AzntoaP2zGmMEfvF/FU59FXMdGOLAK+bra0JcVIKNmnYuNCMs6AW1bLflqLJGhaqxa31OJb5uy3bgVykHzquOgHCAbpNG5cLKvfWGneB++VHRyaFgflUZxfUQ4ESZcyJ4uGM402tyQOzqipRB/HS6xH+yowMvy1jkwi/6UJHz2PuhLN2NGm+UqSU4pmRhysnID/tUJenZSk6Jm1//oPfCQ7ZUSGO69JMHllChgSUBNr87DuFVDquIrDkk68GHFMjHEDSSLGGtCfX99xwKgdjLFxQ2qINBvVVGe3+1Q0rFWznQR98FaSkUAEsyviq/w7n1F1euhNAFeaHcTvd4/F9Mk4VFrikq/TN//VvhNjJu0nsOI7zCGplXvcujA3YB9N0FMtuSxNPwUjXfhuXSavhUfhS4Yv79J1V6sKhlVquv2bjl4hsj2LgHh4lFYQ+w2//QHFhn4dwqlIxjbshGUoh1klpAILdd5EqLj5sYU3R1C33kmO/3GLlQiQw297iCIoGfZtlXdnSF8W5SlQUA0QWQUP68YulO0aXBoHCzTbQIVrvf8K4TRFo/M7yjFifSvaW/gXY6zJaf1q5tdSv06CCF3RAH5Ds+bbu70adPZh9p5TkOu5LTr+Seh2hTjsnziDFD89E5yDuW/MAZyDOiFGnkqs74e7sWo9uhZGSBZv5q5EXJ2m0RzrvI64ABjJs/hScsi/qg957ZrMCGQeSWcQlxlJm+drcOV6CYga/IV8H5+a9DMaXMxMbRIpiTQilx30xwb8FkuPqFtdcfx09oniFlLP7+DUWUprytURezwaOWzmxXxg6AgsNi6l1Iue7EnifmZjQ3wOSoOm33AImQCEDG/q8zSDjH+trSCOi35SETXTmvpKwS1iX9Jocgp4Y/eYVwF+iIwweqNQ1taahtDusT05As01K/wVLmgsmjNrznoQrP4Lhtu5JEDBh/F99RtpLbxCxdNV/EYPq34N9sAN6TPD3TkqRZ8T2Mf+U1jhxaM+6+UYzqj+9Y8yWFrt/Gu1KJf3NmS/8ZJR4p4yPLCHEuQ9Fm0fHYZp8wuzzXZi76HqCZSdLobXuMdUqKkjdI7usziTLJbNQ93jqDkMnOZpd/0muM07NR/IJoafIcy8CMY/aS/h7DzdmTeAepTqX5aOKwhlJ6HwaKMTsm0y7FiZKcFRpSgMVyNi8qdsxZS8FFEVjfEt0al5VvvdP++uA3mdZ0mpdMJc3gqnpzQRhK6I7AVyqcbRKhV3xmvO79Ld5gpMsSZcecTiXkn2XgGTxp65Hr4nyAvdF/6rnORfwjmt5DhpTYgCofQYQI7RL+zLJERsbS8/ceQLLjUpqB9aeTo16GMLx/hCgryvtsKO5Qt6tnsjGv1lym87vrkDvsRX2h2svwjSx+cUk2r/U66wcPYjIXqFPCyS6If5Kwf+B8FMPaPBSXHsgIHFkX6U+lPpT5fVoWOy96Wk2ztW8Qz/F+x3LGeTHegzmnH8K/odCQQHYEsBU1wweq9v9zr8bzzUjhtBbzPn8C6G7oQKIetF2bdRHdHeZolz10ZwqaIzGkLOrG37E8CO7Qp16OfPj1TIdGtKxgIf2ox1cjYce3N/FhDcyb5Sq5UWtACrXpQ/6olWBhOipXSAPCbeVJ+q8zJWuKzjsPFD1YSmQqmy5aGpM/pRO3jydSSvhbQ/7sYzcR33YDK8oMzZPEJeEJKY5y+lOL8nDzrL1xt9LWnJ+qlB3wo2pNjLF1yCAeQJBeEdZHV+m2jGu3AaFoCCwZpoy0P9kLXwqSOafiNcomS5gRW5K5JTWsLUMslChBOwl3H5wW9lZ/1PaKziu1MSL6og55Vk3goHlYPhtiwkWKJokvcAjBdUHks/QlKDlRGxdVan67CpBpWALTAymcAK7dVM/UX/Bj6zzeSojllGEO9lGjA3YEXpeTivsXia7K2pQDWwyhga12HROAE6T/yH7UPRrP2pO3LCud/ekuQAN4MjvNSU+iK6s5cFYhCx9C1Z1KB3WFaMKojwFduqmfeXXHixagQz5v9oV4RFIZgLabmAe8dWqSJL0DiHZ+/I3Ot7U+/dlHUh5fkJWV+/DXrdtaFFUexIrAg7FvPVXTrrBv70l7nttvyr0B0cXUsrGCtKo+1EIJ8lqbIGHcHWKR2xZ2v98/5YWmBUXzSPA5p49ZqSZACaewPRYvlmgveNDxBomV4RFmy9WHH+8vmK6NFvu9nVqIRnS2AAHmHpLQ44KgaHQTxtAPXYdV2xp07Zm9E8JhEVcMD2ENlIsr+lIWoQc97dmXQm4huSy+Xpp7J1jbg2C//drDGv6/MhTHwpiUhRbYNB4KX9VCxQJ6Hx/it45g5Mv2e8KMJN6+26YSLUz4kvW/2MoiWcbXZ2r6lOyn5/P+QMGHw7qbtIwW4dvOKsN5VijR4alfUQ9ZYkU5eYtccTKknWc2CMumxsKx0X5VxiEFqeUL7D6r2/Ub2GcRD/uNhSK2mr7pRCqBlGSWmd/hWKBUj+egQdEQAvywYywfN6rkBPalsppZt/uQN4HrnXffDR2Rok8aSFI6rzrgCUQvH+XMivzd0jIEIAOIYVV4XQPVNhPjVKjrmgGHREUlcrGbmqbkGZZrOXL6hnqfMZonZkEejq6jpeIsAAxMyZQAAAAAAAAAAAA=" alt="Evolución de la capacidad de la IA, 2020–2026: benchmark GPQA Diamond por modelo insignia y familia (OpenAI, Anthropic, Google, DeepSeek, xAI)" loading="lazy" style="width:100%;height:auto;display:block;">
-            <p class="map-caption" style="margin-top:6px;color:#4FA870;">Benchmark de razonamiento científico a nivel de posgrado (GPQA Diamond, % de acierto) por modelo insignia y familia, 2020–2026. Círculos huecos = estimación (el benchmark no existía antes de nov. 2023). Fuentes: BenchGecko (GPQA Diamond, 2025-26), Rein et al. 2023, comunicados de OpenAI, Anthropic, Google DeepMind y xAI.</p>
+            <p class="map-caption" style="margin-top:6px;color:#4FA870;">Benchmark de razonamiento científico a nivel de posgrado (GPQA Diamond, % de acierto) por modelo insignia y familia, 2020–2026. Círculos huecos = estimación (el benchmark no existía antes de nov. 2023). Fuentes: BenchGecko (GPQA Diamond, 2025-26), Rein et al. 2023, comunicados de OpenAI, Anthropic, Google DeepMind y xAI. *Claude Opus 5.5 y GPT-6 Astra: GPQA Diamond ya está saturado en estos modelos y no se reporta; su posición es una estimación equivalente a partir de su puesto relativo en el Artificial Analysis Intelligence Index (sept. 2026).</p>
           </div>
         </div>
       </article>
@@ -7001,7 +7141,7 @@
     <div class="footer-inner">
       <div class="footer-brand">A por el Millón €</div>
       <div class="footer-note">Portada en construcción · aporelmillon.com</div>
-      <div class="footer-version">v3.74 (29.09.2026)</div>
+      <div class="footer-version">v3.79 (04.10.2026)</div>
       <div class="footer-version" style="opacity:0.35;">ref: aporelmillonseowatch0926</div>
     </div>
   </footer>
@@ -7259,18 +7399,57 @@ class Component {
       showHome();
     }
 
-    // Buscador inteligente del índice lateral
+    // Buscador inteligente del índice lateral (titulos + contenido completo de cada articulo)
     const searchInput = document.getElementById('sidebar-search-input');
     const searchEmpty = document.getElementById('sidebar-search-empty');
     if (searchInput) {
       const norm = (s) => (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').trim();
       const areaBlocks = Array.from(document.querySelectorAll('.sidebar-area'));
       const wasOpen = new Map(areaBlocks.map((d) => [d, d.open]));
+
+      // Indice perezoso: para cada subapartado, guarda su titulo y el texto integro
+      // del articulo al que enlaza (parrafos, tablas, glosario...), no solo el titulo.
+      const subIndex = new Map();
+      let indexed = false;
+      const buildIndex = () => {
+        if (indexed) return;
+        areaBlocks.forEach((d) => {
+          d.querySelectorAll('.sidebar-sub-link').forEach((b) => {
+            const id = b.dataset.nav;
+            const target = id ? document.getElementById(id) : null;
+            const rawBody = target ? target.textContent : '';
+            subIndex.set(b, {
+              title: norm(b.textContent),
+              body: norm(rawBody),
+              bodyRaw: rawBody.replace(/\s+/g, ' ').trim(),
+            });
+          });
+        });
+        indexed = true;
+      };
+
+      const makeSnippet = (rawText, q) => {
+        const lower = norm(rawText);
+        const i = lower.indexOf(q);
+        if (i === -1) return '';
+        const start = Math.max(0, i - 34);
+        const end = Math.min(rawText.length, i + q.length + 34);
+        let snip = rawText.slice(start, end).trim();
+        if (start > 0) snip = '…' + snip;
+        if (end < rawText.length) snip += '…';
+        return snip;
+      };
+
+      const clearSnippets = () => {
+        document.querySelectorAll('.sidebar-search-snippet').forEach((el) => el.remove());
+      };
+
       let lastQuery = '';
       const runSearch = () => {
         const q = norm(searchInput.value);
         if (q === lastQuery) return;
         lastQuery = q;
+        clearSnippets();
         if (!q) {
           areaBlocks.forEach((d) => {
             d.classList.remove('sidebar-search-hidden');
@@ -7280,15 +7459,30 @@ class Component {
           if (searchEmpty) searchEmpty.hidden = true;
           return;
         }
+        buildIndex();
         let anyMatch = false;
         areaBlocks.forEach((d) => {
           const areaBtn = d.querySelector('.sidebar-area-link');
           const areaMatches = areaBtn && norm(areaBtn.textContent).includes(q);
           let areaHasMatch = areaMatches;
           d.querySelectorAll('.sidebar-sub-link').forEach((b) => {
-            const match = norm(b.textContent).includes(q);
+            const entry = subIndex.get(b) || { title: norm(b.textContent), body: '', bodyRaw: '' };
+            const titleMatch = entry.title.includes(q);
+            const bodyMatch = !titleMatch && entry.body.includes(q);
+            const match = titleMatch || bodyMatch;
             b.classList.toggle('sidebar-search-hidden', !match);
-            if (match) areaHasMatch = true;
+            if (match) {
+              areaHasMatch = true;
+              if (bodyMatch) {
+                const snip = makeSnippet(entry.bodyRaw, q);
+                if (snip) {
+                  const snipEl = document.createElement('div');
+                  snipEl.className = 'sidebar-search-snippet';
+                  snipEl.textContent = snip;
+                  b.insertAdjacentElement('afterend', snipEl);
+                }
+              }
+            }
           });
           d.classList.toggle('sidebar-search-hidden', !areaHasMatch);
           if (areaHasMatch) {
