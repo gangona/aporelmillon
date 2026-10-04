@@ -1235,25 +1235,6 @@
         </div>
   </section>
 
-  <section class="toc-section" id="indice-completo">
-    <h2>Índice de la web</h2>
-    <p class="grid-sub">Las 13 áreas de la web de un vistazo. Pulsa cualquiera para ir directamente a ella; el detalle de todos los subapartados está en el Mapa de Inversión (1.3).</p>
-    <div class="toc-grid">
-      <button type="button" class="toc-link" data-nav="area-1">1. GENERAL</button>
-      <button type="button" class="toc-link" data-nav="area-2">2. RENTA FIJA</button>
-      <button type="button" class="toc-link" data-nav="area-3">3. RENTA VARIABLE</button>
-      <button type="button" class="toc-link" data-nav="area-4">4. STARTUPS Y VENTURE CAPITAL</button>
-      <button type="button" class="toc-link" data-nav="inmobiliaria">5. INVERSIÓN INMOBILIARIA</button>
-      <button type="button" class="toc-link" data-nav="area-5">6. ORO, PLATA Y OTRAS INVERSIONES</button>
-      <button type="button" class="toc-link" data-nav="area-6">7. NEGOCIOS DIGITALES</button>
-      <button type="button" class="toc-link" data-nav="area-7">8. NEGOCIOS FÍSICOS</button>
-      <button type="button" class="toc-link" data-nav="area-8">9. JUEGO / AZAR</button>
-      <button type="button" class="toc-link" data-nav="area-9">10. OTROS NEGOCIOS O INVERSIONES</button>
-      <button type="button" class="toc-link" data-nav="longevidad-salud">11. LONGEVIDAD Y SALUD</button>
-      <button type="button" class="toc-link" data-nav="tecnologia">12. TECNOLOGÍA</button>
-      <button type="button" class="toc-link" data-nav="sobre-mi">13. SOBRE MÍ</button>
-    </div>
-  </section>
 </div>
 
   <section class="area-section" id="area-1">
@@ -7148,7 +7129,7 @@
     <div class="footer-inner">
       <div class="footer-brand">A por el Millón €</div>
       <div class="footer-note">Portada en construcción · aporelmillon.com</div>
-      <div class="footer-version">v3.82 (04.10.2026)</div>
+      <div class="footer-left" style="display:flex;gap:16px;flex-wrap:wrap;align-items:center;"><div class="footer-version">v3.83 (04.10.2026)</div><div class="footer-version" id="visit-counter" title="Visitas reales">👁 Visitas: …</div></div>
       <div class="footer-version" style="opacity:0.35;">ref: aporelmillonseowatch0926</div>
     </div>
   </footer>
@@ -7505,6 +7486,21 @@ class Component {
 
     // Menú móvil: el índice aparece ya visible (medio desplegado); el botón solo
     // colapsa/expande el bloque entero para ganar espacio de pantalla si se quiere.
+
+    // Contador de visitas real (Abacus)
+    try {
+      const vc = document.getElementById('visit-counter');
+      if (vc) {
+        const seen = (function(){ try { return sessionStorage.getItem('apm_visit'); } catch(e){ return null; } })();
+        const url = 'https://abacus.jasoncameron.dev/' + (seen ? 'get' : 'hit') + '/aporelmillon.com/visitas';
+        fetch(url).then(r => r.json()).then(d => {
+          if (d && typeof d.value === 'number') {
+            vc.textContent = '👁 Visitas: ' + d.value.toLocaleString('es-ES');
+            try { sessionStorage.setItem('apm_visit','1'); } catch(e){}
+          } else { vc.style.display = 'none'; }
+        }).catch(() => { vc.style.display = 'none'; });
+      }
+    } catch(e){}
     const mobileToggle = document.getElementById('mobile-menu-toggle');
     const mobileSidebar = document.getElementById('app-sidebar');
     if (mobileToggle && mobileSidebar) {
