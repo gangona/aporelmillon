@@ -204,7 +204,7 @@
   .area-intro-text { max-width: 1180px; margin: 0 auto 32px auto; font-size: 15px; line-height: 1.7; color: #1B1A18; background: #FFFFFF; border: 1px solid #808080; box-shadow: inset 1px 1px 0 #FFFFFF; padding: 14px 18px; }
 
   .sub-grid { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 18px; }
-  .sub-card { background: #C0C0C0; border-top: 2px solid #FFFFFF; border-left: 2px solid #FFFFFF; border-right: 2px solid #000000; border-bottom: 2px solid #000000; padding: 0; display: flex; flex-direction: column; gap: 0; box-shadow: 2px 2px 0 rgba(0,0,0,.3); }
+  .sub-card { background: #C0C0C0; border-top: 2px solid #FFFFFF; border-left: 2px solid #FFFFFF; border-right: 2px solid #000000; border-bottom: 2px solid #000000; padding: 0; display: flex; flex-direction: column; gap: 0; box-shadow: 2px 2px 0 rgba(0,0,0,.3); min-width: 0; }
   .sub-card h3 { font-size: 13.5px; color: #FFFFFF; background: linear-gradient(90deg, #000080, #1084D0); padding: 6px 10px; text-transform: uppercase; letter-spacing: .01em; }
   .sub-card > .outline-tags, .sub-card > .sub-intro, .sub-card > .sub-examples-label, .sub-card > .sub-examples { margin-left: 12px; margin-right: 12px; }
   .sub-card > .outline-tags { margin-top: 10px; }
@@ -327,13 +327,21 @@
   .main-content { flex-grow: 1; min-width: 0; }
 
   .mobile-menu-btn { display: none; }
-  .mobile-menu-backdrop { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.5); z-index: 998; }
-  .mobile-menu-backdrop.mobile-menu-backdrop-active { display: block; }
 
   @media (max-width: 560px) {
-    .mobile-menu-btn { display: block; position: sticky; top: 0; z-index: 500; width: 100%; background: #C0C0C0; color: #000000; font-family: 'Courier New', monospace; font-weight: 700; font-size: 13px; padding: 10px 12px; text-align: left; border-top: 2px solid #FFFFFF; border-left: 2px solid #FFFFFF; border-right: 2px solid #000000; border-bottom: 2px solid #000000; }
-    .sidebar { position: fixed; top: 0; left: 0; width: 82vw; max-width: 300px; height: 100vh; max-height: 100vh; min-height: 0; transform: translateX(-100%); transition: transform .2s ease; z-index: 999; }
-    .sidebar.sidebar-mobile-open { transform: translateX(0); }
+    /* El índice ya aparece visible (medio desplegado: áreas a la vista, sub-apartados
+       colegados) en vez de un panel oculto que haya que abrir primero. El botón solo
+       colapsa/expande el bloque entero para quien quiera más espacio de pantalla. */
+    .layout { flex-direction: column; align-items: stretch; }
+    .mobile-menu-btn { display: block; position: relative; z-index: 500; width: 100%; background: #C0C0C0; color: #000000; font-family: 'Courier New', monospace; font-weight: 700; font-size: 13px; padding: 10px 12px; text-align: left; border-top: 2px solid #FFFFFF; border-left: 2px solid #FFFFFF; border-right: 2px solid #000000; border-bottom: 2px solid #000000; }
+    .sidebar { position: static; width: 100%; max-width: none; height: auto; max-height: none; min-height: 0; overflow-y: visible; border-right: none; border-bottom: 2px solid #808080; box-shadow: none; }
+    .sidebar.sidebar-collapsed .sidebar-search-row,
+    .sidebar.sidebar-collapsed .sidebar-nav,
+    .sidebar.sidebar-collapsed .sidebar-profile-foot { display: none; }
+    /* Evita que una tabla o SVG ancho "empuje" todo el layout a un ancho mayor que
+       la pantalla: sin esto, Flexbox deja que el contenido fuerce scroll horizontal
+       en toda la página en vez de recortarse/scrollear solo dentro de su propia caja. */
+    .main-content, .sidebar { min-width: 0; }
   }
 
   /* ===== PREVIEW: chrome de ventana Windows 95 — ámbito limitado a .win95-preview ===== */
@@ -392,7 +400,7 @@
   .sub-history-wrap p { font-size: 12px; line-height: 1.65; color: #262626; margin: 0 0 10px 0; font-family: 'Tahoma','Segoe UI',Verdana,sans-serif; }
   .sub-history-wrap p:last-child { margin-bottom: 0; }
   .sitemap-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 12px; margin: 14px 0 4px 0; }
-  .sitemap-window { background: #C0C0C0; border-top: 2px solid #FFFFFF; border-left: 2px solid #FFFFFF; border-right: 2px solid #000000; border-bottom: 2px solid #000000; box-shadow: inset 1px 1px 0 #DFDFDF; display: flex; flex-direction: column; }
+  .sitemap-window { background: #C0C0C0; border-top: 2px solid #FFFFFF; border-left: 2px solid #FFFFFF; border-right: 2px solid #000000; border-bottom: 2px solid #000000; box-shadow: inset 1px 1px 0 #DFDFDF; display: flex; flex-direction: column; min-width: 0; }
   .sitemap-titlebar-link { flex-grow: 1; color: #FFFFFF; font-family: 'Tahoma','Segoe UI',Verdana,sans-serif; font-weight: 700; font-size: 11.5px; letter-spacing: .01em; padding: 0; }
   .sitemap-titlebar-link:hover { text-decoration: underline; }
   .sitemap-body { background: #FFFFFF; padding: 8px 10px 9px 10px; flex-grow: 1; }
@@ -434,8 +442,7 @@
 <body>
 <div style="width: 100%;">
 
-  <button type="button" id="mobile-menu-toggle" class="mobile-menu-btn">☰ ÍNDICE</button>
-  <div id="mobile-menu-backdrop" class="mobile-menu-backdrop"></div>
+  <button type="button" id="mobile-menu-toggle" class="mobile-menu-btn">▾ OCULTAR ÍNDICE</button>
   <div class="layout">
     <aside class="sidebar" id="app-sidebar">
       <div class="sidebar-title"><span class="sidebar-title-left"><span class="sidebar-title-icon-box"><img class="sidebar-title-icon-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAImUlEQVR4nJWXf3BU1RXHP/fe93Y38iMQ2ESFKFoFSa1VlPIjyg+Vwkynv8YfrdpODQLyUwV/DVCsICpBR9SWakmRIRTtTDtUxzKOErGoBUURigwKswS0UDBZEuTHLrvv3Xv6x0uWJCTTemZ29t377j3n3HO/53zPU+vWrRNaRClFRxERlFKIyFnvupJWPR33dNSjtUY1NjYWZlqNdbah47uO486kqzVKKVatWkV9fT1e64KuTtn6Ph6PU1xcXFDc1NSEc+5/7hMRjDE453DO4Xke1lpEhHg8jm7rbdv/trJ06VJufmAMd68dR9VLYxk4ZgA1NTUopXDOISKFfXv27CGZTCIijLruWkQbkskkSilmz76PxsZGnHP4vk8YhmccAChNJkkmkyTLkrz8ysuICFopTgz6lP7De7HhrR14vmNgr8s7PbmIMGjQIIwxKKWYOm06yll832fFihU0Nx9j27ZtAARBAOj2DjiJcdefr2fiS+OY89A9xGIxSs7rA8UhmzbtZOyYIex6v4Geie5MnDjxrEi1irUWYwzZbJZkaRKjNdXV1dTVbWDChAkFB0HaO3Ay3UQiew5Kh1w+pZRevfsw+OYLefON7YybMJSVVRv46YBfMue+Oe0i0BZoe/fuLVyJc5bmxkasc6RSKZRzBEHAypUricViiDhUOp2WtsqSyb5cMflCRlxzJZu2f0DvTD821+7AGM3jjy0kH4ZMnzajXdg7Ai+aB6Xap7FSimhJlAX79+/H6wi+pqYmFJrlLywn7zbz0Z92km78ChGHNob+/cpZtPCxSCnwn0OHusz71mFbG9HjmfTUAGVlZSSTScrKykAU+SDP3VOmYFBYG2KMhzaaZEmSfreew5Q1Y6haOYoZtRNYs6YWrdvd5P8lrXs8gO79Ytz82FAwjqpnf8Triz9gwvdvxJVbAK4aMgTv6oCq1aOxgePwoVP0KonzysMbmDtrxDc2DhRqgRYRTukcCd/j7Q17Kb44xqS113HQT6Gdj1KG2PCQ62+6iLq3PmTze5+RPNdn48adnDgcMHXqVJxz7ZR3rH5djZVSaK01u97Yhc725cYbvsuWzR8Q5hJcNfLbYASlY4wddyW5bJzxPxxF5agrMLlu/PuVJp6qXnyWcegMC12PPRGhpE9flk/+K04SVL00DOQYH325C+0SlP/M581//oMxo6/mdNax5cOtpFZkeWrpEsJOjH9T0RABoqGhASRD7aR36da9mDEjR4Nn6ZHsyw/GXk+3eILamRtJ1ZziyScWkgsCJk2aEiFbgdIWyIMKgRyogFBpVBck2lorvLb3k06nyWQy1K6uJQgDcrktHFj1Jbf0rcJZy9OP3sDtd9yG1hpj/EiRssybPZyJt3yHyy45CeIQwAJLqlMEkmDRsq0gIEQRi+pBS21Ip9Nn+dhaNCoXXEbqxWYa0g2dkpSIsPDe/syZ0pMLLrmIIGhGIQgKBYSqmP2fH+JbI94nk+9JWw21tbWkUqkoAhs3bkQrHVFmpDnK04PnoMwxXv/7erp371YgJ6U0IsKYUaMQF7K+Ls+AL/OcW1qMcxbQOGVY/9pOYgnD7KG2U+dB4yWTSSZfOwCxYUt6aASLE81oNDeOPJ8Pa35NiMYXR4CPF9MglptuqmfW7YbxNyS4YGAlWMuBfeuJx0Le3aq4dFBvtALoAgg4PJxQZDNcc+l5KCftPBSt0AKiFeIg1B5b6w/jXBF+yz1afJ7/YzN33fkJl1UMI57ow6lcnm7ds9S9fYBcXnHrrzLEEnGUaJpPxdHaAyLseYKQ9YrYfOAE1jmcRBSpFCilCcWhBTwtBKLRKoanLXmrMSIYZZl6ZykXD7qCI/teJRcqXOjIZBWJIoPxDNn0LGJ+HpEEv5m/Dc8vorziQZRSeEe++ory8nLyeRcBSLXktqiWsYoiqASNKqSd0bDo8cep3/EIv11zmEVzT5ALsvieIu4bnI1zMuuoqR5MaE4wY+5OfrfkSl548gJmzN1Hwj8atWhaa7Zv387vp/6EkQPLEDmNtaYFx6BMiLMepxV8uv8IGkPdngbunLOAyZMn88jMBTw4vTexop6cP/DnHK7fSN2mo3y2t55nn7iKrD1Jzo6kSO0mEwwmbreyrHowMx9egelx25mGZH/TUXx7CuNCYirAUzl8yWGsxXen6UFIYBVWCSczEWCtDdBas3h5E6lddXj2a1yQJuFZ4gaKYhZlDJrjOBNSpHeijAdW6OEfx/NNxIalpaW8sbuZO4aWY4h4XqFAt0BFome0EIaaIWPHtxQUw8m8sODecpYsryefSRGPgTIK5UAkBOeYN/dvWFXE/Ed3sfiRgSgCYnHhtHNnIqCU4tVPjtJJvcEZ4XQoaCXsbfgaK0JVVRXOORJG8dyLjdw/azwPz+zFA9P7MeJ7SURDPiwCbXjq6R8jsRwL5o6N9HkJjh2nfVfc0NDAX3YeRKFQOGjzM55hy76jaBfjnVSaypEjCpRqjMeMSSUsfeYt/rD6BMtqjrD5o2NY8dCJARjtce89r2G0ZtHidwglRmhLKe7/iygLCqd0Dg/FO5+ngQBaSpLWGrwYxnj868BBEKisrCyUZuc8nlvewLzZ43CntxPaBO99HNCtO9z/0DpsVnh+2SgC5eFLlnnzP+ZUrp5BwxdxIlPf/tPMGENJSUm7JrJj01ldXc2wYcOoqKgoFKzaNav5YseD5AOD5xu0Aish5w+Yg0704Ytd8/E8n8CG9B+8AN/3UNqjPnWgvQMAx48fJ7QBZzhSF4y3OtW7d++zyCmTyRCGeay1LZGBnj174vt+1Oiq1kgLJSUlrF27lt27d6OmTZsmnucVFIZhiOd5aK3P+lxrvXfnHMaYTudb1xtjCs60jaTWEekhUeFTFRUVUlxcXGgQovwO0WJRXgyldAvDqQKPt23DRBy+0YSOdsaklVE7ONDxQP8FuWlgWQM/q5IAAAAASUVORK5CYII=" alt="A por el Millón €" /></span><span>Índice completo</span></span></div>
@@ -7141,7 +7148,7 @@
     <div class="footer-inner">
       <div class="footer-brand">A por el Millón €</div>
       <div class="footer-note">Portada en construcción · aporelmillon.com</div>
-      <div class="footer-version">v3.79 (04.10.2026)</div>
+      <div class="footer-version">v3.82 (04.10.2026)</div>
       <div class="footer-version" style="opacity:0.35;">ref: aporelmillonseowatch0926</div>
     </div>
   </footer>
@@ -7496,20 +7503,19 @@ class Component {
       searchInput.addEventListener('keydown', (e) => { if (e.key === 'Escape') { searchInput.value = ''; runSearch(); } });
     }
 
-    // Menú móvil: abrir/cerrar el índice lateral como panel deslizante
+    // Menú móvil: el índice aparece ya visible (medio desplegado); el botón solo
+    // colapsa/expande el bloque entero para ganar espacio de pantalla si se quiere.
     const mobileToggle = document.getElementById('mobile-menu-toggle');
     const mobileSidebar = document.getElementById('app-sidebar');
-    const mobileBackdrop = document.getElementById('mobile-menu-backdrop');
-    const closeMobileMenu = () => {
-      if (mobileSidebar) mobileSidebar.classList.remove('sidebar-mobile-open');
-      if (mobileBackdrop) mobileBackdrop.classList.remove('mobile-menu-backdrop-active');
-    };
     if (mobileToggle && mobileSidebar) {
+      const updateMobileToggleLabel = () => {
+        mobileToggle.textContent = mobileSidebar.classList.contains('sidebar-collapsed') ? '▸ MOSTRAR ÍNDICE' : '▾ OCULTAR ÍNDICE';
+      };
       mobileToggle.addEventListener('click', () => {
-        mobileSidebar.classList.toggle('sidebar-mobile-open');
-        if (mobileBackdrop) mobileBackdrop.classList.toggle('mobile-menu-backdrop-active');
+        mobileSidebar.classList.toggle('sidebar-collapsed');
+        updateMobileToggleLabel();
       });
-      if (mobileBackdrop) mobileBackdrop.addEventListener('click', closeMobileMenu);
+      updateMobileToggleLabel();
     }
 
     // Calculadora de dividendos (Área 8 — Herramientas)
