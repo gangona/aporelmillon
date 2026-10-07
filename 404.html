@@ -5,15 +5,16 @@
 <title>Redirigiendo... — A por el Millón €</title>
 <!--
   GitHub Pages sirve este archivo cuando no encuentra un fichero real en la ruta pedida
-  (por ejemplo /otros/otros-no-inversion/nutricion/, que solo existe como "pagina" dentro
-  del index.html de una sola pagina, no como fichero en el repositorio).
-  Este script redirige a la raiz codificando la ruta original en la query string; index.html
-  la decodifica y restaura con history.replaceState antes de decidir que seccion mostrar.
+  (por ejemplo /otros/otros-no-inversion/nutricion/ o /en/general/panorama/, que solo existen
+  como "paginas" dentro del index.html de una sola pagina). Redirige a la raiz del idioma
+  (/ o /en/) codificando la ruta original en la query string; index.html la restaura con
+  history.replaceState antes de decidir que seccion mostrar.
   Tecnica estandar: https://github.com/rafgraph/spa-github-pages
 -->
 <script>
-  var pathSegmentsToKeep = 0; // dominio propio (aporelmillon.com) en la raiz, no un subpath de github.io
   var l = window.location;
+  var isEn = l.pathname === '/en' || l.pathname.indexOf('/en/') === 0;
+  var pathSegmentsToKeep = isEn ? 1 : 0; // /en/ es un subdirectorio real con su propio index.html
   l.replace(
     l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
     l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +

@@ -1,0 +1,3 @@
+v3.95 - Paginas reales por seccion (soluciona los 404 de Search Console)
+Sube TODO el contenido de esta carpeta a la raiz del repo gangona/aporelmillon (reemplaza index.html, 404.html, sitemap.xml).
+No borres nada de lo que ya tienes (CNAME, iconos, manifest.json, service-worker.js, robots.txt).
