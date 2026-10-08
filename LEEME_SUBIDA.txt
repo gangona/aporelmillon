@@ -1,1 +1,1 @@
-v3.97 - Portada edificio ancha + movil. Sube el CONTENIDO de cada zip (no la carpeta) a la raiz del repo, sobrescribiendo. Orden: parte1, parte2, parte3.
+v3.97b - Portada edificio. Sube el CONTENIDO del zip (no el zip) a la raiz del repo, sobrescribiendo.
