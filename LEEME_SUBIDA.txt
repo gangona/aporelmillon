@@ -1,1 +1,1 @@
-v3.98b - Portada edificio + infografias. Sube el CONTENIDO del zip (no el zip) a la raiz del repo, sobrescribiendo.
+v3.99 - Portada edificio + infografias. Sube el CONTENIDO del zip (no el zip) a la raiz del repo, sobrescribiendo.
